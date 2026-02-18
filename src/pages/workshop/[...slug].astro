@@ -1,0 +1,41 @@
+---
+import { getCollection } from 'astro:content';
+import WorkshopLayout from '../../layouts/WorkshopLayout.astro';
+
+export async function getStaticPaths() {
+  const workshopEntries = await getCollection('workshop');
+  return workshopEntries.map(entry => ({
+    params: { slug: entry.slug }, props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+const allEntries = await getCollection('workshop');
+const sortedEntries = allEntries.sort((a, b) => a.slug.localeCompare(b.slug));
+const currentIndex = sortedEntries.findIndex(e => e.slug === entry.slug);
+
+const prevEntry = sortedEntries[currentIndex - 1];
+const nextEntry = sortedEntries[currentIndex + 1];
+---
+<WorkshopLayout title={entry.data.title}>
+  <Content />
+
+	<div class="flex justify-between mt-12 border-t-2 border-gray-700 pt-8">
+		<div>
+			{prevEntry && (
+				<a href={`/workshop/${prevEntry.slug}`} class="block text-blue-300 hover:bg-gray-700 p-4 rounded border border-gray-600">
+					&larr; {prevEntry.data.title}
+				</a>
+			)}
+		</div>
+		<div>
+			{nextEntry && (
+				<a href={`/workshop/${nextEntry.slug}`} class="block text-blue-300 hover:bg-gray-700 p-4 rounded border border-gray-600">
+					{nextEntry.data.title} &rarr;
+				</a>
+			)}
+		</div>
+	</div>
+</WorkshopLayout>

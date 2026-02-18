@@ -1,0 +1,61 @@
+---
+import { getCollection } from 'astro:content';
+import '../styles/global.css';
+
+const { title } = Astro.props;
+const allWorkshopEntries = await getCollection('workshop');
+
+const groupedByDifficulty = allWorkshopEntries.reduce((acc, entry) => {
+	const [difficulty] = entry.slug.split('/');
+	if (!acc[difficulty]) {
+		acc[difficulty] = [];
+	}
+	acc[difficulty].push(entry);
+	return acc;
+}, {});
+
+const difficulties = {
+	easy: 'Lett',
+	medium: 'Middels',
+	advanced: 'Avansert'
+};
+---
+<!DOCTYPE html>
+<html lang="no">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>{title}</title>
+	</head>
+	<body class="bg-gray-900 text-white font-sans text-lg leading-relaxed">
+		<main class="flex">
+			<aside class="w-1/4 bg-gray-800 p-8 border-r-2 border-gray-700">
+				<h2 class="text-3xl font-bold mb-8">Meny</h2>
+				<nav>
+					<ul>
+						{Object.entries(difficulties).map(([key, value]) => (
+							<li class="mb-6">
+								<h3 class="text-2xl font-bold capitalize mb-2">{value}</h3>
+								<ul>
+									{groupedByDifficulty[key]?.sort((a, b) => a.slug.localeCompare(b.slug)).map(entry => (
+										<li class="mb-1">
+											<a href={`/workshop/${entry.slug}`} class="block text-blue-300 hover:bg-gray-700 p-2 rounded">
+												{entry.data.title}
+											</a>
+										</li>
+
+									))}
+								</ul>
+							</li>
+						))}
+					</ul>
+				</nav>
+			</aside>
+			<div class="w-3/4 p-12">
+				<h1 class="text-5xl font-bold mb-8">{title}</h1>
+				<slot />
+			</div>
+		</main>
+		<script src="/src/scripts/copy-code.js" is:inline></script>
+	</body>
+</html>
