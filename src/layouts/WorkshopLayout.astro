@@ -39,7 +39,7 @@ const difficulties = {
 								<ul>
 									{groupedByDifficulty[key]?.sort((a, b) => a.slug.localeCompare(b.slug)).map(entry => (
 										<li class="mb-1">
-											<a href={`/workshop/${entry.slug}`} class="block text-blue-300 hover:bg-gray-700 p-2 rounded">
+											<a href={`${import.meta.env.BASE_URL}/workshop/${entry.slug}`} class="block text-blue-300 hover:bg-gray-700 p-2 rounded">
 												{entry.data.title}
 											</a>
 										</li>
