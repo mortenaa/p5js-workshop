@@ -6,7 +6,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  base: '/p5js-workshop/',
+  base: process.env.NODE_ENV === 'production' ? '/p5js-workshop/' : '/',
   vite: {
     plugins: [tailwindcss()]
   },

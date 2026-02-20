@@ -25,14 +25,14 @@ const nextEntry = sortedEntries[currentIndex + 1];
 	<div class="flex justify-between mt-12 border-t-2 border-gray-700 pt-8">
 		<div>
 			{prevEntry && (
-				<a href={`${import.meta.env.BASE_URL}/workshop/${prevEntry.slug}`} class="block text-blue-300 hover:bg-gray-700 p-4 rounded border border-gray-600">
+				<a href={`${import.meta.env.BASE_URL}workshop/${prevEntry.slug}`} class="block text-blue-300 hover:bg-gray-700 p-4 rounded border border-gray-600">
 					&larr; {prevEntry.data.title}
 				</a>
 			)}
 		</div>
 		<div>
 			{nextEntry && (
-				<a href={`${import.meta.env.BASE_URL}/workshop/${nextEntry.slug}`} class="block text-blue-300 hover:bg-gray-700 p-4 rounded border border-gray-600">
+				<a href={`${import.meta.env.BASE_URL}workshop/${nextEntry.slug}`} class="block text-blue-300 hover:bg-gray-700 p-4 rounded border border-gray-600">
 					{nextEntry.data.title} &rarr;
 				</a>
 			)}
