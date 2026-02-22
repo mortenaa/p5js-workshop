@@ -1,7 +1,6 @@
 ---
 title: "Tegne figurer"
 description: "Lær å tegne enkle figurer."
-layout: ../../../layouts/WorkshopLayout.astro
 ---
 
 Her lærer du å tegne figurer som sirkler, firkanter og trekanter.

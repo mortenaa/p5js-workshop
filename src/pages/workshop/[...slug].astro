@@ -20,7 +20,9 @@ const prevEntry = sortedEntries[currentIndex - 1];
 const nextEntry = sortedEntries[currentIndex + 1];
 ---
 <WorkshopLayout title={entry.data.title}>
-  <Content />
+	<article class="prose prose-invert max-w-none">
+  	<Content />
+	</article>
 
 	<div class="flex justify-between mt-12 border-t-2 border-gray-700 pt-8">
 		<div>
