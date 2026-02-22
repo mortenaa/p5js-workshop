@@ -1,3 +1,187 @@
-<!DOCTYPE html><html lang="no"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><title>Introduksjon</title><link rel="stylesheet" href="/p5js-workshop/_astro/index.BQfb2Ngc.css"></head> <body class="bg-gray-900 text-white font-sans text-lg leading-relaxed"> <main class="flex"> <aside class="w-1/4 bg-gray-800 p-8 border-r-2 border-gray-700"> <h2 class="text-3xl font-bold mb-8">Meny</h2> <nav> <ul> <li class="mb-6"> <h3 class="text-2xl font-bold capitalize mb-2">Lett</h3> <ul> <li class="mb-1"> <a href="/p5js-workshop/workshop/easy/01-introduction" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Introduksjon </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/easy/02-drawing-shapes" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Tegne figurer </a> </li> </ul> </li><li class="mb-6"> <h3 class="text-2xl font-bold capitalize mb-2">Middels</h3> <ul> <li class="mb-1"> <a href="/p5js-workshop/workshop/medium/01-variables" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Variabler </a> </li> </ul> </li><li class="mb-6"> <h3 class="text-2xl font-bold capitalize mb-2">Avansert</h3> <ul> <li class="mb-1"> <a href="/p5js-workshop/workshop/advanced/01-interactivity" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Interaktivitet </a> </li> </ul> </li> </ul> </nav> </aside> <div class="w-3/4 p-12"> <h1 class="text-5xl font-bold mb-8">Introduksjon</h1>  <p>Dette er en introduksjon til p5.js.</p> <div class="flex justify-between mt-12 border-t-2 border-gray-700 pt-8"> <div> <a href="/p5js-workshop/workshop/advanced/01-interactivity" class="block text-blue-300 hover:bg-gray-700 p-4 rounded border border-gray-600">
+<!DOCTYPE html><html lang="no"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><title>Introduksjon</title><link rel="stylesheet" href="/p5js-workshop/_astro/index.--BfxcgC.css"></head> <body class="bg-gray-900 text-white font-sans text-lg leading-relaxed"> <main class="flex"> <aside class="w-1/4 bg-gray-800 p-8 border-r-2 border-gray-700"> <h2 class="text-3xl font-bold mb-8">Meny</h2> <nav> <ul> <li class="mb-6"> <h3 class="text-2xl font-bold capitalize mb-2">Lett</h3> <ul> <li class="mb-1"> <a href="/p5js-workshop/workshop/easy/01-introduction" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Introduksjon </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/easy/02-drawing-shapes" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Tegne figurer </a> </li> </ul> </li><li class="mb-6"> <h3 class="text-2xl font-bold capitalize mb-2">Middels</h3> <ul> <li class="mb-1"> <a href="/p5js-workshop/workshop/medium/01-variables" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Variabler </a> </li> </ul> </li><li class="mb-6"> <h3 class="text-2xl font-bold capitalize mb-2">Avansert</h3> <ul> <li class="mb-1"> <a href="/p5js-workshop/workshop/advanced/01-interactivity" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Interaktivitet </a> </li> </ul> </li> </ul> </nav> </aside> <div class="w-3/4 p-12"> <h1 class="text-5xl font-bold mb-8">Introduksjon</h1>  <article class="prose prose-invert max-w-none"> <p>I denne guiden skal vi bruke <a href="https://editor.p5js.org/">“p5.js Web Editor”</a> til å skrive, lagre og kjøre programmer.</p>
+<p>p5.js Web Editor er et nettsted der programmerere kan skrive, teste, kjøre eller eksperimentere p5.js‑programmer uten å måtte laste ned eller sette opp en kodeeditor på datamaskinen. En kodeeditor gjør det enklere å skrive og lese kode ved å strukturere og fargelegge teksten på en måte som hjelper programmerere å se de ulike delene av koden.</p>
+<h2 id="hva-du-trenger">Hva du trenger</h2>
+<ol>
+<li>Tilgang til internett og en moderne nettleser, for eksempel Chrome, Firefox, Safari eller Edge.</li>
+<li>En stasjonær datamaskin, bærbar datamaskin eller Chromebook.</li>
+</ol>
+<h2 id="steg-1-åpne-registreringssiden">Steg 1: Åpne registreringssiden</h2>
+<p>Åpne en nettleser på datamaskinen og gå til <a href="https://editor.p5js.org/" target="_blank" rel="noreferrer"><code>https://editor.p5js.org/</code></a>.
+Klikk på “Sign up”-lenken øverst til høyre på nettsiden.</p>
+<p><img src="/p5_editor_sign_up.png" alt="Skjermbilde av &#x22;Sign up&#x22;-siden i p5.js Web Editor"></p>
+<h2 id="steg-2-lage-konto">Steg 2: Lage konto</h2>
+<p>Har du allerede registrert deg så kan du logge inn ved å klikke på “Login”-lenken øverst til høyre på nettsiden og følge instruksjonene for å logge inn med e‑post, Google‑konto eller GitHub‑konto. Da kan du hoppe videre til Steg 3.</p>
+<p>Når du er på registreringssiden, lager du en konto i p5.js Web Editor på en av disse måtene:</p>
+<ol>
+<li>Velg «Sign up» med e‑post (manuell registrering). Anbefales for de som ikke har en Google‑ eller GitHub‑konto.
+<ol>
+<li>Skriv inn et brukernavn.</li>
+<li>Skriv inn e‑postadressen din.</li>
+<li>Lag et passord og skriv det inn på nytt for å bekrefte.</li>
+<li>Klikk på «Sign Up»-knappen.
+<img src="/p5_editor_sign_up_page.png" alt="Skjermbilde av &#x22;Sign up&#x22;-siden i p5.js Web Editor"></li>
+</ol>
+</li>
+<li>Ved å bruke en Google‑konto
+<ul>
+<li>Klikk på knappen nederst på siden som heter «Login with Google».
+<img src="/login-with-google.png" alt="Knapp google pålogging"></li>
+<li>Følg instruksjonene for å skrive inn e‑postadressen og passordet til Google‑kontoen din (om nødvendig).</li>
+</ul>
+</li>
+<li>Ved å bruke en GitHub‑konto
+<ul>
+<li>Klikk på knappen nederst på siden som heter «Login with GitHub».
+<img src="/login-with-github.png" alt="Knapp github pålogging"></li>
+<li>Følg instruksjonene for å skrive inn brukernavn og passord for GitHub‑kontoen din.</li>
+<li>Gi p5.js Web Editor tilgang til GitHub‑kontoen din ved å klikke på «Authorize processing»-knappen.
+<img src="/github-auth.png" alt="Github authorisering"></li>
+</ul>
+</li>
+</ol>
+<h2 id="steg-3-utforsk-webeditoren">Steg 3: Utforsk web‑editoren</h2>
+<p>p5.js Web Editor er et nettbasert miljø der programmerere kan skrive og teste p5.js‑kode. Nå skal vi utforsk de ulike delene av p5.js Web Editor og hva de brukes til.</p>
+<p>Diagrammet under viser og beskriver hver del av brukergrensesnittet i editoren:
+<img src="/p5_editor_interface_breakdown.png" alt="p5 editor grensesnitt"></p>
+<h2 id="steg-4-gi-navn-til-lagre-og-kjør-ditt-første-program">Steg 4: Gi navn til, lagre og kjør ditt første program</h2>
+<ul>
+<li>Gi navn til prosjektene dine ved å klikke på blyantikonet over teksteditoren og skrive inn et navn for prosjektet.
+<img src="/p5_editor_naming_a_sketch.png" alt="Gi navn til program"></li>
+<li>Lagre prosjekter ved å klikke på «File» i verktøylinjen øverst og velge «Save».
+<ul>
+<li>Pass på at du er logget inn på kontoen din, ellers kan du ikke lagre prosjektet.</li>
+<li>Det er lurt å lagre prosjektene ofte, slik at koden ikke går tapt hvis noe skjer med datamaskinen, nettleseren eller internettforbindelsen mens du koder.
+<img src="/p5_editor_saving_a_sketch.png" alt="Lagre program">
+<img src="/p5_editor_saved_sketch_notification.png" alt="Lagret program notifikasjon">
+For å se resultatet av koden din, klikker du på Play‑knappen øverst til venstre:
+<img src="/p5_editor_running_a_sketch.png" alt="Kjøre program">
+P5.js‑programmer er tekstfiler med kode skrevet i programmeringsspråket JavaScript. JavaScript er et språk som brukes til å gjøre nettsider interaktive. p5.js er et bibliotek skrevet i JavaScript – derfor slutter navnet på «.js» for JavaScript. Med p5.js kan du lage programmer som er fargerike og animerte, med ting brukerne kan trykke på og leke seg med!</li>
+</ul>
+</li>
+</ul>
+<p>Editor‑fanen starter med denne koden i sketch.js‑filen:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> setup</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  createCanvas</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">400</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">400</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  background</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">220</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="function setup() {
+  createCanvas(400, 400);
+}
+function draw() {
+  background(220);
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p>Koden over lager et canvas‑element i forhåndsvisningen som er 400 piksler bredt og 400 piksler høyt. Den setter også bakgrunnen til en gråfarge. Canvas er det området i forhåndsvisningen der du kan tegne og animere ting. Det er som et digitalt lerret for programmering!</p>
+<h3 id="createcanvas">createCanvas()</h3>
+<p>Dataskjermer er bygd opp av bittesmå lys som kalles piksler. Det er de minste byggesteinene i alle bilder. Linjen med kode som lager et tegneområde i forhåndsvisningen er createCanvas(400, 400). Uten denne linjen har du ikke noe å tegne på! Tallene 400, 400 sier hvor bredt og hvor høyt canvaset skal være, målt i piksler. Disse tallene kalles argumenter til createCanvas()-funksjonen.</p>
+<p>Verdiene du skriver inni parentesene til en funksjon, kalles argumenter – altså verdier du bruker for å tilpasse hvordan funksjonen oppfører seg. createCanvas() står inne i setup()-funksjonen for å lage et HTML‑canvas‑element som du kan tegne på.</p>
+<h2 id="steg-5-endre-fargen-på-canvaset">Steg 5: Endre fargen på canvaset</h2>
+<ul>
+<li>Du kan skrive kommandoer for hvilken som helst skisse i teksteditoren, og se resultatet i forhåndsvisningen ved å klikke på Play.</li>
+<li>Endre bakgrunnsfargen på canvaset ved å endre argumentet til background()-funksjonen.
+<ul>
+<li>Bytt background(220); til background(“aqua”); og trykk på Play.</li>
+</ul>
+</li>
+</ul>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> setup</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  createCanvas</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">400</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">400</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  background</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"aqua"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="function setup() {
+  createCanvas(400, 400);
+}
+function draw() {
+  background(&#x22;aqua&#x22;);
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<h3 id="background">background()</h3>
+<p>background()-funksjonen farger bakgrunnen i en bestemt farge. Du kan bruke ord inni anførselstegn eller tallverdier for å sette fargen på bakgrunnen til canvaset.</p>
+<h2 id="steg-6-tegn-figurer-på-canvaset">Steg 6: Tegn figurer på canvaset</h2>
+<ul>
+<li>Tegn en sirkel på canvaset.
+<ul>
+<li>Legg til denne kodelinjen under background()-funksjonen:</li>
+</ul>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">//circle in the center with a width of 100</span></span>
+<span class="line"><span style="color:#B392F0">circle</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">200</span><span style="color:#E1E4E8">,</span><span style="color:#79B8FF">200</span><span style="color:#E1E4E8">,</span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">);</span></span></code></pre><button class="copy-btn" type="button" data-code="//circle in the center with a width of 100
+circle(200,200,100);" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+</li>
+<li>Trykk på Play for å se resultatet.</li>
+</ul>
+<p>Din kode skal nå se slik ut:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> setup</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  createCanvas</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">400</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">400</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  background</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">220</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">  // Draw a circle in the center with</span></span>
+<span class="line"><span style="color:#6A737D">  // a width of 100.</span></span>
+<span class="line"><span style="color:#B392F0">  circle</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">200</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">200</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="function setup() {
+  createCanvas(400, 400);
+}
+function draw() {
+  background(220);
+
+  // Draw a circle in the center with
+  // a width of 100.
+  circle(200, 200, 100);
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<h3 id="draw">draw()</h3>
+<p>Du kan tegne figurer på canvaset ved å skrive bestemte kommandoer for figurer inne i klammeparentesene {} etter function draw().</p>
+<p>Skissen over tegner en sirkel på canvaset ved å kalle circle()-funksjonen inne i draw(). De to første argumentene – 200, 200 – plasserer sirkelen midt på canvaset, og det siste argumentet – 100 – sier at sirkelen er 100 piksler bred. Kommentarene som er skrevet inn i skissen i linjene over circle()-funksjonen forklarer hva koden gjør.</p>
+<h2 id="steg-7-eksperimenter">Steg 7: Eksperimenter!</h2>
+<p>p5.js har mange funksjoner du kan bruke for å lage både statiske og interaktive elementer på canvaset.</p>
+<p>Bytt ut background- og circle‑kommandoene med denne koden:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">//when mouse button is pressed, circles turn black</span></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> (mouseIsPressed </span><span style="color:#F97583">===</span><span style="color:#79B8FF"> true</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#B392F0">  fill</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">} </span><span style="color:#F97583">else</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#B392F0">  fill</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">255</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">//white circles drawn at mouse position</span></span>
+<span class="line"><span style="color:#B392F0">circle</span><span style="color:#E1E4E8">(mouseX, mouseY, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">);</span></span></code></pre><button class="copy-btn" type="button" data-code="//when mouse button is pressed, circles turn black
+if (mouseIsPressed === true) {
+  fill(0);
+} else {
+  fill(255);
+}
+
+//white circles drawn at mouse position
+circle(mouseX, mouseY, 100);" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p>Koden din skal nå se slik ut:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> setup</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  createCanvas</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">400</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">400</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#6A737D">  //when mouse button is pressed, circles turn black</span></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8"> (mouseIsPressed </span><span style="color:#F97583">===</span><span style="color:#79B8FF"> true</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#B392F0">    fill</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  } </span><span style="color:#F97583">else</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#B392F0">    fill</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">255</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">  //white circles drawn at mouse position</span></span>
+<span class="line"><span style="color:#B392F0">  circle</span><span style="color:#E1E4E8">(mouseX, mouseY, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="function setup() {
+  createCanvas(400, 400);
+}
+function draw() {
+  //when mouse button is pressed, circles turn black
+  if (mouseIsPressed === true) {
+    fill(0);
+  } else {
+    fill(255);
+  }
+
+  //white circles drawn at mouse position
+  circle(mouseX, mouseY, 100);
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p><em><strong>Prøv dette!</strong></em>
+Hold nede museknappen mens du drar musepekeren over canvaset.</p>
+<p>Koden over tegner hvite sirkler på samme sted som musepekeren. Når museknappen holdes inne, endrer sirkelen farge til svart.</p> </article> <div class="flex justify-between mt-12 border-t-2 border-gray-700 pt-8"> <div> <a href="/p5js-workshop/workshop/advanced/01-interactivity" class="block text-blue-300 hover:bg-gray-700 p-4 rounded border border-gray-600">
 &larr; Interaktivitet </a> </div> <div> <a href="/p5js-workshop/workshop/easy/02-drawing-shapes" class="block text-blue-300 hover:bg-gray-700 p-4 rounded border border-gray-600"> Tegne figurer &rarr;
-</a> </div> </div>  </div> </main> <script src="/src/scripts/copy-code.js"></script> </body> </html>
+</a> </div> </div>  </div> </main> <script type="module">document.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll(".copy-btn").forEach(e=>{e.textContent="Kopier",e.addEventListener("click",async()=>{const o=e.dataset.code;if(o)try{await navigator.clipboard.writeText(o);const t=e.textContent;e.textContent="Kopiert!",setTimeout(()=>{e.textContent=t},2e3)}catch(t){console.error("Failed to copy: ",t)}})})});</script> </body> </html>
