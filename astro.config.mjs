@@ -1,12 +1,12 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import rehypeCopyCode from './src/utils/rehype-copy-code.js';
-
 import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  base: process.env.NODE_ENV === 'production' ? '/p5js-workshop/' : '/',
+  // Use the GitHub Pages base path for both dev and prod
+  base: '/p5js-workshop/',
   vite: {
     plugins: [tailwindcss()]
   },

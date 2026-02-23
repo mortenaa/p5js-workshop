@@ -17,7 +17,7 @@ p5.js Web Editor er et nettsted der programmerere kan skrive, teste, kjøre elle
 Åpne en nettleser på datamaskinen og gå til <a href="https://editor.p5js.org/" target="_blank" rel="noreferrer">`https://editor.p5js.org/`</a>.
 Klikk på "Sign up"-lenken øverst til høyre på nettsiden.
 
-![Skjermbilde av "Sign up"-siden i p5.js Web Editor](./p5_editor_sign_up.png)
+![Skjermbilde av "Sign up"-siden i p5.js Web Editor](/p5js-workshop/images/p5_editor_sign_up.png)
 
 ## Steg 2: Lage konto
 
@@ -30,36 +30,36 @@ Når du er på registreringssiden, lager du en konto i p5.js Web Editor på en a
     2. Skriv inn e‑postadressen din.
     3. Lag et passord og skriv det inn på nytt for å bekrefte.
     4. Klikk på «Sign Up»-knappen.
-![Skjermbilde av "Sign up"-siden i p5.js Web Editor](./p5_editor_sign_up_page.png)
+![Skjermbilde av "Sign up"-siden i p5.js Web Editor](/p5js-workshop/images/p5_editor_sign_up_page.png)
 2. Ved å bruke en Google‑konto
     - Klikk på knappen nederst på siden som heter «Login with Google».
-![Knapp google pålogging](./login-with-google.png)
+![Knapp google pålogging](/p5js-workshop/images/login-with-google.png)
     - Følg instruksjonene for å skrive inn e‑postadressen og passordet til Google‑kontoen din (om nødvendig).
 3. Ved å bruke en GitHub‑konto
     - Klikk på knappen nederst på siden som heter «Login with GitHub».
-![Knapp github pålogging](./login-with-github.png)
+![Knapp github pålogging](/p5js-workshop/images/login-with-github.png)
     - Følg instruksjonene for å skrive inn brukernavn og passord for GitHub‑kontoen din.
     - Gi p5.js Web Editor tilgang til GitHub‑kontoen din ved å klikke på «Authorize processing»-knappen.
-![Github authorisering](./github-auth.png)
+![Github authorisering](/p5js-workshop/images/github-auth.png)
 
 ## Steg 3: Utforsk web‑editoren
 
 p5.js Web Editor er et nettbasert miljø der programmerere kan skrive og teste p5.js‑kode. Nå skal vi utforsk de ulike delene av p5.js Web Editor og hva de brukes til.
 
 Diagrammet under viser og beskriver hver del av brukergrensesnittet i editoren:
-![p5 editor grensesnitt](./p5_editor_interface_breakdown.png)
+![p5 editor grensesnitt](/p5js-workshop/images/p5_editor_interface_breakdown.png)
 
 ## Steg 4: Gi navn til, lagre og kjør ditt første program
 
 - Gi navn til prosjektene dine ved å klikke på blyantikonet over teksteditoren og skrive inn et navn for prosjektet.
-![Gi navn til program](./p5_editor_naming_a_sketch.png)
+![Gi navn til program](/p5js-workshop/images/p5_editor_naming_a_sketch.png)
 - Lagre prosjekter ved å klikke på «File» i verktøylinjen øverst og velge «Save».
     - Pass på at du er logget inn på kontoen din, ellers kan du ikke lagre prosjektet.
     - Det er lurt å lagre prosjektene ofte, slik at koden ikke går tapt hvis noe skjer med datamaskinen, nettleseren eller internettforbindelsen mens du koder.
-![Lagre program](./p5_editor_saving_a_sketch.png)
-![Lagret program notifikasjon](./p5_editor_saved_sketch_notification.png)
+![Lagre program](/p5js-workshop/images/p5_editor_saving_a_sketch.png)
+![Lagret program notifikasjon](/p5js-workshop/images/p5_editor_saved_sketch_notification.png)
 For å se resultatet av koden din, klikker du på Play‑knappen øverst til venstre:
-![Kjøre program](./p5_editor_running_a_sketch.png)
+![Kjøre program](/p5js-workshop/images/p5_editor_running_a_sketch.png)
 P5.js‑programmer er tekstfiler med kode skrevet i programmeringsspråket JavaScript. JavaScript er et språk som brukes til å gjøre nettsider interaktive. p5.js er et bibliotek skrevet i JavaScript – derfor slutter navnet på «.js» for JavaScript. Med p5.js kan du lage programmer som er fargerike og animerte, med ting brukerne kan trykke på og leke seg med!
 
 Editor‑fanen starter med denne koden i sketch.js‑filen:
