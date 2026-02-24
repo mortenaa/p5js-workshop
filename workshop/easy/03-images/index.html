@@ -1,3 +1,523 @@
-<!DOCTYPE html><html lang="no"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><title>Vise bilder</title><link rel="stylesheet" href="/p5js-workshop/_astro/index.--BfxcgC.css"></head> <body class="bg-gray-900 text-white font-sans text-lg leading-relaxed"> <main class="flex"> <aside class="w-1/4 bg-gray-800 p-8 border-r-2 border-gray-700"> <h2 class="text-3xl font-bold mb-8">Meny</h2> <nav> <ul> <li class="mb-6"> <h3 class="text-2xl font-bold capitalize mb-2">Lett</h3> <ul> <li class="mb-1"> <a href="/p5js-workshop/workshop/easy/01-introduction" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Introduksjon </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/easy/02-drawing-shapes" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Tegne figurer </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/easy/03-images" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Vise bilder </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/easy/04-colors" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Jobbe med farger </a> </li> </ul> </li><li class="mb-6"> <h3 class="text-2xl font-bold capitalize mb-2">Middels</h3> <ul> <li class="mb-1"> <a href="/p5js-workshop/workshop/medium/01-variables" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Variabler </a> </li> </ul> </li><li class="mb-6"> <h3 class="text-2xl font-bold capitalize mb-2">Avansert</h3> <ul> <li class="mb-1"> <a href="/p5js-workshop/workshop/advanced/01-interactivity" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Interaktivitet </a> </li> </ul> </li> </ul> </nav> </aside> <div class="w-3/4 p-12"> <h1 class="text-5xl font-bold mb-8">Vise bilder</h1>  <article class="prose prose-invert max-w-none"> <p>Her lærer du å vise bilder i p5.js. Du kan bruke bilder som du har lagret på datamaskinen din, eller du kan bruke bilder som er tilgjengelige på nettet.</p> </article> <div class="flex justify-between mt-12 border-t-2 border-gray-700 pt-8"> <div> <a href="/p5js-workshop/workshop/easy/02-drawing-shapes" class="block text-blue-300 hover:bg-gray-700 p-4 rounded border border-gray-600">
+<!DOCTYPE html><html lang="no"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><title>Vise bilder</title><link rel="stylesheet" href="/p5js-workshop/_astro/index.--BfxcgC.css"></head> <body class="bg-gray-900 text-white font-sans text-lg leading-relaxed"> <main class="flex"> <aside class="w-1/4 bg-gray-800 p-8 border-r-2 border-gray-700"> <h2 class="text-3xl font-bold mb-8">Meny</h2> <nav> <ul> <li class="mb-6"> <h3 class="text-2xl font-bold capitalize mb-2">Lett</h3> <ul> <li class="mb-1"> <a href="/p5js-workshop/workshop/easy/01-introduction" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Introduksjon </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/easy/02-drawing-shapes" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Tegne figurer </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/easy/03-images" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Vise bilder </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/easy/04-colors" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Jobbe med farger </a> </li> </ul> </li><li class="mb-6"> <h3 class="text-2xl font-bold capitalize mb-2">Middels</h3> <ul> <li class="mb-1"> <a href="/p5js-workshop/workshop/medium/01-variables" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Variabler </a> </li> </ul> </li><li class="mb-6"> <h3 class="text-2xl font-bold capitalize mb-2">Avansert</h3> <ul> <li class="mb-1"> <a href="/p5js-workshop/workshop/advanced/01-interactivity" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Interaktivitet </a> </li> </ul> </li> </ul> </nav> </aside> <div class="w-3/4 p-12"> <h1 class="text-5xl font-bold mb-8">Vise bilder</h1>  <article class="prose prose-invert max-w-none"> <p>Her lærer du å vise bilder i p5.js. Du kan bruke bilder som du har lagret på datamaskinen din, eller du kan bruke bilder som er tilgjengelige på nettet.</p>
+<p>I denne oppgaven skal vi vise bilder ved å skrive kode i p5.js. Det kan være kult å bruke i presentasjoner på skolen, som bakgrunnsbilder i spill, eller andre ting. Vi kommer til å lære deg hvordan du kan bytte bilde ved å klikke på datamusa.</p>
+<p>Når du er gjennom oppgava skal du greie å sette opp et vindu som ser slik ut:
+[bilde1]</p>
+<h2 id="steg-1-laste-opp-bildet">Steg 1: Laste opp bildet</h2>
+<p>Når du har åpna p5.js, så kan du starte med å lagre det tomme vinduet. Kall det hva du vil. Vi har valgt å kalle vårt bildevisningsprogram for <code>presentasjonen</code>. Pass på at du er logget inn på p5.js, ellers kan du ikke lagre prosjektet ditt.
+<img src="/p5js-workshop/images/color_start.png" alt="Startbilde"></p>
+<p>Nå kan du høyreklikke på bildet under og lagre det på datamaskinen din.
+<img src="/p5js-workshop/images/color_undersea.jpg" alt="Bilde av sjø"></p>
+<p>Så kan du klikke på ”>“-knappen under play-knappen i p5.js. Deretter klikker du pluss-tegnet og velger “Upload File”. Finn bildet du nettopp lagret og dra det inn i “Upload File”-vinduet. Nå skal bildet være lastet opp i p5.js, og du kan se det i “Sketch Files”-delen.</p>
+<p>I web editoren kan du skrive kode for å lage variablen som skal holde bildet. Skrive inn på første linje foran function setup():</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> sjoen;</span></span></code></pre><button class="copy-btn" type="button" data-code="let sjoen;" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p>Hele koden så langt skal se slik ut:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> sjoen;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> setup</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  createCanvas</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">400</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">400</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  background</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">220</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="let sjoen;
+
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(220);
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<h2 id="steg-2-endre-setup-funksjon">Steg 2: Endre setup-funksjon</h2>
+<ul>
+<li>Vi ønsker å lage tegneområde vårt i setup-funksjonen større, så endre createCanvas-linjen til:</li>
+</ul>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#B392F0">createCanvas</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">640</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">420</span><span style="color:#E1E4E8">);</span></span></code></pre><button class="copy-btn" type="button" data-code="createCanvas(640, 420);" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<ul>
+<li>Klare du å forande størrelsen på tegneområdet ved å endre tallene i createCanvas? Prøv å endre dem til andre tall og se hva som skjer!</li>
+<li>Sett størrelsen på tegneområdet tilbake til 640 og 420.</li>
+</ul>
+<p>Hele koden så langt skal se slik ut:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> sjoen;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> setup</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  createCanvas</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">640</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">420</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  background</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">220</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="let sjoen;
+
+function setup() {
+  createCanvas(640, 420);
+}
+
+function draw() {
+  background(220);
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<h2 id="steg-3-vis-bildet">Steg 3: Vis bildet!</h2>
+<p>Nå skal vi få frem bildet i vinduet du har laget. Først må vi laste inn bildet, det gjør vi inne i setup-metoden.</p>
+<ul>
+<li>Først må du skrive <code>async</code> foran <code>function setup()</code>, slik at det ser slik ut:</li>
+</ul>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> function</span><span style="color:#B392F0"> setup</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  createCanvas</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">640</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">420</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="async function setup() {
+  createCanvas(640, 420);
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<ul>
+<li>
+<p>async er en måte å fortelle p5.js at det kommer til å være noe i setup-funksjonen som tar litt tid, og at p5.js må vente på det før den fortsetter. Det er viktig at vi skriver async her, ellers kommer ikke bildet til å vises.</p>
+</li>
+<li>
+<p>Så må du skrive inn følgende kode inne i setup-funksjonen, under createCanvas-linjen:</p>
+<ul>
+<li>Her må du passe på at filnavnet i koden er det samme som filnavnet på bildet du lastet opp. Hvis du for eksempel lastet opp et bilde som heter <code>bilde.jpg</code>, så må du skrive <code>bilde.jpg</code> i koden.</li>
+</ul>
+</li>
+</ul>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#E1E4E8">sjoen </span><span style="color:#F97583">=</span><span style="color:#F97583"> await</span><span style="color:#B392F0"> loadImage</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'undersea.jpg'</span><span style="color:#E1E4E8">);</span></span></code></pre><button class="copy-btn" type="button" data-code="sjoen = await loadImage(&#x27;undersea.jpg&#x27;);" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p>Hele koden så langt skal se slik ut:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> sjoen;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> function</span><span style="color:#B392F0"> setup</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  createCanvas</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">640</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">420</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  sjoen </span><span style="color:#F97583">=</span><span style="color:#F97583"> await</span><span style="color:#B392F0"> loadImage</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'undersea.jpg'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  background</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">220</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="let sjoen;
+
+async function setup() {
+  createCanvas(640, 420);
+  sjoen = await loadImage(&#x27;undersea.jpg&#x27;);
+}
+
+function draw() {
+  background(220);
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<ul>
+<li>I draw-funksjonen, under background-linjen, skriv inn følgende kode for å vise bildet:</li>
+</ul>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#B392F0">image</span><span style="color:#E1E4E8">(sjoen, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span></code></pre><button class="copy-btn" type="button" data-code="image(sjoen, 0, 0);" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<ul>
+<li>Trykk på play nå og se om bildet vises! Dersom bildet ikke vises nå, så må du dobbelsjekke koden din, for nå har du alt du trenger.</li>
+</ul>
+<p>Hele koden så langt skal se slik ut:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> sjoen;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> function</span><span style="color:#B392F0"> setup</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  createCanvas</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">640</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">420</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  sjoen </span><span style="color:#F97583">=</span><span style="color:#F97583"> await</span><span style="color:#B392F0"> loadImage</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'undersea.jpg'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  background</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">220</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  image</span><span style="color:#E1E4E8">(sjoen, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">,</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="let sjoen;
+
+async function setup() {
+  createCanvas(640, 420);
+  sjoen = await loadImage(&#x27;undersea.jpg&#x27;);
+}
+
+function draw() {
+  background(220);
+  image(sjoen, 0,0);
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<ul>
+<li>Prøv å endre tallene til <code>image(sjoen, 0, 0)</code>.</li>
+<li>Sett dem tilbake til (0, 0) før du går videre.</li>
+</ul>
+<h2 id="steg-4-endre-størrelsen">Steg 4: Endre størrelsen!</h2>
+<p>Inni parentesen til image, så har du nå tre parametre. Altså tre forskjellige ting som er separert med komma. Du kan legge til to parametre til. De må være tall og de bestemmer størrelsen på bildet ditt.</p>
+<ul>
+<li>Legg til to parametre til, slik at innholdet i parentesen til <code>image</code> ser slik ut: <code>(sjoen, 0, 0, 640, 200)</code>.</li>
+<li>Få bildet til å dekke hele vinduet igjen, ved å bytte ut det siste parameteret med størrelsen på vinduet sin høyde.</li>
+<li>Forsøk å få bildet til å vises slik som dette:
+<img src="/p5js-workshop/images/color_half.png" alt="Bilde av halv sjø"></li>
+<li>Forsøk å få bildet til å vises slik som dette:
+<img src="/p5js-workshop/images/color_quarter.png" alt="Bilde av kvart sjø"></li>
+<li>Forsøk å få bildet til å vises slik som dette:
+<img src="/p5js-workshop/images/color_quarter_center.png" alt="Bilde av kvart sjø i sentrum"></li>
+<li>Forsøk å få bildet til å vises slik som dette:
+<img src="/p5js-workshop/images/color_center.png" alt="Bilde av sentrert sjø"></li>
+</ul>
+<p>Her er koden med de to siste parameterne i image. Når denne koden kjører, så skjer akkurat det samme som når koden i steg 3 kjørte. Bilde av sjøen vises i hele vinduet.</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> sjoen;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> function</span><span style="color:#B392F0"> setup</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  createCanvas</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">640</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">420</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  sjoen </span><span style="color:#F97583">=</span><span style="color:#F97583"> await</span><span style="color:#B392F0"> loadImage</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'undersea.jpg'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  background</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">220</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  image</span><span style="color:#E1E4E8">(sjoen,</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">,</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">,</span><span style="color:#79B8FF">640</span><span style="color:#E1E4E8">,</span><span style="color:#79B8FF">420</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="let sjoen;
+
+async function setup() {
+  createCanvas(640, 420);
+  sjoen = await loadImage(&#x27;undersea.jpg&#x27;);
+}
+
+function draw() {
+  background(220);
+  image(sjoen,0,0,640,420);
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<h2 id="steg-5-vis-2-bilder">Steg 5: Vis 2 bilder</h2>
+<p>Her er det nye bildet vi har valgt å bruke. Lagre det på samme sted som det forrige, eller finn et annet bilde du vil bruke. Gi bildet navnet <code>space.jpg</code>.
+<img src="/p5js-workshop/images/color_space.jpg" alt="Bilde av verdensrommet"></p>
+<p>Hugser du hvordan du lastet opp det første bildet? Se tilbake på steg 1 dersom du ikke husker det. Nå må du laste opp det nye bildet på samme måte som du lastet opp det første.</p>
+<p>For hver kodelinje du skriver inn, må du kjøre koden din for å se at du ikke har noen skrivefeil. Bildet vil ikke vises før du har skrevet inn alle linjene, men du vil få feilmelding dersom du har skrivefeil, og da vil du vite hvilken linje skrivefeilen er på.</p>
+<ul>
+<li>Nå må du lage en ny bildedeklarasjon. Denne skrives rett under den første du har. Vi har valgt å kalle dette bildet verdensrommet, så vår bildedeklarasjone ser slik ut:</li>
+</ul>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> verdensrommet;</span></span></code></pre><button class="copy-btn" type="button" data-code="let verdensrommet;" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p>Husker du hva du må gjøre nå?</p>
+<ul>
+<li>Nå må bildet leses inn, da skriver vi denne kodelinja inni setup:</li>
+</ul>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#E1E4E8">verdensrommet </span><span style="color:#F97583">=</span><span style="color:#F97583"> await</span><span style="color:#B392F0"> loadImage</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'space.jpg'</span><span style="color:#E1E4E8">);</span></span></code></pre><button class="copy-btn" type="button" data-code="verdensrommet = await loadImage(&#x27;space.jpg&#x27;);" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<ul>
+<li>Nå gjenstår bare å fortelle programmet hvordan du vil at bildet skal vises. La oss starte med å putte det inn oppå det andre bildet. Da skriver vi denne kodelinja inn i draw-metoden:</li>
+</ul>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#B392F0">image</span><span style="color:#E1E4E8">(verdensrommet, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span></code></pre><button class="copy-btn" type="button" data-code="image(verdensrommet, 0, 0);" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<ul>
+<li>Sett koden <code>image(verdensrommet, 0, 0);</code> slik at den står på linja over <code>image(sjoen, 0, 0, 640, 200);</code> hva skjer?</li>
+<li>Sett koden <code>image(verdensrommet, 0, 0);</code> slik at den står på linja under <code>image(sjoen, 0, 0, 640, 200);</code> hva skjer?</li>
+<li>Pass på at <code>image(verdensrommet, 0, 0);</code> står under <code>image(sjoen, 0, 0, 640, 200);</code>, så setter du inn de to parameterne som justerer størrelsen på bildet og gjør verdensrombildet halvparten så stort. Hva skjer?</li>
+<li>Forsøk å få bildene til å vises slik:
+<img src="/p5js-workshop/images/color_space_1.png" alt="Bilde 1"></li>
+<li>Forsøk å få bildene til å vises slik:
+<img src="/p5js-workshop/images/color_space_2.png" alt="Bilde 2"></li>
+<li>Forsøk å få bildene til å vises slik:
+<img src="/p5js-workshop/images/color_space_3.png" alt="Bilde 3"></li>
+<li>Før du går videre, så gjør slik at verdensrombildet står på linja under sjøbildet, og pass også på at begge bildene dekker hele skjermen.
+Her er koden så langt:</li>
+</ul>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> sjoen;</span></span>
+<span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> verdensrommet;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> function</span><span style="color:#B392F0"> setup</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  createCanvas</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">640</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">420</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  sjoen </span><span style="color:#F97583">=</span><span style="color:#F97583"> await</span><span style="color:#B392F0"> loadImage</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'undersea.jpg'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  verdensrommet </span><span style="color:#F97583">=</span><span style="color:#F97583"> await</span><span style="color:#B392F0"> loadImage</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'space.jpg'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  background</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">220</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  image</span><span style="color:#E1E4E8">(sjoen,</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">,</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">,</span><span style="color:#79B8FF">640</span><span style="color:#E1E4E8">,</span><span style="color:#79B8FF">420</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  image</span><span style="color:#E1E4E8">(verdensrommet, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">640</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">640</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="let sjoen;
+let verdensrommet;
+
+async function setup() {
+  createCanvas(640, 420);
+  sjoen = await loadImage(&#x27;undersea.jpg&#x27;);
+  verdensrommet = await loadImage(&#x27;space.jpg&#x27;);
+}
+
+function draw() {
+  background(220);
+  image(sjoen,0,0,640,420);
+  image(verdensrommet, 0, 0, 640, 640);
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<h2 id="steg-6-bla-mellom-bildene">Steg 6: Bla mellom bildene</h2>
+<p>Nå skal vi bla mellom bildene ved å bruke datamusa. Her kommer først en skriftlig forklaring på hva vi skal gjøre, og så viser vi kodelinjene etterpå.</p>
+<p>Vi skal nummerere bildene, med nummer 0 og 1. Da bruker vi en variabel, eller rett og slett bare et tall som holder styr på hvilket bilde som vises på skjermen. Hver gang vi trykker på venstre musetast, så bytter vi bilde på skjermen. For å få dette til, så må vi lage to if-setninger som sjekker hvilket bilde som skal vises. I tillegg må vi lage en metode, eller en event-handler som hele tiden følger med på om noen trykker på musetasten på datamusa. Inni event-handleren, må vi skrive kode som oppdaterer variabelen vår, slik at hver gang noen trykker på musetasten, så skifter den mellom 0 og 1.</p>
+<p>Vi deler dette opp i de tre neste stegene. Først lager vi variabelen, deretter lager vi if-setningene som sjekker hvilket bilde som skal vises og til slutt skriver vi koden for eventhandleren.</p>
+<p>Vi viser ikke hvordan hele koden ser ut før på slutten av de tre neste stegene, det er derfor viktig å lese nøye og forsøke å skrive inn de forskjellige kodelinjene der du tror de skal være.</p>
+<h2 id="steg-7-variabelen">Steg 7: Variabelen</h2>
+<p>Vi må deklarere variabler på samme måte som vi deklarerte bildene over. Variabelen gir vi navnet bildenummer. Variabelen gir vi samtidig en verdi lik 0, og ser slik ut:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> bildenummer </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">;</span></span></code></pre><button class="copy-btn" type="button" data-code="let bildenummer = 0;" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<ul>
+<li>Skriv inn begge kodelinjen</li>
+<li>Sjekk at programmet fremdeles kjører. Ingenting nytt skal skje.</li>
+</ul>
+<h2 id="steg-8-if-setningen">Steg 8: If-setningen</h2>
+<p>Nå skal vi lage koden som sjekker hvilket bilde som skal brukes. Da må vi skrive to if-setninger, de skal skrives i <code>draw</code>-metoden. Vi starter med å skrive de med hverdagslige ord, og så gjør vi de om til kode:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Dersom bildenummeret er null,</span></span>
+<span class="line"><span>    så skal bildet av verdensrommet vises</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Dersom bildenummeret er en,</span></span>
+<span class="line"><span>    så skal bildet av sjøen vises</span></span></code></pre><button class="copy-btn" type="button" data-code="Dersom bildenummeret er null,
+    så skal bildet av verdensrommet vises
+
+Dersom bildenummeret er en,
+    så skal bildet av sjøen vises" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p>Nå gjør vi den første av disse om til kode, da bli koden slik:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> (bildenummer </span><span style="color:#F97583">===</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#B392F0">  image</span><span style="color:#E1E4E8">(verdensrommet, </span><span style="color:#79B8FF">70</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">30</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">500</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">300</span><span style="color:#E1E4E8">);    </span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="if (bildenummer === 0) {
+  image(verdensrommet, 70, 30, 500, 300);    
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p><em><strong>🔔 Når vi sammenligner variabler, så bruker vi tre like-tegn.</strong></em></p>
+<ul>
+<li>
+<p>Skriv if-setningen som er vist over inn i draw-metoden din.</p>
+</li>
+<li>
+<p>Sjekk at programmet kjører. Det vil ikke skje noe nytt.</p>
+</li>
+<li>
+<p>Skriv koden for den andre if-setningen selv.</p>
+</li>
+<li>
+<p>Test at koden din fungerer før du går videre.</p>
+</li>
+<li>
+<p>Du kan sjekke at begge bildene vises ved bytte fra <code>0</code> til <code>1</code> i <code>setup</code>-metoden der hvor du bestemmer hva <code>bildenummer</code> skal starte med å være.</p>
+</li>
+<li>
+<p>I steg 5, så var kodelinjene som gjorde at bildene ble vist bare inne krøllparentesene til <code>draw</code>, nå skal de i tillegg være inni krøllparentesene til hver sin if-setning. Vær nøye på at du har flytta disse kodelinjene inn i if-setningene, slik at det fremdeles bare er en av hver.</p>
+</li>
+</ul>
+<p>Koden din skal nå se slik ut:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> sjoen;</span></span>
+<span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> verdensrommet;</span></span>
+<span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> bildenummer </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> function</span><span style="color:#B392F0"> setup</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  createCanvas</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">640</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">420</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  sjoen </span><span style="color:#F97583">=</span><span style="color:#F97583"> await</span><span style="color:#B392F0"> loadImage</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'undersea.jpg'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  verdensrommet </span><span style="color:#F97583">=</span><span style="color:#F97583"> await</span><span style="color:#B392F0"> loadImage</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'space.jpg'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  background</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">220</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8"> (bildenummer </span><span style="color:#F97583">===</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#B392F0">    image</span><span style="color:#E1E4E8">(verdensrommet, </span><span style="color:#79B8FF">70</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">30</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">500</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">300</span><span style="color:#E1E4E8">);    </span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8"> (bildenummer </span><span style="color:#F97583">===</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#B392F0">    image</span><span style="color:#E1E4E8">(sjoen, </span><span style="color:#79B8FF">70</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">30</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">500</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">300</span><span style="color:#E1E4E8">);    </span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="let sjoen;
+let verdensrommet;
+let bildenummer = 0;
+
+async function setup() {
+  createCanvas(640, 420);
+  sjoen = await loadImage(&#x27;undersea.jpg&#x27;);
+  verdensrommet = await loadImage(&#x27;space.jpg&#x27;);
+}
+
+function draw() {
+  background(220);
+  if (bildenummer === 0) {
+    image(verdensrommet, 70, 30, 500, 300);    
+  }
+  
+  if (bildenummer === 1) {
+    image(sjoen, 70, 30, 500, 300);    
+  }
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<h2 id="steg-9-event-handleren">Steg 9: Event-handleren</h2>
+<p>Når begge if-setningene er på plass er det på tide å lage koden som sjekker om noen har trykka på venstre musetast. Da må vi skrive inn dette helt nederst i Processing-koden din, det skal på utsiden av draw-metoden:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> mouseReleased</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="function mouseReleased() {
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<ul>
+<li>Skriv inn den nye koden og sjekk at programmet kjører.</li>
+</ul>
+<h3 id="hva-er-en-event-handler">Hva er en event-handler?</h3>
+<p>En event-handler er en slags innebygd metode. Det som er spesielt er at navnet på event-handlere er allerede bestemt og når vi bruker dem i koden vår, så fungerer de slik at de reagerer når noe spesielt skjer. Hva den reagerer på kan man ofte lese ut fra navnet på metoden. Når eventen reagerer, har vi mulighet til å bestemme hva som skal skje ved ved å skrive kode. Her er noen andre event-handlere som også er klare til at vi kan skrive kode til de:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>mousePressed()</span></span>
+<span class="line"><span>mouseClicked()</span></span>
+<span class="line"><span>mouseMoved()</span></span>
+<span class="line"><span>mouseDragged()</span></span>
+<span class="line"><span>mouseWheel()</span></span></code></pre><button class="copy-btn" type="button" data-code="mousePressed()
+mouseClicked()
+mouseMoved()
+mouseDragged()
+mouseWheel()" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p>Event-handleren vi skal bruke heter mouseReleased.</p>
+<h3 id="få-bildene-til-å-rulle">Få bildene til å rulle</h3>
+<p>Nå vet programmet at det hele tiden skal følge med musetasten, men programmet har forløpig ingenting å gjøre dersom noen trykker. Det vi vil skal skje er at når noen trykker, så skal vi bytte ut hvilket bilde som vises, vi skriver dette med hverdagslige ord først:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Dersom bildenummeret er 0,</span></span>
+<span class="line"><span>    så skal bildenummeret settes til å være 1,</span></span>
+<span class="line"><span>ellers</span></span>
+<span class="line"><span>    så skal bildenummeret settes til å være 0</span></span></code></pre><button class="copy-btn" type="button" data-code="Dersom bildenummeret er 0,
+    så skal bildenummeret settes til å være 1,
+ellers
+    så skal bildenummeret settes til å være 0" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p>Koden for dette blir:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8">(bildenummer </span><span style="color:#F97583">===</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">){</span></span>
+<span class="line"><span style="color:#E1E4E8">    bildenummer </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">} </span><span style="color:#F97583">else</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    bildenummer </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="if(bildenummer === 0){
+    bildenummer = 1;
+} else {
+    bildenummer = 0;
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p>Vi har brukt <code>else</code> for å få en av to ting til å skje. Dersom vi hadde skrevet denne koden:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8">(bildenummer </span><span style="color:#F97583">===</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">){</span></span>
+<span class="line"><span style="color:#E1E4E8">    bildenummer </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8">(bildenummer </span><span style="color:#F97583">===</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    bildenummer </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="if(bildenummer === 0){
+    bildenummer = 1;
+}
+
+if(bildenummer === 1) {
+    bildenummer = 0;
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p>Så ville bildenummer først blitt til 1 og så til 0 igjen før mouseReleased var ferdig, da ville aldri bilde blitt byttet. Når vi har en else, så vil bare en av tingene skje. Vi kan også skrive dette på denne måten:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8">(bildenummer </span><span style="color:#F97583">===</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">){</span></span>
+<span class="line"><span style="color:#E1E4E8">    bildenummer </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">} </span><span style="color:#F97583">else</span><span style="color:#F97583"> if</span><span style="color:#E1E4E8">(bildenummer </span><span style="color:#F97583">===</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    bildenummer </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="if(bildenummer === 0){
+    bildenummer = 1;
+} else if(bildenummer === 1) {
+    bildenummer = 0;
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p>Her vil koden bare sjekke den andre if-setningen dersom den første ikke stemte. Test ut dette for å se hvordan det fungerer.</p>
+<ul>
+<li>Skriv inn if-setningen som blir forklart over.</li>
+<li>Kjør koden og se at det fungerer, nå skal bilde byttes når du trykker på datamusa.</li>
+<li>Skrive om koden inni <code>mouseReleased</code> slik at det er to if-setninger.</li>
+<li>Skriv om koden inni <code>draw</code>, slik at du får <code>if</code> og så <code>else</code>.</li>
+<li>Legg til dette bildet også:
+<img src="/p5js-workshop/images/color_trekant.png" alt="Bilde trekanter"></li>
+</ul>
+<h3 id="ruller-mellom-alle-tre-bildene-da-må-du-deklarere-bilde-laste-bilde-skrive-en-if-setning-inni-draw-og-en-if-setning-inni-mousereleased-med-else-foran">Ruller mellom alle tre bildene (da må du deklarere bilde, laste bilde, skrive en if-setning inni <code>draw</code> og en if-setning inni <code>mouseReleased</code> med <code>else</code> foran).</h3>
+<ul>
+<li>Gjør om koden slik at alle tre bildene er like store som vinduet.</li>
+<li>Bytt om rekkefølgen, slik at trekantbilde vises rett etter bilde av verdensrommet.</li>
+</ul>
+<p>Her er bilde av koden så langt, med to bilder som byttes på:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> sjoen;</span></span>
+<span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> verdensrommet;</span></span>
+<span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> bildenummer </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> function</span><span style="color:#B392F0"> setup</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  createCanvas</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">640</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">420</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  sjoen </span><span style="color:#F97583">=</span><span style="color:#F97583"> await</span><span style="color:#B392F0"> loadImage</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'undersea.jpg'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  verdensrommet </span><span style="color:#F97583">=</span><span style="color:#F97583"> await</span><span style="color:#B392F0"> loadImage</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'space.jpg'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  background</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">220</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8"> (bildenummer </span><span style="color:#F97583">===</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#B392F0">    image</span><span style="color:#E1E4E8">(verdensrommet, </span><span style="color:#79B8FF">70</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">30</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">500</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">300</span><span style="color:#E1E4E8">);    </span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8"> (bildenummer </span><span style="color:#F97583">===</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#B392F0">    image</span><span style="color:#E1E4E8">(sjoen, </span><span style="color:#79B8FF">300</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">200</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">250</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">180</span><span style="color:#E1E4E8">);   </span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> mouseReleased</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8">(bildenummer </span><span style="color:#F97583">===</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">){</span></span>
+<span class="line"><span style="color:#E1E4E8">    bildenummer </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  } </span><span style="color:#F97583">else</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    bildenummer </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="let sjoen;
+let verdensrommet;
+let bildenummer = 0;
+
+async function setup() {
+  createCanvas(640, 420);
+  sjoen = await loadImage(&#x27;undersea.jpg&#x27;);
+  verdensrommet = await loadImage(&#x27;space.jpg&#x27;);
+}
+
+function draw() {
+  background(220);
+  if (bildenummer === 0) {
+    image(verdensrommet, 70, 30, 500, 300);    
+  }
+  
+  if (bildenummer === 1) {
+    image(sjoen, 300, 200, 250, 180);   
+  }
+}
+
+function mouseReleased() {
+  if(bildenummer === 0){
+    bildenummer = 1;
+  } else {
+    bildenummer = 0;
+  }
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p>Her er koden for hvordan du kan rullere mellom tre forskjellige bilder:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> sjoen;</span></span>
+<span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> verdensrommet;</span></span>
+<span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> trekant;</span></span>
+<span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> bildenummer </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> function</span><span style="color:#B392F0"> setup</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  createCanvas</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">640</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">420</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  sjoen </span><span style="color:#F97583">=</span><span style="color:#F97583"> await</span><span style="color:#B392F0"> loadImage</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'undersea.jpg'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  verdensrommet </span><span style="color:#F97583">=</span><span style="color:#F97583"> await</span><span style="color:#B392F0"> loadImage</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'space.jpg'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  trekant </span><span style="color:#F97583">=</span><span style="color:#F97583"> await</span><span style="color:#B392F0"> loadImage</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'trekant.png'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  background</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">220</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8"> (bildenummer </span><span style="color:#F97583">===</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#B392F0">    image</span><span style="color:#E1E4E8">(verdensrommet, </span><span style="color:#79B8FF">70</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">30</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">500</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">300</span><span style="color:#E1E4E8">);    </span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8"> (bildenummer </span><span style="color:#F97583">===</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#B392F0">    image</span><span style="color:#E1E4E8">(sjoen, </span><span style="color:#79B8FF">300</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">200</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">250</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">180</span><span style="color:#E1E4E8">);   </span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8">(bildenummer </span><span style="color:#F97583">===</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">){</span></span>
+<span class="line"><span style="color:#B392F0">    image</span><span style="color:#E1E4E8">(trekant, </span><span style="color:#79B8FF">20</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">160</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">300</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">240</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> mouseReleased</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8">(bildenummer </span><span style="color:#F97583">===</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">){</span></span>
+<span class="line"><span style="color:#E1E4E8">    bildenummer </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  } </span><span style="color:#F97583">else</span><span style="color:#F97583"> if</span><span style="color:#E1E4E8">(bildenummer </span><span style="color:#F97583">===</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">){</span></span>
+<span class="line"><span style="color:#E1E4E8">    bildenummer </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  } </span><span style="color:#F97583">else</span><span style="color:#F97583"> if</span><span style="color:#E1E4E8">(bildenummer </span><span style="color:#F97583">===</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">){</span></span>
+<span class="line"><span style="color:#E1E4E8">    bildenummer </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="let sjoen;
+let verdensrommet;
+let trekant;
+let bildenummer = 0;
+
+async function setup() {
+  createCanvas(640, 420);
+  sjoen = await loadImage(&#x27;undersea.jpg&#x27;);
+  verdensrommet = await loadImage(&#x27;space.jpg&#x27;);
+  trekant = await loadImage(&#x27;trekant.png&#x27;);
+}
+
+function draw() {
+  background(220);
+  if (bildenummer === 0) {
+    image(verdensrommet, 70, 30, 500, 300);    
+  }
+  
+  if (bildenummer === 1) {
+    image(sjoen, 300, 200, 250, 180);   
+  }
+  
+  if(bildenummer === 2){
+    image(trekant, 20, 160, 300, 240);
+  }
+}
+
+function mouseReleased() {
+  if(bildenummer === 0){
+    bildenummer = 1;
+  } else if(bildenummer === 1){
+    bildenummer = 2;
+  } else if(bildenummer === 2){
+    bildenummer = 0;
+  }
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div> </article> <div class="flex justify-between mt-12 border-t-2 border-gray-700 pt-8"> <div> <a href="/p5js-workshop/workshop/easy/02-drawing-shapes" class="block text-blue-300 hover:bg-gray-700 p-4 rounded border border-gray-600">
 &larr; Tegne figurer </a> </div> <div> <a href="/p5js-workshop/workshop/easy/04-colors" class="block text-blue-300 hover:bg-gray-700 p-4 rounded border border-gray-600"> Jobbe med farger &rarr;
 </a> </div> </div>  </div> </main> <script type="module">document.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll(".copy-btn").forEach(e=>{e.textContent="Kopier",e.addEventListener("click",async()=>{const o=e.dataset.code;if(o)try{await navigator.clipboard.writeText(o);const t=e.textContent;e.textContent="Kopiert!",setTimeout(()=>{e.textContent=t},2e3)}catch(t){console.error("Failed to copy: ",t)}})})});</script> </body> </html>
