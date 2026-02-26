@@ -29,7 +29,7 @@ const difficulties = {
 	</head>
 	<body class="bg-gray-900 text-white font-sans text-lg leading-relaxed">
 		<main class="flex">
-			<aside class="w-1/4 bg-gray-800 p-8 border-r-2 border-gray-700">
+			<aside class="w-1/4 bg-gray-800 p-8 border-r-2 border-gray-700 sticky top-0 h-screen">
 				<h2 class="text-3xl font-bold mb-8">Meny</h2>
 				<nav>
 					<ul>
@@ -51,7 +51,7 @@ const difficulties = {
 					</ul>
 				</nav>
 			</aside>
-			<div class="w-3/4 p-12">
+			<div class="w-3/4 p-12 overflow-y-auto">
 				<h1 class="text-5xl font-bold mb-8">{title}</h1>
 				<slot />
 			</div>
