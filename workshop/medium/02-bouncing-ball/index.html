@@ -1,0 +1,393 @@
+<!DOCTYPE html><html lang="no"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><title>Sprettende ball</title><link rel="stylesheet" href="/p5js-workshop/_astro/index.DipRzuJ1.css"></head> <body class="bg-gray-900 text-white font-sans text-lg leading-relaxed"> <main class="flex"> <aside class="w-1/4 bg-gray-800 p-8 border-r-2 border-gray-700 sticky top-0 h-screen"> <h2 class="text-3xl font-bold mb-8">Meny</h2> <nav> <ul> <li class="mb-6"> <h3 class="text-2xl font-bold capitalize mb-2">Lett</h3> <ul> <li class="mb-1"> <a href="/p5js-workshop/workshop/easy/01-introduction" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Introduksjon </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/easy/02-drawing-shapes" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Tegne figurer </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/easy/03-images" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Vise bilder </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/easy/04-colors" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Jobbe med farger </a> </li> </ul> </li><li class="mb-6"> <h3 class="text-2xl font-bold capitalize mb-2">Middels</h3> <ul> <li class="mb-1"> <a href="/p5js-workshop/workshop/medium/01-variables" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Variabler </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/medium/02-bouncing-ball" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Sprettende ball </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/medium/03-tegnespillet" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Tegnespillet </a> </li> </ul> </li><li class="mb-6"> <h3 class="text-2xl font-bold capitalize mb-2">Avansert</h3> <ul> <li class="mb-1"> <a href="/p5js-workshop/workshop/advanced/01-interactivity" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Interaktivitet </a> </li> </ul> </li> </ul> </nav> </aside> <div class="w-3/4 p-12 overflow-y-auto"> <h1 class="text-5xl font-bold mb-8">Sprettende ball</h1>  <article class="prose prose-invert max-w-none"> <h1 id="introduksjon">Introduksjon:</h1>
+<p>I denne modulen skal vi lære et programmeringsspråk som heter p5.js. Det
+ble laget for å gjøre programmering lett for designere og andre som ikke har
+programmert før. p5.js egner seg til å lage multimedieprogrammer, spill og
+liknende. Mange liker p5.js fordi det er raskt å lage programmer som
+vanligvis krever mye arbeid.</p>
+<p><img src="/p5js-workshop/images/bouncing_ball.gif" alt="ball som spretter opp og ned" title="ball som spretter opp og ned"></p>
+<h1 id="steg-1-vindu">Steg 1: Vindu</h1>
+<p>Nå skal vi begynne helt enkelt med å lage et vindu og fylle det med en
+bakgrunnsfarge. Dette vil bli grunnlaget for nesten alle programmer som du lager
+med p5.js, så det er et fint sted å starte.</p>
+<h2 id="sjekkliste">Sjekkliste</h2>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Start med å skrive dette i p5.js-editoren:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> setup</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  createCanvas</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">640</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">480</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  background</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="function setup() {
+  createCanvas(640, 480);
+}
+
+function draw() {
+  background(0);
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Kjør programmet.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Lagre programmet som Ball.</p>
+</li>
+</ul>
+<h2 id="utforsking">Utforsking</h2>
+<p>Hva skjer hvis du:</p>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Endrer <code>640</code> i <code>createCanvas(640, 480);</code>?</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Endrer <code>480</code>?</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Hva om du endrer <code>0</code> i <code>background(0);</code>?</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Hva skjer hvis tallet er høyere enn <code>255</code>?</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Hva skjer hvis tallet er negativt?</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Før du går videre, fjern endringene du gjorde i utforskingen.</p>
+</li>
+</ul>
+<h2 id="forklaring-av-koden">Forklaring av koden</h2>
+<p>Selv om du har utforsket <code>createCanvas(640, 480)</code> og <code>background(0)</code>, lurer du kanskje
+på hva resten av koden gjør? Her er en forklaring:</p>
+<ul>
+<li>
+<p><code>function setup() {</code> lager en <em>funksjon</em> som heter setup. Når <code>setup</code> blir kalt
+kjøres koden mellom krøllparentesene <code>{ }</code>. Du lurer kanskje på hva en
+funksjon er og hva det betyr å kalle den? En funksjon er <em>en navngitt del med
+kode</em>. Den navngitte koden kan kjøres når man trenger det, ved <em>å kalle den</em>
+slik som dette: <code>setup();</code>. <code>setup</code> er en spesiell funksjon som alltid kjøres
+av p5.js når du starter programmet.</p>
+</li>
+<li>
+<p><code>createCanvas(640, 480);</code> er et kall på funksjonen <code>createCanvas</code> som åpner et vindu med
+bredde 640 <a href="https://no.wikipedia.org/wiki/Piksel">piksler</a> og høyde 480
+piksler. Legg merke til at du sender verdier inn til createCanvas med å legge verdiene
+mellom <code>( )</code>. <code>;</code> forteller at setningen er ferdig. Dette gjør det mulig å ha
+flere setninger på samme linje (<code>createCanvas(1,2); background(3);</code>) eller fordele en
+lang setning utover flere linjer.</p>
+</li>
+<li>
+<p><code>}</code> på linje tre betyr at funksjonen <code>setup</code> er ferdig.</p>
+</li>
+<li>
+<p><code>function draw() {</code> på linje 5 betyr at vi lager en funksjon som heter <code>draw</code>.
+<code>draw</code> er spesiell, den blir kjørt om og om igjen så lenge programmet ditt
+kjører.</p>
+</li>
+<li>
+<p><code>background(0);</code> setter bakgrunnsfargen i vinduet. Tallet <code>0</code> betyr at
+bakgrunnen skal være svart. Hvit har verdien <code>255</code>. Tallene mellom 0-255 gir
+forskjellige gråtoner. Senere skal vi se hvordan vi tegner farger.</p>
+</li>
+<li>
+<p><code>}</code> på siste linje betyr at funksjonen <code>draw</code> er ferdig.</p>
+</li>
+</ul>
+<h1 id="steg-2-sirkel">Steg 2: Sirkel</h1>
+<p>Siden denne oppgaven skal handle om en sprettende ball, er det på tide at vi
+begynner å tegne. La oss tegne en sirkel midt i vinduet.</p>
+<h2 id="sjekkliste-1">Sjekkliste</h2>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Endre <code>draw</code> til følgende uten å endre <code>setup</code>:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  background</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  ellipse</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">320</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">240</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="function draw() {
+  background(0);
+  ellipse(320, 240, 100, 100);
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Lagre og kjør programmet. Du skal nå se en
+hvit sirkel midt i vinduet som i bildet under.</p>
+<p><img src="/p5js-workshop/images/bouncing_ball_circle1.png" alt="En hvit sirkel på svart bakgrunn midt i et vindu" title="En hvit sirkel på svart bakgrunn midt i et vindu"></p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Legg til en sirkel til og kjør programmet igjen:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  background</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  ellipse</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">320</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">240</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  ellipse</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">200</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">200</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="function draw() {
+  background(0);
+  ellipse(320, 240, 100, 100);
+  ellipse(0, 0, 200, 200);
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> La oss legge til en siste sirkel og kjøre programmet enda en gang:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  background</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  ellipse</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">320</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">240</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  ellipse</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">200</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">200</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  ellipse</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">640</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">480</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">50</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">50</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="function draw() {
+  background(0);
+  ellipse(320, 240, 100, 100);
+  ellipse(0, 0, 200, 200);
+  ellipse(640, 480, 50, 50);
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+</li>
+</ul>
+<p><img src="/p5js-workshop/images/bouncing_ball_circle2.png" alt="Tre hvite sirkler på svart bakgrunn: en stor øverst til venstre, en middels
+stor midt i vinduet og en liten nederst til høyre" title="Tre hvite sirkler på svart bakgrunn: en stor øverst til venstre, en middels stor midt i
+vinduet og en liten nederst til høyre"></p>
+<h2 id="forklaring-av-koden-1">Forklaring av koden</h2>
+<p>Klarer du knekke koden for hvordan <code>ellipse</code> fungerer?</p>
+<ul>
+<li>
+<p>Det første tallet bestemmer hvor langt til høyre i vinduet sirkelen skal
+tegnes opp.</p>
+</li>
+<li>
+<p>Det andre tallet bestemmer hvor langt ned i vinduet den skal tegnes opp.</p>
+</li>
+<li>
+<p>Det tredje tallet bestemmer hvor bred sirkelen skal være.</p>
+</li>
+<li>
+<p>Det siste tallet bestemmer hvor høy sirkelen er.</p>
+</li>
+</ul>
+<p>Det siste hørtes kanskje rart ut? En sirkel er jo like bred som den er høy! En
+ellipse som er like høy som den er bred, er en sirkel, men ellipser kan også
+være bredere enn de er høye, eller høyere enn de er brede. Derfor heter
+funksjonen <code>ellipse</code> og ikke <code>circle</code>.</p>
+<p><img src="/p5js-workshop/images/bouncing_ball_circle3.png" alt="Tre hvite sirkler på svart bakgrunn med piler som viser X- og
+Y-aksen." title="Tre hvite sirkler på svart bakgrunn med piler som viser X- og Y-aksen."></p>
+<p>I bildet ovenfor vises også området utenfor bilderammen og to piler <strong>X</strong> og
+<strong>Y</strong>.</p>
+<ul>
+<li>
+<p>Det første tallet i <code>ellipse</code> angir posisjon langs X-aksen, vist med X-pilen.</p>
+</li>
+<li>
+<p>Det andre tallet i <code>ellipse</code> angir posisjon lans Y-aksen, vist med Y-pilen.</p>
+</li>
+</ul>
+<p>Der pilene krysser hverandre har både X og Y verdien <code>0</code>. Pilene strekker seg
+til kanten av vinduet med verdiene <code>640</code> for X og <code>480</code> for Y. Dette ble bestemt
+av <code>createCanvas(640, 480)</code>.</p>
+<p><strong>Tips:</strong> Man kan tegne opp ting utenfor bildet med negative tall eller tall som
+er større enn de som ble brukt i <code>createCanvas</code>.</p>
+<h1 id="steg-3-variabler">Steg 3: Variabler</h1>
+<p>Til nå har vi brukt faste tall overalt. Dette fungerer ikke alltid bra. For
+eksempel, hva skjer hvis vi endrer størrelsen på vinduet? Vil den første
+sirkelen være i midten? Og hvordan kan vi få sirklene skal bevege på seg?</p>
+<p>Dette løser vi ved hjelp av noe som heter <em>variabler</em>. En variabel er en verdi
+som har blitt gitt et navn. Vi kan endre på verdien til variabelen, og det er
+derfor det heter variabel: <em>verdien kan variere</em>.</p>
+<h2 id="sjekkliste-2">Sjekkliste</h2>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input type="checkbox" disabled> La oss begynne med å endre størrelsen på vinduet i <code>setup</code>:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> setup</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  createCanvas</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">800</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">600</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="function setup() {
+  createCanvas(800, 600);
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p>Legg merke til at to av sirkelene har “flyttet” på seg. De er ikke i midten og
+høyre bunn av vinduet.</p>
+<p><img src="/p5js-workshop/images/bouncing_ball_variables1.png" alt="De tre hvite sirklene er nå vist på en svart bilderamme som er større enn
+før." title="De tre hvite sirklene er nå vist på en svart bilderamme som er større enn før."></p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Vi skal nå ta i bruk to variabler som heter <code>width</code> og <code>height</code>, altså
+bredde og høyde. Disse variablene får verdien til størrelsen på vinduet når
+<code>createCanvas</code> kalles. Endre <code>draw</code> til å bruke <code>width</code> og <code>height</code>:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  background</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  ellipse</span><span style="color:#E1E4E8">(width </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">, height </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  ellipse</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">200</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">200</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  ellipse</span><span style="color:#E1E4E8">(width, height, </span><span style="color:#79B8FF">50</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">50</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="function draw() {
+  background(0);
+  ellipse(width / 2, height / 2, 100, 100);
+  ellipse(0, 0, 200, 200);
+  ellipse(width, height, 50, 50);
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p>Her har vi brukt regnestykkene <code>width / 2</code> og <code>height / 2</code> for å tegne opp den
+første sirkelen. Skråstreken <code>/</code> betyr delt på, altså gir <code>width / 2</code>
+halvparten av bredden. Hva gir <code>height / 2</code>?</p>
+<p><strong>Tips:</strong> Vi kunne også brukt <code>width * 0.5</code> for å oppnå det samme, bredden
+ganget med en halv. Noen ganger er det enklere med deling og andre ganger
+ganging.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Lagre og kjør programmet, om du ikke har gjort det allerede.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> La oss lage våre egne variabler, slik at vi kan få formene til å bevege på
+seg:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> x;</span></span>
+<span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> y;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> setup</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  createCanvas</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">800</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">600</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  x </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> width </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  y </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> height </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="let x;
+let y;
+
+function setup() {
+  createCanvas(800, 600);
+  x = width / 2;
+  y = height / 2;
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p><code>let x;</code> og <code>let y;</code> lager to variabler med navn <code>x</code> og <code>y</code>. Inne i <code>setup</code> gir vi
+variablene verdier, som er de samme regnestykkene som vi brukte tidligere.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Det er ikke nok å bare ha variabler, vi må bruke dem også. Endre <code>draw</code>
+til å bruke <code>x</code> og <code>y</code>:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#E1E4E8">  x </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> x </span><span style="color:#F97583">+</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">  background</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  ellipse</span><span style="color:#E1E4E8">(x, y, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  ellipse</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">200</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">200</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  ellipse</span><span style="color:#E1E4E8">(width, height, </span><span style="color:#79B8FF">50</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">50</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="function draw() {
+  x = x + 1;
+
+  background(0);
+  ellipse(x, y, 100, 100);
+  ellipse(0, 0, 200, 200);
+  ellipse(width, height, 50, 50);
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p>Den første sirkelen bruker nå <code>x</code> og <code>y</code> som posisjon. I tillegg la vi til
+linjen <code>x = x + 1;</code> som sier at <code>x</code> skal øke med <code>1</code> for hver gang <code>draw</code>
+kjøres. Hva vil skje med den ene sirkelen når programmes kjøres?</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Lagre og kjør programmet, om du ikke har gjort det allerede.</p>
+</li>
+</ul>
+<h2 id="utforsking-1">Utforsking</h2>
+<p>Kan du endre <code>x</code> og <code>y</code> inni <code>draw</code> slik at sirkelen beveger seg:</p>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Mot venstre istedenfor høyre?</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Opp istedenfor sidelengs?</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Ned istedenfor for opp?</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> På skrå?</p>
+</li>
+</ul>
+<h1 id="steg-4-sprette-i-veggen">Steg 4: Sprette i veggen</h1>
+<p>Det er kjedelig når sirkelen forsvinner ut av vinduet hele tiden. Vi skal nå få
+sirkelen til å snu når den treffer kanten av vinduet, slik en ball spretter
+tilbake hvis den kastes i en vegg.</p>
+<h2 id="sjekkliste-3">Sjekkliste</h2>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Vi trenger et par nye variabler for å styre retningen til sirkelen. Legg
+til variablene <code>xFart</code> og <code>yFart</code> før <code>setup</code>:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> xFart </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 1.5</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> yFart </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">;</span></span></code></pre><button class="copy-btn" type="button" data-code="let xFart = 1.5;
+let yFart = 2;" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Legg til koden under i <code>draw</code> for å få ballen til å snu. Merk at vi endrer
+setningen hvor vi øker <code>x</code> og fjerner to av sirklene.</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#E1E4E8">  x </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> x </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> xFart;</span></span>
+<span class="line"><span style="color:#E1E4E8">  y </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> y </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> yFart;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8"> (x </span><span style="color:#F97583">&#x3C;</span><span style="color:#79B8FF"> 50</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    xFart </span><span style="color:#F97583">=</span><span style="color:#F97583"> -</span><span style="color:#E1E4E8">xFart;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8"> (x </span><span style="color:#F97583">></span><span style="color:#E1E4E8"> width </span><span style="color:#F97583">-</span><span style="color:#79B8FF"> 50</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    xFart </span><span style="color:#F97583">=</span><span style="color:#F97583"> -</span><span style="color:#E1E4E8">xFart;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8"> (y </span><span style="color:#F97583">&#x3C;</span><span style="color:#79B8FF"> 50</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    yFart </span><span style="color:#F97583">=</span><span style="color:#F97583"> -</span><span style="color:#E1E4E8">yFart;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8"> (y </span><span style="color:#F97583">></span><span style="color:#E1E4E8"> height </span><span style="color:#F97583">-</span><span style="color:#79B8FF"> 50</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    yFart </span><span style="color:#F97583">=</span><span style="color:#F97583"> -</span><span style="color:#E1E4E8">yFart;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">  background</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  ellipse</span><span style="color:#E1E4E8">(x, y, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="function draw() {
+  x = x + xFart;
+  y = y + yFart;
+
+  if (x < 50) {
+    xFart = -xFart;
+  }
+
+  if (x > width - 50) {
+    xFart = -xFart;
+  }
+
+  if (y < 50) {
+    yFart = -yFart;
+  }
+
+  if (y > height - 50) {
+    yFart = -yFart;
+  }
+
+  background(0);
+  ellipse(x, y, 100, 100);
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Lagre og kjør programmet.</p>
+</li>
+</ul>
+<h3 id="forklaring">Forklaring</h3>
+<p>I <code>draw</code> ser vi en del nytt som du ikke har sett før.</p>
+<ul>
+<li>
+<p><code>if (x &#x3C; 50)</code>, <em>hvis x er under 50</em>, lar oss kjøre <code>xFart = -xFart;</code> kun
+dersom x er under 50. Hva betyr de andre <code>if</code>-setningene?</p>
+</li>
+<li>
+<p><code>xFart = -xFart;</code> endrer fortegnet på farten. Dersom farten er positiv (+),
+vil den endres til å bli negativ (+ - = -). Dersom farten er negativ får vi to
+minus, som er positiv (- - = +).</p>
+</li>
+</ul>
+<h2 id="utfordringer">Utfordringer</h2>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Kan du kombinere to og to av <code>if</code>-setningene ved å bruke <code>||</code>? <code>||</code> betyr
+eller. Her er et eksempel: <code>if (x &#x3C; 1 || x > 10)</code>, hvis x er under 1 <em>eller</em> x
+er over 10.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Kan du få ballen til å sprette sideleng som dette?</p>
+<p><img src="/p5js-workshop/images/bouncing_ball_sideways.gif" alt="ball som spretter sidelengs" title="ball som spretter sidelengs"></p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Kan du få ballen til å endre form samtidig?</p>
+<p><img src="/p5js-workshop/images/bouncing_ball_rar.gif" alt="ball som endrer form etter posisjon" title="ball som endrer form etter posisjon"></p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Kan du få ballen til å endre fart avhengig av posisjonen?</p>
+<p><img src="/p5js-workshop/images/bouncing_ball.gif" alt="ball som har større fart på bunn" title="ball som har større fart på bunn"></p>
+</li>
+</ul> </article> <div class="flex justify-between mt-12 border-t-2 border-gray-700 pt-8"> <div> <a href="/p5js-workshop/workshop/medium/01-variables" class="block text-blue-300 hover:bg-gray-700 p-4 rounded border border-gray-600">
+&larr; Variabler </a> </div> <div> <a href="/p5js-workshop/workshop/medium/03-tegnespillet" class="block text-blue-300 hover:bg-gray-700 p-4 rounded border border-gray-600"> Tegnespillet &rarr;
+</a> </div> </div>  </div> </main> <script type="module">document.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll(".copy-btn").forEach(e=>{e.textContent="Kopier",e.addEventListener("click",async()=>{const o=e.dataset.code;if(o)try{await navigator.clipboard.writeText(o);const t=e.textContent;e.textContent="Kopiert!",setTimeout(()=>{e.textContent=t},2e3)}catch(t){console.error("Failed to copy: ",t)}})})});</script> </body> </html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html><html lang="no"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><title>Tegnespillet</title><link rel="stylesheet" href="/p5js-workshop/_astro/index.DipRzuJ1.css"></head> <body class="bg-gray-900 text-white font-sans text-lg leading-relaxed"> <main class="flex"> <aside class="w-1/4 bg-gray-800 p-8 border-r-2 border-gray-700 sticky top-0 h-screen"> <h2 class="text-3xl font-bold mb-8">Meny</h2> <nav> <ul> <li class="mb-6"> <h3 class="text-2xl font-bold capitalize mb-2">Lett</h3> <ul> <li class="mb-1"> <a href="/p5js-workshop/workshop/easy/01-introduction" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Introduksjon </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/easy/02-drawing-shapes" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Tegne figurer </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/easy/03-images" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Vise bilder </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/easy/04-colors" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Jobbe med farger </a> </li> </ul> </li><li class="mb-6"> <h3 class="text-2xl font-bold capitalize mb-2">Middels</h3> <ul> <li class="mb-1"> <a href="/p5js-workshop/workshop/medium/01-variables" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Variabler </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/medium/02-bouncing-ball" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Sprettende ball </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/medium/03-tegnespillet" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Tegnespillet </a> </li> </ul> </li><li class="mb-6"> <h3 class="text-2xl font-bold capitalize mb-2">Avansert</h3> <ul> <li class="mb-1"> <a href="/p5js-workshop/workshop/advanced/01-interactivity" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Interaktivitet </a> </li> </ul> </li> </ul> </nav> </aside> <div class="w-3/4 p-12 overflow-y-auto"> <h1 class="text-5xl font-bold mb-8">Tegnespillet</h1>  <article class="prose prose-invert max-w-none"> <h1 id="introduksjon">Introduksjon:</h1>
+<p>Denne oppgaven går ut på å lage et tegnespill, målet er å skrive kode, slik at
+du kan å tegne tegninger som ligner på disse:</p>
+<p><img src="/p5js-workshop/images/Gulsol.png" alt="Bilde av en gul sol"></p>
+<p><img src="/p5js-workshop/images/gronttre.png" alt="Bilde av et grønt tre"></p>
+<p><img src="/p5js-workshop/images/tofjes.png" alt="Bilde av to fjes"></p>
+<p>Oppgaven er lagt opp slik at du leser og gjør det som står i oppgaveteksen, så
+på slutten av hvert steg, kan du dobbelsjekke koden din med en eksempelkode vi
+har lagt ved.</p>
+<h1 id="steg-1-lag-ett-vindu-som-skal-være-tegnebrettet">Steg 1: Lag ett vindu, som skal være tegnebrettet</h1>
+<p>Nå skal vi lage et vindu med en enkel bakgrunnsfarge. Det er noe vi gjør til
+nesten alle programmer vi lager i p5.js.</p>
+<h2 id="gjør-dette">Gjør dette:</h2>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" disabled> Start p5.js-editoren og skriv dette:</li>
+</ul>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> setup</span><span style="color:#E1E4E8">(){</span></span>
+<span class="line"><span style="color:#B392F0">    createCanvas</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">640</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">420</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">    background</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="function setup(){
+    createCanvas(640, 420);
+    background(0, 0, 0);
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Nå kan du starte programmet med å trykke <code>CTRL</code> + <code>Enter</code>, eller trykke <code>play</code>
+pilen øverst.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Lagre programmet med å trykke <code>CTRL</code> + <code>S</code>, eller med å trykke <code>File</code>, så
+<code>Save</code> i menyen øverst.</p>
+</li>
+</ul>
+<h3 id="tips-hvordan-skrive-krøllparenteser-">Tips: Hvordan skrive krøllparenteser { }</h3>
+<p>Her er en oversikt over hvordan man skriver tegn som ofte brukes i p5.js og
+andre programmeringsspråk.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="center">Tegn</th><th>Windows/Linux</th><th>Mac</th></tr></thead><tbody><tr><td align="center"><code>;</code></td><td><code>shift + ,</code></td><td><code>shift + ,</code></td></tr><tr><td align="center"><code>"</code></td><td><code>shift + 2</code></td><td><code>shift + 2</code></td></tr><tr><td align="center"><code>\'</code></td><td><code>\'</code> (til høyre for Æ)</td><td><code>\'</code> (til venstre for 1)</td></tr><tr><td align="center"><code>|</code></td><td><code>|</code> (til venstre for 1)</td><td><code>alt + 7</code></td></tr><tr><td align="center"><code>\&#x26;</code></td><td><code>shift + 6</code></td><td><code>shift + 6</code></td></tr><tr><td align="center"><code>+</code></td><td><code>+</code> (til høyre for 0)</td><td><code>+</code> (til høyre for 0)</td></tr><tr><td align="center"><code>-</code></td><td><code>-</code> (til høyre for .)</td><td><code>-</code> (til høyre for .)</td></tr><tr><td align="center"><code>*</code></td><td><code>shift + '</code></td><td><code>shift + @</code> (til høyre for Æ)</td></tr><tr><td align="center"><code>/</code></td><td><code>shift + 7</code></td><td><code>shift + 7</code></td></tr><tr><td align="center"><code>\[</code></td><td><code>alt gr + 8</code></td><td><code>alt + 8</code></td></tr><tr><td align="center"><code>\]</code></td><td><code>alt gr + 9</code></td><td><code>alt + 9</code></td></tr><tr><td align="center"><code>{</code></td><td><code>alt gr + 7</code></td><td><code>shift + alt + 8</code></td></tr><tr><td align="center"><code>}</code></td><td><code>alt gr + 0</code></td><td><code>shift + alt + 9</code></td></tr></tbody></table>
+<h2 id="prøv-dette">Prøv dette:</h2>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Prøv å endre <code>0</code> i <code>background(0, 0, 0);</code> til andre tall.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Se hva som skjer dersom du endrer ett av tallene til <code>255</code>.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Hva skjer når du setter tallet til å være høyere enn <code>255</code> eller lavere
+enn <code>0</code>?</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Forsøk å endre størrelsen på vinduet ved endre på tallene i <code>createCanvas</code>.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Finn en bakgrunnsfarge du liker og beholde den til neste del av oppgaven.</p>
+</li>
+</ul>
+<h2 id="forklaring-av-koden">Forklaring av koden</h2>
+<p>Lurer du på hvordan koden du har skrevet fungerer?</p>
+<ul>
+<li>
+<p><code>function setup() {</code> er en funksjon som heter <code>setup</code>. Merk at du bare kan ha én
+funksjon med hvert navn! <code>setup</code> er en spesiell funksjon fordi den blir kjøres
+bare én gang helt først når du starter programmet ditt.</p>
+</li>
+<li>
+<p><code>createCanvas(640, 420);</code> er det som bestemmer hvor stort vinduet ditt er. Denne er
+inni <code>function setup(){}</code>-funksjonen fordi vi må bestemme størrelsen på vinduet bare
+en gang når vi starter.</p>
+</li>
+<li>
+<p>Vi har også <code>background(0, 0, 0);</code> som bestemmer bakgrunnsfargen i vinduet.
+<code>0</code> betyr at det ikke er farge, da blir det svart. Dersom vi skriver 255 (det
+høyeste tallet vi kan velge) setter vi på full fargestyrke på den lille pæra
+som sitter i PC-skjermen. Det betyr at dersom vi skriver <code>background(255, 255, 255)</code> så blir det hvitt. De forskjellige tallene står for <code>background(RØD, GRØNN, BLÅ)</code> og når vi endrer verdiene her, så blander vi fargene.</p>
+</li>
+<li>
+<p>På linje 1 og 4 har vi <code>{</code> og <code>}</code> disse krøllparentesene åpner og lukker
+funksjonen. Funksjonen inneholder all kode vi skriver mellom disse.</p>
+</li>
+</ul>
+<p>Slik skal koden din se ut så langt, husk at tallene inni parentesene ikke
+nødvendigvis er like de du har, det betyr bare at du har annen størrelse på
+vinduet ditt, eller en annen bakgrunsfarge.</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> setup</span><span style="color:#E1E4E8">(){</span></span>
+<span class="line"><span style="color:#B392F0">    createCanvas</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">640</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">420</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">    background</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="function setup(){
+    createCanvas(640, 420);
+    background(0, 0, 0);
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<h1 id="steg-2-tegne-med-sirkel">Steg 2: Tegne med sirkel!</h1>
+<p>Vi lager en ny funksjon som vi kaller <code>draw</code>.</p>
+<h2 id="gjør-dette-1">Gjør dette:</h2>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" disabled> Skriv denne koden:</li>
+</ul>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">(){</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="function draw(){
+
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Start programmet og se at det kjører. Det skal ikke skje noe nytt, men
+dersom programmet ikke kjører, så har du skrivefeil i den nye koden.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Skriv denne koden inn i <code>draw</code>-funksjonen for å få noe å tegne med!</p>
+</li>
+</ul>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#B392F0">    fill</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">255</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">    ellipse</span><span style="color:#E1E4E8">(mouseX, mouseY, </span><span style="color:#79B8FF">50</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">50</span><span style="color:#E1E4E8">);</span></span></code></pre><button class="copy-btn" type="button" data-code="    fill(100, 100, 255);
+    ellipse(mouseX, mouseY, 50, 50);" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" disabled> Start programmet og tegn litt.</li>
+</ul>
+<h2 id="prøv-dette-1">Prøv dette:</h2>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Bytt fargen du tegner med, det gjør du ved å endre tallene inni <code>fill(100, 100, 255);</code>.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Se om du får til å tegne grønt.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Se om du får til å tegne blått.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Bytt ut det første <code>50</code> tallet med <code>200</code> som står i parentesen bak
+<code>ellipse</code> og se hva som skjer.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Kan du få <code>ellipse</code> til å bli like høy som vinduet ditt?</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Prøv det du har lyst til.</p>
+</li>
+</ul>
+<p>Når du har prøvd litt forskjellig, så har vi laga til ei oppgave, forsøk å bytte
+bakgrunnsfarge, størrelse på vinduet, og fargen du tegner med slik at du også
+kan lage tegninger som ligner på de vi har laget under. Det kan være vanskelig å
+finne nøyaktig samme farge og størrelse, men en som ligner er godt nok!</p>
+<p><img src="/p5js-workshop/images/Gulsol.png" alt="Bilde av en gul sol"></p>
+<p><img src="/p5js-workshop/images/gronttre.png" alt="Bilde av et grønt tre"></p>
+<p><img src="/p5js-workshop/images/tofjes.png" alt="Bilde av to fjes"></p>
+<h2 id="forklaring-av-koden-1">Forklaring av koden</h2>
+<p>Lurer du på hvordan koden du har skrevet fungerer?</p>
+<ul>
+<li>
+<p><code>function draw(){</code> er en ny funksjon, slik som <code>function setup(){}</code>, men med nytt navn og
+nytt innhold.</p>
+</li>
+<li>
+<p>ellipse betyr at du lager en sirkel, og <code>mouseX, mouseY</code> bestemmer at den skal
+følge etter musepekeren når du flytter på datamusa. Tallene <code>50, 50</code> bestemmer
+størrelsen til sirkelen.</p>
+</li>
+<li>
+<p><code>fill(100, 100, 255);</code> bestemmer hvilke farge sirkelen skal ha, her er det
+likt som før, der de står for <code>(RØD, GRØNN, BLÅ)</code> og kan blandes slik som du
+har prøvd før.</p>
+</li>
+</ul>
+<p>Til sist har vi lagt til et bilde av hele koden vår, så kan du se om din kode
+ligner på den vi har. Husk at tallene inni parentesene sikkert er litt
+forskjellige fra de du har i din kode.</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> setup</span><span style="color:#E1E4E8">(){</span></span>
+<span class="line"><span style="color:#B392F0">  createCanvas</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">640</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">420</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  background</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">(){</span></span>
+<span class="line"><span style="color:#B392F0">  fill</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">255</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  ellipse</span><span style="color:#E1E4E8">(mouseX, mouseY, </span><span style="color:#79B8FF">50</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">50</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="function setup(){
+  createCanvas(640, 420);
+  background(0, 0, 0);
+}
+
+function draw(){
+  fill(100, 100, 255);
+  ellipse(mouseX, mouseY, 50, 50);
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div> </article> <div class="flex justify-between mt-12 border-t-2 border-gray-700 pt-8"> <div> <a href="/p5js-workshop/workshop/medium/02-bouncing-ball" class="block text-blue-300 hover:bg-gray-700 p-4 rounded border border-gray-600">
+&larr; Sprettende ball </a> </div> <div>  </div> </div>  </div> </main> <script type="module">document.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll(".copy-btn").forEach(e=>{e.textContent="Kopier",e.addEventListener("click",async()=>{const o=e.dataset.code;if(o)try{await navigator.clipboard.writeText(o);const t=e.textContent;e.textContent="Kopiert!",setTimeout(()=>{e.textContent=t},2e3)}catch(t){console.error("Failed to copy: ",t)}})})});</script> </body> </html>
