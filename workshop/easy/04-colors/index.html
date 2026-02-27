@@ -1,3 +1,577 @@
-<!DOCTYPE html><html lang="no"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><title>Jobbe med farger</title><link rel="stylesheet" href="/p5js-workshop/_astro/index.DipRzuJ1.css"></head> <body class="bg-gray-900 text-white font-sans text-lg leading-relaxed"> <main class="flex"> <aside class="w-1/4 bg-gray-800 p-8 border-r-2 border-gray-700 sticky top-0 h-screen"> <h2 class="text-3xl font-bold mb-8">Meny</h2> <nav> <ul> <li class="mb-6"> <h3 class="text-2xl font-bold capitalize mb-2">Lett</h3> <ul> <li class="mb-1"> <a href="/p5js-workshop/workshop/easy/01-introduction" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Introduksjon </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/easy/02-drawing-shapes" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Tegne figurer </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/easy/03-images" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Vise bilder </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/easy/04-colors" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Jobbe med farger </a> </li> </ul> </li><li class="mb-6"> <h3 class="text-2xl font-bold capitalize mb-2">Middels</h3> <ul> <li class="mb-1"> <a href="/p5js-workshop/workshop/medium/01-variables" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Variabler </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/medium/02-bouncing-ball" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Sprettende ball </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/medium/03-tegnespillet" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Tegnespillet </a> </li> </ul> </li><li class="mb-6"> <h3 class="text-2xl font-bold capitalize mb-2">Avansert</h3> <ul> <li class="mb-1"> <a href="/p5js-workshop/workshop/advanced/01-interactivity" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Interaktivitet </a> </li> </ul> </li> </ul> </nav> </aside> <div class="w-3/4 p-12 overflow-y-auto"> <h1 class="text-5xl font-bold mb-8">Jobbe med farger</h1>  <article class="prose prose-invert max-w-none"> <p>Her lærer du å jobbe med farger.</p> </article> <div class="flex justify-between mt-12 border-t-2 border-gray-700 pt-8"> <div> <a href="/p5js-workshop/workshop/easy/03-images" class="block text-blue-300 hover:bg-gray-700 p-4 rounded border border-gray-600">
+<!DOCTYPE html><html lang="no"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><title>Jobbe med farger</title><link rel="stylesheet" href="/p5js-workshop/_astro/index.DipRzuJ1.css"></head> <body class="bg-gray-900 text-white font-sans text-lg leading-relaxed"> <main class="flex"> <aside class="w-1/4 bg-gray-800 p-8 border-r-2 border-gray-700 sticky top-0 h-screen"> <h2 class="text-3xl font-bold mb-8">Meny</h2> <nav> <ul> <li class="mb-6"> <h3 class="text-2xl font-bold capitalize mb-2">Lett</h3> <ul> <li class="mb-1"> <a href="/p5js-workshop/workshop/easy/01-introduction" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Introduksjon </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/easy/02-drawing-shapes" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Tegne figurer </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/easy/03-images" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Vise bilder </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/easy/04-colors" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Jobbe med farger </a> </li> </ul> </li><li class="mb-6"> <h3 class="text-2xl font-bold capitalize mb-2">Middels</h3> <ul> <li class="mb-1"> <a href="/p5js-workshop/workshop/medium/01-variables" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Variabler </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/medium/02-bouncing-ball" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Sprettende ball </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/medium/03-tegnespillet" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Tegnespillet </a> </li> </ul> </li><li class="mb-6"> <h3 class="text-2xl font-bold capitalize mb-2">Avansert</h3> <ul> <li class="mb-1"> <a href="/p5js-workshop/workshop/advanced/01-interactivity" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Interaktivitet </a> </li> </ul> </li> </ul> </nav> </aside> <div class="w-3/4 p-12 overflow-y-auto"> <h1 class="text-5xl font-bold mb-8">Jobbe med farger</h1>  <article class="prose prose-invert max-w-none"> <p>På skolen lærer man om farger og hvordan man kan blande dem for å få andre farger. Slik er det med farger i datamaskinen også; vi blander primærfarger og mengden av hver primærfarge bestemmer hvilken farge vi får. Hvis vi sammenligner blanding av malingsfarger med blanding av farger på en dataskjerm, fungerer blandingen litt annerledes. Hvordan blandingen fungerer på en dataskjerm skal du lære mer om i denne leksjonen med p5.js.</p>
+<p><img src="/p5js-workshop/images/col_rgb.png" alt="Blanding av farger"></p>
+<hr>
+<h2 id="steg-1-mer-enn-grått">Steg 1: Mer enn grått</h2>
+<p>Her skal vi se hvordan bakgrunnsfargen bestemmes. I det første punktet viser vi hele programmet, og i resten av punktene ser vi kun på <code>draw</code> som er den delen av koden som skal endres. For hvert steg kan du kjøre programmet med play-knappen, og det kan være lurt å lagre koden etter hver endring. Du lagre ved å klikke på «File» i verktøylinjen øverst og velge «Save». Hurtigtaster for å lagre er <em><strong>Ctrl + S</strong></em> (<em><strong>Cmd + S</strong></em> på Mac).</p>
+<hr>
+<h3 id="sjekkliste">Sjekkliste</h3>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Vi begynner med å fylle bakgrunnen med sort:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">  function</span><span style="color:#B392F0"> setup</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#6A737D">    // bestem størrelsen til vinduet</span></span>
+<span class="line"><span style="color:#B392F0">    createCanvas</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">800</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">600</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#6A737D">    // svart backgrunn</span></span>
+<span class="line"><span style="color:#B392F0">    background</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span></code></pre><button class="copy-btn" type="button" data-code="  function setup() {
+    // bestem størrelsen til vinduet
+    createCanvas(800, 600);
+  }
+
+  function draw() {
+    // svart backgrunn
+    background(0);
+  }" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p>Dette har du kanskje sett før. Når vi kaller på background med bare ett tall får vi en gråtone der 0 er sort og 255 er hvitt.</p>
+<p>// Dette er en kommentar. Det er tekst i koden som ikke har noen effekt, men som kan brukes til å forklare hva koden gjør. Kommentarer starter med // og fortsetter til slutten av linjen. Kommentarer er nyttige for å gjøre koden lettere å forstå for deg selv og andre som leser koden din.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Test ut å endre bakgrunnsfargen til hvit ved å bytte ut 0 med 255 i background-funksjonen. 0 = sort, 255 = hvitt, og alle tallene imellom er forskjellige gråtoner.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> La oss endre på <code>draw</code> slik at vi får en rød bakgrunn:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">  function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  background</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">255</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="  function draw() {
+  background(255, 0, 0);
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p>Dette likner på det vi hadde i det første steget, men nå bruker vi plutselig tre tall istedenfor ett. La oss utforske dem.</p>
+<p>Nå har vi tre tall inni parentesene til background-funksjonen. Det første tallet er mengden av rød farge, det andre er mengden av grønn farge, og det tredje er mengden av blå farge. Dette kalles RGB-farger, og hver farge kan ha en verdi mellom 0 og 255. Når vi setter rød til 255 og grønn og blå til 0, får vi en ren rød farge.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> La oss endre <code>background</code> igjen:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">  function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  background</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">255</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="  function draw() {
+  background(0, 255, 0);
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p>Når du kjører programmet, hvilken farge får du på bakgrunnen?</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> La oss endre <code>background</code> enda en gang:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">  function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  background</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">255</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="  function draw() {
+  background(0, 0, 255);
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p>Hvilke farge får du nå på bakgrunnen?</p>
+</li>
+</ul>
+<hr>
+<h3 id="forklaring-av-additive-farger">Forklaring av additive farger</h3>
+<p>Som nevnt har du kanskje lært om farger på skolen og brukt maling eller fargeblyanter. Du lærte nok om primærfargene rød, gul og blå, og at du kunne lage omtrent alle slags farger ved å blande disse sammen.</p>
+<p>Jo flere farger man blander sammen når man maler, desto mørkere ble den ferdige fargen. Dette er fordi malingen inneholder fargede pigmenter som absorberer lys. Jo flere farger av lyset som absorberes, desto færre farger og mindre lys reflekteres og treffer øyet ditt. For eksempel absorberer grønn maling rødt og blått lys, det grønne lyset reflekteres tilbake og treffer øyet ditt. Gul maling absorberer blått lys, og blå maling absorberer rødt og deler av det grønne lyset. Da gjenstår det bare grønt lys igjen, og derfor kan du blande gul og blå for å få grønn.</p>
+<p>I en datamaskin er det annerledes. Har du lagt merke til at skjermen lyser? Siden skjermen lyser, angir vi hvor mye hver farge skal lyse. Øyet reagerer på rødt, grønt og blått lys, så disse er valgt som de tre primærfargene i dataskjermer. Om du går nærme nok en gammel data- eller TV-skjerm kan du se de tre fargene hver for seg.</p>
+<p>Hvilke tre farger fikk du i stegene ovenfor? Nå forstår du kanskje hvorfor de tre verdiene <code>255, 0, 0</code>, <code>0, 255, 0</code> og `0, 0, 255 ga henholdsvis rød, grønn og blå?</p>
+<p>Fordi primærfargene er rød, grønn og blå kalles dette systemet RGB. Det er et additivt system, fordi man legger sammen fargene, mens i tegning på papir jobber man med et subtraktivt system der farger trekkes fra.</p>
+<p>Vi kan også blande farger her, men det oppfører seg annerledes fra du kanskje er vant til fra maling. Hvis vi blander rødt og grønt, får vi gult. Hvis vi blander grønt og blått, får vi en slags turkis, kalt cyan. Hvis vi blander rødt og blått, får vi en slags rosa, kalt magenta. Når alle tre fargene er like sterke, får vi en gråtone. Med alle tre på fullt, <code>255</code>, får vi hvitt.</p>
+<p><img src="/p5js-workshop/images/col_rgb.png" alt="Blanding av farger"></p>
+<p>Du har kankje også sett et fargehjul før, der primærfargne plasseres rundt hjulet. Sekundærfargene, fargene man får når man blander to primærfarger plasseres da mellom disse. Vi kan også lage et slikt for RGB.</p>
+<p><img src="/p5js-workshop/images/col_hjul.png" alt="Fargehjul"></p>
+<hr>
+<h2 id="steg-2-fyllfarger-og-omriss">Steg 2: Fyllfarger og omriss</h2>
+<p>Når vi tegner former, er det en stor sjanse for at vi vil bruke andre farger enn svart og hvit. Foreløpig har vi bare sett at vi kan styre fargen på bakgrunnen, så la oss se hva vi kan gjøre med fargene til former.</p>
+<h3 id="sjekkliste-1">Sjekkliste</h3>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Legg til en sirkel i <code>draw</code>:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  background</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">255</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">255</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  ellipse</span><span style="color:#E1E4E8">(width </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">, height </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="function draw() {
+  background(0, 255, 255);
+  ellipse(width / 2, height / 2, 100, 100);
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p>Dette tegner en sirkel i midten av canvaset. <code>width</code> og <code>height</code> er innebygde variabler som gir oss bredden og høyden på canvaset, så <code>width / 2</code> og <code>height / 2</code> gir oss midten av canvaset. De siste to tallene, <code>100, 100</code>, bestemmer bredden og høyden på sirkelen.</p>
+<p>Du ser kanskje noe du ikke har lagt merke til før: Hva er det som er rundt sirkelen?</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Endre fargen som sirkelen fargelegges med, med funksjonen <code>fill</code>:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  background</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">255</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">255</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  fill</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">255</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">192</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">64</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  ellipse</span><span style="color:#E1E4E8">(width </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">, height </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="function draw() {
+  background(0, 255, 255);
+  fill(255, 192, 64);
+  ellipse(width / 2, height / 2, 100, 100);
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p>Nå får du en oransje sirkel midt i vinduet på en blå bakgrunn.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Endre fargen på omrisset med funksjonen <code>stroke</code>:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  background</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">255</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">255</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  fill</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">255</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">192</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">64</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  stroke</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">192</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">96</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">64</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  ellipse</span><span style="color:#E1E4E8">(width </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">, height </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="function draw() {
+  background(0, 255, 255);
+  fill(255, 192, 64);
+  stroke(192, 96, 64);
+  ellipse(width / 2, height / 2, 100, 100);
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p>Nå er streken rundt sirkelen en rødlig brun. Det er kanskje ikke så lett å se fargen på streken siden den er så tynn.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Gjør omrisset fetere med funksjonen strokeWeight:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  background</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">255</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">255</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  fill</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">255</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">192</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">64</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  stroke</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">192</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">96</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">64</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  strokeWeight</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  ellipse</span><span style="color:#E1E4E8">(width </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">, height </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="function draw() {
+  background(0, 255, 255);
+  fill(255, 192, 64);
+  stroke(192, 96, 64);
+  strokeWeight(3);
+  ellipse(width / 2, height / 2, 100, 100);
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p>Nå er omrisset tre piksler bredt. En piksel er en liten dot som utgjør den minste enheten på skjermen.</p>
+</li>
+</ul>
+<h3 id="eksperimenter">Eksperimenter</h3>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Prøv forskjellige bakgrunnsfarger. Hvordan synes du forskjellige bakgrunnsfarger passer sammen med fargene på sirkelen?</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Prøv forskjellige fyllfarger. Hvordan passer disse med fargen på omrisset?</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Prøv forskjellige farger på omrisset. Hvordan passer det med bakgrunnen og fyllfargen?</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Prøv andre tykkelser på omrisset. Hvor synes du at det er passe tykt?</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Kan du tegne to sirkler på skjermen i forskjellige farger?</p>
+</li>
+</ul>
+<hr>
+<h2 id="steg-3-fargevelgeren">Steg 3: Fargevelgeren</h2>
+<p>Noen ganger kan det være tungvint å skulle lage fargene man har lyst på ved å bare tenke ut tallene. Man blir riktignok flinkere på dette etter hvert som man har gjort det en del ganger. Inntil man har blitt komfortabel med dette, kan det være lurt å bruke fargevelgeren som finnes i p5.js.</p>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Åpne fargevelgeren ved å trykke på Ctrl + K (Cmd + K på Mac).
+<img src="/p5js-workshop/images/col_picker.png" alt="Fargevelgeren">
+Du får da opp et vindu som lar deg velge farger. Her kan du fylle inn tallverdiene som vi har sett tidligere, R, G og B. Det er også noen andre felt. H, S og L er for et annet fargesystem som naturlig nok heter HSL. Det er også to områder som vi kan velge farge fra ved å klikke. I den lille firkanten til høyre ser du hvilken farge du har valgt. I den store firkanten kan du klikke for å velge farge. Du kan også klikke på den fargede stripen for å velge en annen fargetone. Den andre lange stripen lar deg velge hvor mye gjennomsiktighet du vil ha i fargen. Ved å klikke på RGB eller HSL kan du bytte mellom de to fargesystemene. Ved å klikke på HEX returnere fargen som RGB-verdier. Klikker du RGB eller HSL igjen, returnerer den som HSL-verdier eller heksadesimalverdi. Vi skal forklare hva HSL og heksadesimalverdi etter hvert.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Prøv å trykke i det store fargefeltet til venstre. Her kan du velge hvor sterk og hvor lys fargen skal være. Hva skjer med verdiene til R, G og B for lyse farger? Hva er verdien til R, G og B for mørke farger?</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Prøv å klikke på den øverste av de 2 lange stripen for å velge en annen fargetone. Hva skjer med verdiene til R, G og B når du velger forskjellige fargetoner?</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Finn en farge du liker til bakgrunnsfarge. Skriv inn verdiene for R, G og B i background og i draw.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Finn en farge du liker til fyllfargen. Skriv inn verdiene for R, G og B i fill og i draw.</p>
+</li>
+</ul>
+<p>I fargevelgeren her:
+<img src="/p5js-workshop/images/col_picker.png" alt="Fargevelgeren">
+Ser du rødt representert ved RGB som 255,0,0 eller heksadesimalverdi som #FF0000</p>
+<hr>
+<h3 id="web-farger---fargekoder-i-heksadesimaler">Web-farger - fargekoder i heksadesimaler</h3>
+<p>De som har jobbet med nettsider, er vant til å angi farger med en sekssifret kode: <code>#0123EF</code>. Du tenker kanskje: «Kan F være et siffer?» Ja, i heksadesimaler, eller sekstentallssystemet, utvides sifrene med bokstavene A-F. Da får vi sifre fra 0 til F, som er tallene fra null til femten. A er da 10, B er 11, C er 12, osv. Det er ingen forskjell på små og store bokstaver her, så man kan også skrive det som <code>#0123EF</code>.</p>
+<p>Siden vi skal angi tre farger, RGB, består koden av tre tosifrede tall. I <code>#0123EF</code> er disse tre tosifrede tallene 01, 23 og EF. De første to angir rødt, de neste to grønt og de to siste blått.</p>
+<p>Vi kan regne om <code>#0123EF</code> til rød, grønn og blå slik som dette:</p>
+<ul>
+<li>rød = 0 · 16 + 1 = 1</li>
+<li>grønn = 2 · 16 + 3 = 35</li>
+<li>blå = 14 · 16 + 15 = 249
+Altså nesten ingenting rødt, noe grønt og masse blått. La oss teste det ut:</li>
+</ul>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> setup</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#6A737D">  // bestem størrelsen til vinduet</span></span>
+<span class="line"><span style="color:#B392F0">  createCanvas</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">800</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">600</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  background</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'#0123EF'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  fill</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">255</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">192</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">64</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  stroke</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">192</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">96</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">64</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  strokeWeight</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  ellipse</span><span style="color:#E1E4E8">(width </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">, height </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="function setup() {
+  // bestem størrelsen til vinduet
+  createCanvas(800, 600);
+}
+
+function draw() {
+  background(&#x27;#0123EF&#x27;);
+  fill(255, 192, 64);
+  stroke(192, 96, 64);
+  strokeWeight(3);
+  ellipse(width / 2, height / 2, 100, 100);
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p>Disse fargekodene kan være nyttige hvis man er kjent med de fra før. Fargekodene brukes stort sett kun direkte, og det er vanskelig å bruke heksadesimale fargekoder når fargen skal variere. For eksempel om du skal la programmet vise alle rød-farger, er det enklere å bruke vanlige heltall.</p>
+<p>Men for program der du ikke ønsker å variere fargen underveis, kan de brukes med eksempelvis <code>background</code>. Senere skal vi se på hvordan vi kan lage color-variabler med disse kodene.</p>
+<hr>
+<h2 id="steg-4-hsl-farger">Steg 4: HSL-farger</h2>
+<p>Da vi så på fargevelgeren, så vi tre tekstfelter merket H, S og L. Du så kanskje også hvordan disse oppførte seg når vi endret fargevalget? Hvis ikke, tar vi en rask titt på dette igjen under.</p>
+<p>Dette systemet kalles HSL: Hue, Saturation, Lightness. Som på norsk er fargetone/kulør, fargemetning og lysstyrke/lyshet. Det første tallet, H, bestemmer hva slags farge det blir. Det andre, S, bestemmer hvor sterk fargen skal være. Det siste, L, bestemmer hvor lys fargen skal være.</p>
+<h3 id="sjekkliste-2">Sjekkliste</h3>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Først tar vi en titt på hvordan fargevelgeren og HSL henger sammen. Åpne fargevelgeren igjen med Ctrl + K (Cmd + K på Mac).</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Klikk på RGB for å bytte til HSL.  Bruk det store fargefeltet til venstre og se hva som skjer med de tre verdiene: H, S og B. Hvordan oppfører de seg når du gjør fargen lysere, mørkere, sterkere og svakere? Kan du knytte en av de tre verdiene til bevegelse opp og ned? Hva med sideveis?</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Bruke den øverste av de to lange stripene for å velge en annen fargetone. Hva skjer med verdiene til H, S og L når du velger forskjellige fargetoner?</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> La oss prøve ut HSL nå som du har sett hvordan disse verdiene henger sammen i farge velgeren:</p>
+</li>
+</ul>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> setup</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#6A737D">  // bestem størrelsen til vinduet</span></span>
+<span class="line"><span style="color:#B392F0">  createCanvas</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">800</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">600</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  colorMode</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">HSL</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">360</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  background</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  fill</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">120</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">25</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  stroke</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">120</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">50</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  strokeWeight</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  ellipse</span><span style="color:#E1E4E8">(width </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">, height </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="function setup() {
+  // bestem størrelsen til vinduet
+  createCanvas(800, 600);
+  colorMode(HSL, 360, 100, 100);
+}
+
+function draw() {
+  background(0, 100, 100);
+  fill(120, 100, 25);
+  stroke(120, 100, 50);
+  strokeWeight(3);
+  ellipse(width / 2, height / 2, 100, 100);
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p>Her kaller vi på en ny funksjon <code>colorMode</code> som tar imot fargesystemet som første argument og så maksverdier for de forskjelloge kanalene (H, S og L).</p>
+<p>Du lurer kanskje på hvorfor H har fått <code>360</code> som maksverdi. Det er fordi fargetonen baseres på fargehjulet, og det gir 360 grader med fargetoner. Metning og lys gis typisk i prosent. Du kan selvfølgelig velge helt andre maksverdier om du ønsker det.</p>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Kjør programmet om du ikke har gjort det allerede.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Vi har sett at rød ligger på null grader, og grønn på 120 grader. La oss se hvilke farger som befinner seg rundt hjulet ved å endre draw:</p>
+</li>
+</ul>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> setup</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#6A737D">  // bestem størrelsen til vinduet</span></span>
+<span class="line"><span style="color:#B392F0">  createCanvas</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">800</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">600</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  colorMode</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">HSL</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">360</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  background</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">  fill</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">50</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  ellipse</span><span style="color:#E1E4E8">(width </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 4</span><span style="color:#E1E4E8">, height </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 3</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">  fill</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">60</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">50</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  ellipse</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">2</span><span style="color:#F97583"> *</span><span style="color:#E1E4E8"> width </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 4</span><span style="color:#E1E4E8">, height </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 3</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">  fill</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">120</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">50</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  ellipse</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">3</span><span style="color:#F97583"> *</span><span style="color:#E1E4E8"> width </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 4</span><span style="color:#E1E4E8">, height </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 3</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">  fill</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">180</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">50</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  ellipse</span><span style="color:#E1E4E8">(width </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 4</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">2</span><span style="color:#F97583"> *</span><span style="color:#E1E4E8"> height </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 3</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">  fill</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">240</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">50</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  ellipse</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">2</span><span style="color:#F97583"> *</span><span style="color:#E1E4E8"> width </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 4</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">2</span><span style="color:#F97583"> *</span><span style="color:#E1E4E8"> height </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 3</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">  fill</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">300</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">50</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  ellipse</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">3</span><span style="color:#F97583"> *</span><span style="color:#E1E4E8"> width </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 4</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">2</span><span style="color:#F97583"> *</span><span style="color:#E1E4E8"> height </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 3</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="function setup() {
+  // bestem størrelsen til vinduet
+  createCanvas(800, 600);
+  colorMode(HSL, 360, 100, 100);
+}
+
+function draw() {
+  background(0);
+
+  fill(0, 100, 50);
+  ellipse(width / 4, height / 3, 100, 100);
+
+  fill(60, 100, 50);
+  ellipse(2 * width / 4, height / 3, 100, 100);
+
+  fill(120, 100, 50);
+  ellipse(3 * width / 4, height / 3, 100, 100);
+
+  fill(180, 100, 50);
+  ellipse(width / 4, 2 * height / 3, 100, 100);
+
+  fill(240, 100, 50);
+  ellipse(2 * width / 4, 2 * height / 3, 100, 100);
+
+  fill(300, 100, 50);
+  ellipse(3 * width / 4, 2 * height / 3, 100, 100);
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p>Her går vi gjennom fargetonene 60 grader ad gangen. Hvilke farger ligger på de seks vinklene: 0, 60, 120, 180, 240 og 300? Hva tror du befinner seg på 360 grader?</p>
+<p>Om du lurer på regnestykkene for plasseringene av sirklene, så deler vi bredden på fire fordi det blir fire tomrom med tre kolonner. Tilsvarende blir det tre tomrom i høyden når vi har to rader. Ved å dele på antall tomrom, får vi bredden på avstanden mellom to nabosirkler eller vinduskanten og den nærmeste sirkelen.</p>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Kjør programmet om du ikke har gjort det.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> La oss se på hvordan metningen og lysheten påvirker fargen. Vi legger til en variabel for fargetone som skal endres over tid, sånn at vi kan se effekten også på forskjellige fargetoner. Legg derfor til følgende øverst i programmet, ovenfor både setup() og draw():</p>
+</li>
+</ul>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> tone </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">;</span></span></code></pre><button class="copy-btn" type="button" data-code="let tone = 0;" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p>Så endrer vi draw til å tegne opp 9 sirkler der radene har samme metning, og kolonnene har samme lyshet:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">background</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  let</span><span style="color:#E1E4E8"> metning </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 100</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">  let</span><span style="color:#E1E4E8"> lyshet </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 60</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  tone </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> tone </span><span style="color:#F97583">+</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8"> (tone </span><span style="color:#F97583">></span><span style="color:#79B8FF"> 360</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    tone </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">  fill</span><span style="color:#E1E4E8">(tone, metning, lyshet);</span></span>
+<span class="line"><span style="color:#B392F0">  ellipse</span><span style="color:#E1E4E8">(width </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 4</span><span style="color:#E1E4E8">, height </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 4</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  lyshet </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> lyshet </span><span style="color:#F97583">-</span><span style="color:#79B8FF"> 10</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#B392F0">  fill</span><span style="color:#E1E4E8">(tone, metning, lyshet);</span></span>
+<span class="line"><span style="color:#B392F0">  ellipse</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">2</span><span style="color:#F97583"> *</span><span style="color:#E1E4E8"> width </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 4</span><span style="color:#E1E4E8">, height </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 4</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  lyshet </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> lyshet </span><span style="color:#F97583">-</span><span style="color:#79B8FF"> 10</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#B392F0">  fill</span><span style="color:#E1E4E8">(tone, metning, lyshet);</span></span>
+<span class="line"><span style="color:#B392F0">  ellipse</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">3</span><span style="color:#F97583"> *</span><span style="color:#E1E4E8"> width </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 4</span><span style="color:#E1E4E8">, height </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 4</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  lyshet </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 50</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  metning </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> metning </span><span style="color:#F97583">-</span><span style="color:#79B8FF"> 40</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#B392F0">  fill</span><span style="color:#E1E4E8">(tone, metning, lyshet);</span></span>
+<span class="line"><span style="color:#B392F0">  ellipse</span><span style="color:#E1E4E8">(width </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 4</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">2</span><span style="color:#F97583"> *</span><span style="color:#E1E4E8"> height </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 4</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  lyshet </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> lyshet </span><span style="color:#F97583">-</span><span style="color:#79B8FF"> 10</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#B392F0">  fill</span><span style="color:#E1E4E8">(tone, metning, lyshet);</span></span>
+<span class="line"><span style="color:#B392F0">  ellipse</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">2</span><span style="color:#F97583"> *</span><span style="color:#E1E4E8"> width </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 4</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">2</span><span style="color:#F97583"> *</span><span style="color:#E1E4E8"> height </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 4</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  lyshet </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> lyshet </span><span style="color:#F97583">-</span><span style="color:#79B8FF"> 10</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#B392F0">  fill</span><span style="color:#E1E4E8">(tone, metning, lyshet);</span></span>
+<span class="line"><span style="color:#B392F0">  ellipse</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">3</span><span style="color:#F97583"> *</span><span style="color:#E1E4E8"> width </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 4</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">2</span><span style="color:#F97583"> *</span><span style="color:#E1E4E8"> height </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 4</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  lyshet </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 50</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  metning </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> metning </span><span style="color:#F97583">-</span><span style="color:#79B8FF"> 40</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#B392F0">  fill</span><span style="color:#E1E4E8">(tone, metning, lyshet);</span></span>
+<span class="line"><span style="color:#B392F0">  ellipse</span><span style="color:#E1E4E8">(width </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 4</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">3</span><span style="color:#F97583"> *</span><span style="color:#E1E4E8"> height </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 4</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  lyshet </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> lyshet </span><span style="color:#F97583">-</span><span style="color:#79B8FF"> 10</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#B392F0">  fill</span><span style="color:#E1E4E8">(tone, metning, lyshet);</span></span>
+<span class="line"><span style="color:#B392F0">  ellipse</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">2</span><span style="color:#F97583"> *</span><span style="color:#E1E4E8"> width </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 4</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">3</span><span style="color:#F97583"> *</span><span style="color:#E1E4E8"> height </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 4</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  lyshet </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> lyshet </span><span style="color:#F97583">-</span><span style="color:#79B8FF"> 10</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#B392F0">  fill</span><span style="color:#E1E4E8">(tone, metning, lyshet);</span></span>
+<span class="line"><span style="color:#B392F0">  ellipse</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">3</span><span style="color:#F97583"> *</span><span style="color:#E1E4E8"> width </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 4</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">3</span><span style="color:#F97583"> *</span><span style="color:#E1E4E8"> height </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 4</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="function draw() {
+background(0);
+
+  let metning = 100;
+  let lyshet = 60;
+
+  tone = tone + 1;
+  if (tone > 360) {
+    tone = 0;
+  }
+
+  fill(tone, metning, lyshet);
+  ellipse(width / 4, height / 4, 100, 100);
+
+  lyshet = lyshet - 10;
+  fill(tone, metning, lyshet);
+  ellipse(2 * width / 4, height / 4, 100, 100);
+
+  lyshet = lyshet - 10;
+  fill(tone, metning, lyshet);
+  ellipse(3 * width / 4, height / 4, 100, 100);
+
+  lyshet = 50;
+  metning = metning - 40;
+  fill(tone, metning, lyshet);
+  ellipse(width / 4, 2 * height / 4, 100, 100);
+
+  lyshet = lyshet - 10;
+  fill(tone, metning, lyshet);
+  ellipse(2 * width / 4, 2 * height / 4, 100, 100);
+
+  lyshet = lyshet - 10;
+  fill(tone, metning, lyshet);
+  ellipse(3 * width / 4, 2 * height / 4, 100, 100);
+
+  lyshet = 50;
+  metning = metning - 40;
+  fill(tone, metning, lyshet);
+  ellipse(width / 4, 3 * height / 4, 100, 100);
+
+  lyshet = lyshet - 10;
+  fill(tone, metning, lyshet);
+  ellipse(2 * width / 4, 3 * height / 4, 100, 100);
+
+  lyshet = lyshet - 10;
+  fill(tone, metning, lyshet);
+  ellipse(3 * width / 4, 3 * height / 4, 100, 100);
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<hr>
+<h3 id="repetisjon-av-kode">Repetisjon av kode</h3>
+<p>I koden over, er det mye repetisjon av kode for å sette fargen og tegne opp sirklene. Selv om vi ikke skal gå gjennom løkker nå, kan det være nyttig å se hvordan denne koden kunne vært gjort kortere og enklere ved hjelp av løkker.</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  background</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  let</span><span style="color:#E1E4E8"> metning </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 100</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">  let</span><span style="color:#E1E4E8"> lyshet </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 60</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  tone </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> tone </span><span style="color:#F97583">+</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8"> (tone </span><span style="color:#F97583">></span><span style="color:#79B8FF"> 360</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    tone </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  for</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">let</span><span style="color:#E1E4E8"> rad </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">; rad </span><span style="color:#F97583">&#x3C;=</span><span style="color:#79B8FF"> 3</span><span style="color:#E1E4E8">; rad</span><span style="color:#F97583">++</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    lyshet </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 60</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    for</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">let</span><span style="color:#E1E4E8"> kolonne </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">; kolonne </span><span style="color:#F97583">&#x3C;=</span><span style="color:#79B8FF"> 3</span><span style="color:#E1E4E8">; kolonne</span><span style="color:#F97583">++</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">      lyshet </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> lyshet </span><span style="color:#F97583">-</span><span style="color:#79B8FF"> 10</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#B392F0">      fill</span><span style="color:#E1E4E8">(tone, metning, lyshet);</span></span>
+<span class="line"><span style="color:#B392F0">      ellipse</span><span style="color:#E1E4E8">(kolonne </span><span style="color:#F97583">*</span><span style="color:#E1E4E8"> width </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 4</span><span style="color:#E1E4E8">, rad </span><span style="color:#F97583">*</span><span style="color:#E1E4E8"> height </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 4</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    metning </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> metning </span><span style="color:#F97583">-</span><span style="color:#79B8FF"> 40</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="function draw() {
+  background(0);
+
+  let metning = 100;
+  let lyshet = 60;
+
+  tone = tone + 1;
+  if (tone > 360) {
+    tone = 0;
+  }
+
+  for (let rad = 1; rad <= 3; rad++) {
+    lyshet = 60;
+
+    for (let kolonne = 1; kolonne <= 3; kolonne++) {
+      lyshet = lyshet - 10;
+      fill(tone, metning, lyshet);
+      ellipse(kolonne * width / 4, rad * height / 4, 100, 100);
+    }
+
+    metning = metning - 40;
+  }
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<hr>
+<h2 id="steg-5-fargevariabler-og--funksjoner">Steg 5: Fargevariabler og -funksjoner</h2>
+<p>Noen ganger er det nyttig å kunne ha variabler for å holde rede på farger. Over så vi at vi godt kan bruke tre variabler, en for hver fargekanal i systemet, men nå skal vi se på en egen type som kan brukes til farger: color.</p>
+<p>Vi skal også se på noen funksjoner for å jobbe med farger. Dette gjør at vi kan få mer nytte av fargevariabler uten å bruke en variabel for hver fargekanal. Hvis farger skal endre seg veldig mye, kan det likevel være enklere med tre variabler. Variablene defineres, som tidligere, utenfor setup() og draw().</p>
+<h3 id="sjekkliste-3">Sjekkliste</h3>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Vi begynner helt enkelt med en fargevariabel for bakgrunn og en for fyllfarge:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> bakgrunn;</span></span>
+<span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> fyll;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> setup</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  createCanvas</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">800</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">600</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  bakgrunn </span><span style="color:#F97583">=</span><span style="color:#B392F0"> color</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">32</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">128</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">64</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  fyll </span><span style="color:#F97583">=</span><span style="color:#B392F0"> color</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">64</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">128</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">255</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  background</span><span style="color:#E1E4E8">(bakgrunn);</span></span>
+<span class="line"><span style="color:#B392F0">  fill</span><span style="color:#E1E4E8">(fyll);</span></span>
+<span class="line"><span style="color:#B392F0">  ellipse</span><span style="color:#E1E4E8">(width </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">, height </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="let bakgrunn;
+let fyll;
+
+function setup() {
+  createCanvas(800, 600);
+  bakgrunn = color(32, 128, 64);
+  fyll = color(64, 128, 255);
+
+}
+
+function draw() {
+  background(bakgrunn);
+  fill(fyll);
+  ellipse(width / 2, height / 2, 100, 100);
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p>Hvis du kjører programmet ser du en blå sirkel på en grønn bakgrunn. <code>color(32, 128, 64)</code> gir oss en verdi som vi kan putte i en color-variabel. Nå vi bruker variabelen i <code>background(bakgrunn)</code>, er det som om vi skrev <code>background(32, 128, 64)</code>.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> La oss se hvordan vi kan lage en farge som ligger et sted mellom to farger med lerpColor. Legg til en ekstra farge for svart først i programmet:</p>
+<p>I starten:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> svart;</span></span></code></pre><button class="copy-btn" type="button" data-code="let svart;" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p>Legg til i setup():</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#E1E4E8">svart </span><span style="color:#F97583">=</span><span style="color:#B392F0"> color</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span></code></pre><button class="copy-btn" type="button" data-code="svart = color(0, 0, 0);" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p>Så setter vi omrisset til sirkelen til å være en mellomting mellom svart og fyllfargen:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  background</span><span style="color:#E1E4E8">(bakgrunn);</span></span>
+<span class="line"><span style="color:#B392F0">  fill</span><span style="color:#E1E4E8">(fyll);</span></span>
+<span class="line"><span style="color:#B392F0">  stroke</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">lerpColor</span><span style="color:#E1E4E8">(fyll, svart, </span><span style="color:#79B8FF">0.5</span><span style="color:#E1E4E8">));</span></span>
+<span class="line"><span style="color:#B392F0">  strokeWeight</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">5</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  ellipse</span><span style="color:#E1E4E8">(width </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">, height </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="function draw() {
+  background(bakgrunn);
+  fill(fyll);
+  stroke(lerpColor(fyll, svart, 0.5));
+  strokeWeight(5);
+  ellipse(width / 2, height / 2, 100, 100);
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p><code>lerpColor(farge1, farge2, blandingsForhold)</code> gir en som ligger mellom farge1 og farge2, eller fyll og svart i koden ovenfor. blandingsForholdet er et tall mellom 0 og 1. Når det er 0 blir fargen helt lik farge1. Når det er 1 blir fargen helt lik farge2. 0.5 gir oss da en farge midt mellom de to.</p>
+<p>Siden resultatet av et kall på <code>lerpColor</code> er en farge, kunne du også lagt resultatet i en color-variabel: let omriss = lerpColor(fyll, svart, 0.5);</p>
+<p>Kjør programmet og merk at omrisset nå er en mørkere variant av blåfargen istedenfor helt svart.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Hvis man vil bruke HSL istedenfor RGB, går det også an, men da må man bytte fargesystem før man lager fargene:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> bakgrunn;</span></span>
+<span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> fyll;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> setup</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  createCanvas</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">800</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">600</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  colorMode</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">HSL</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">360</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  bakgrunn </span><span style="color:#F97583">=</span><span style="color:#B392F0"> color</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">120</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">75</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">30</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  fyll </span><span style="color:#F97583">=</span><span style="color:#B392F0"> color</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">210</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">75</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">40</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  background</span><span style="color:#E1E4E8">(bakgrunn);</span></span>
+<span class="line"><span style="color:#B392F0">  fill</span><span style="color:#E1E4E8">(fyll);</span></span>
+<span class="line"><span style="color:#B392F0">  ellipse</span><span style="color:#E1E4E8">(width </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">, height </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="let bakgrunn;
+let fyll;
+
+function setup() {
+  createCanvas(800, 600);
+  colorMode(HSL, 360, 100, 100);
+  bakgrunn = color(120, 75, 30);
+  fyll = color(210, 75, 40);
+}
+
+function draw() {
+  background(bakgrunn);
+  fill(fyll);
+  ellipse(width / 2, height / 2, 100, 100);
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p>Kjør programmet.</p>
+<p>Hva skjer med fargene om du lager dem før du bytter til HSL? Hva om du bytter til RGB, colorMode(RGB, 255);, etter at du har lagd fargene ovenfor?</p>
+</li>
+</ul> </article> <div class="flex justify-between mt-12 border-t-2 border-gray-700 pt-8"> <div> <a href="/p5js-workshop/workshop/easy/03-images" class="block text-blue-300 hover:bg-gray-700 p-4 rounded border border-gray-600">
 &larr; Vise bilder </a> </div> <div> <a href="/p5js-workshop/workshop/medium/01-variables" class="block text-blue-300 hover:bg-gray-700 p-4 rounded border border-gray-600"> Variabler &rarr;
 </a> </div> </div>  </div> </main> <script type="module">document.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll(".copy-btn").forEach(e=>{e.textContent="Kopier",e.addEventListener("click",async()=>{const o=e.dataset.code;if(o)try{await navigator.clipboard.writeText(o);const t=e.textContent;e.textContent="Kopiert!",setTimeout(()=>{e.textContent=t},2e3)}catch(t){console.error("Failed to copy: ",t)}})})});</script> </body> </html>
