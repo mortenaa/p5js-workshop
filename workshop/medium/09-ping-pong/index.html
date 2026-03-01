@@ -1,0 +1,340 @@
+<!DOCTYPE html><html lang="no"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><title>Ping Pong</title><link rel="stylesheet" href="/p5js-workshop/_astro/index.DipRzuJ1.css"></head> <body class="bg-gray-900 text-white font-sans text-lg leading-relaxed"> <main class="flex"> <aside class="w-1/4 bg-gray-800 p-8 border-r-2 border-gray-700 sticky top-0 h-screen"> <h2 class="text-3xl font-bold mb-8">Meny</h2> <nav> <ul> <li class="mb-6"> <h3 class="text-2xl font-bold capitalize mb-2">Lett</h3> <ul> <li class="mb-1"> <a href="/p5js-workshop/workshop/easy/01-introduction" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Introduksjon </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/easy/02-drawing-shapes" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Tegne figurer </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/easy/03-images" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Vise bilder </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/easy/04-colors" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Jobbe med farger </a> </li> </ul> </li><li class="mb-6"> <h3 class="text-2xl font-bold capitalize mb-2">Middels</h3> <ul> <li class="mb-1"> <a href="/p5js-workshop/workshop/medium/01-variables" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Variabler </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/medium/02-bouncing-ball" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Sprettende ball </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/medium/03-tegnespillet" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Tegnespillet </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/medium/04-tetris" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Tetris </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/medium/06-uendelig_bakke" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Uendelig bakke </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/medium/07-verden-1" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Verden </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/medium/09-ping-pong" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Ping Pong </a> </li> </ul> </li><li class="mb-6"> <h3 class="text-2xl font-bold capitalize mb-2">Avansert</h3> <ul> <li class="mb-1"> <a href="/p5js-workshop/workshop/advanced/01-interactivity" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Interaktivitet </a> </li> </ul> </li> </ul> </nav> </aside> <div class="w-3/4 p-12 overflow-y-auto"> <h1 class="text-5xl font-bold mb-8">Ping Pong</h1>  <article class="prose prose-invert max-w-none"> <h1 id="introduksjon">Introduksjon</h1>
+<p>Her skal vi lage dataspillet Ping pong. Vi skal også lære om å hvordan du kan få programmene dine til å reagere på tastetrykk. Dette er veldig nyttig når du skal lage spill.</p>
+<p>Pong dataspillet ble laget i 1972, og var det første dataspillet som ble laget.</p>
+<h2 id="steg-1-sprettende-ball">Steg 1: Sprettende ball</h2>
+<p>Vår begynnelse kommer til å ligne på det vi gjorde i den “Sprettende Ballen”.</p>
+<h3 id="sjekkliste">Sjekkliste</h3>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Start p5.js og skriv dette:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> ballX;</span></span>
+<span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> ballY;</span></span>
+<span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> ballXFart </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> ballYFart </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> ballRadius </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 9</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> ballDiameter </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> ballRadius </span><span style="color:#F97583">*</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> setup</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  createCanvas</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">600</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">300</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  ballX </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> width </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  ballY </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> height </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#E1E4E8">  ballX </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> ballX </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> ballXFart;</span></span>
+<span class="line"><span style="color:#E1E4E8">  ballY </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> ballY </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> ballYFart;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8"> (ballX </span><span style="color:#F97583">&#x3C;</span><span style="color:#E1E4E8"> ballRadius) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    ballXFart </span><span style="color:#F97583">=</span><span style="color:#F97583"> -</span><span style="color:#E1E4E8">ballXFart;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8"> (ballX </span><span style="color:#F97583">></span><span style="color:#E1E4E8"> width </span><span style="color:#F97583">-</span><span style="color:#E1E4E8"> ballRadius) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    ballXFart </span><span style="color:#F97583">=</span><span style="color:#F97583"> -</span><span style="color:#E1E4E8">ballXFart;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8"> (ballY </span><span style="color:#F97583">&#x3C;</span><span style="color:#E1E4E8"> ballRadius) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    ballYFart </span><span style="color:#F97583">=</span><span style="color:#F97583"> -</span><span style="color:#E1E4E8">ballYFart;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8"> (ballY </span><span style="color:#F97583">></span><span style="color:#E1E4E8"> height </span><span style="color:#F97583">-</span><span style="color:#E1E4E8"> ballRadius) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    ballYFart </span><span style="color:#F97583">=</span><span style="color:#F97583"> -</span><span style="color:#E1E4E8">ballYFart;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">  background</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  ellipse</span><span style="color:#E1E4E8">(ballX, ballY, ballDiameter, ballDiameter);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="let ballX;
+let ballY;
+let ballXFart = 2;
+let ballYFart = 2;
+let ballRadius = 9;
+let ballDiameter = ballRadius * 2;
+
+function setup() {
+  createCanvas(600, 300);
+
+  ballX = width / 2;
+  ballY = height / 2;
+}
+
+function draw() {
+  ballX = ballX + ballXFart;
+  ballY = ballY + ballYFart;
+
+  if (ballX < ballRadius) {
+    ballXFart = -ballXFart;
+  }
+  if (ballX > width - ballRadius) {
+    ballXFart = -ballXFart;
+  }
+  if (ballY < ballRadius) {
+    ballYFart = -ballYFart;
+  }
+  if (ballY > height - ballRadius) {
+    ballYFart = -ballYFart;
+  }
+
+  background(0);
+  ellipse(ballX, ballY, ballDiameter, ballDiameter);
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+</li>
+</ul>
+<p>Koden er endret litt fra oppgaven om den sprettende ballen. Vi bruker andre navn på variablene våre. Det er også noen helt nye variabler.</p>
+<p>Hvorfor tror du vi har gjort dette?</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" disabled> Kjør programmet ved å trykke på Play-knappen<img src="/p5js-workshop/images/play.png" alt="Play-knappen"></li>
+</ul>
+<p><img src="/p5js-workshop/images/pingpong1.gif" alt="Ping pong 1"></p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" disabled> Gi programmet ditt et navn ved trykke på pennen. Du må være logget inn for å kunne gjøre dette.</li>
+</ul>
+<h3 id="utfordringer">Utfordringer</h3>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Kan du endre størrelsen på ballen?</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Kan du endre farten på ballen?</p>
+</li>
+</ul>
+<h2 id="steg-2-ballen-faller-bak">Steg 2: Ballen faller bak</h2>
+<p>I Ping pong skal du hindre at ballen faller bak rekkerten. For at det skal være vits å gjøre dette må vi først sørge for at ballen ikke bare spretter tilbake når den treffer venstre vegg. Vi kan begynne med å sørge for at ballen ikke spretter tilbake.</p>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Fjern koden som gjør at ballen spretter tilbake (denne ligger i den øverste ‘if’-en), slik at du går fra dette:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> (ballX </span><span style="color:#F97583">&#x3C;</span><span style="color:#E1E4E8"> ballRadius) {</span></span>
+<span class="line"><span style="color:#E1E4E8">ballXFart </span><span style="color:#F97583">=</span><span style="color:#F97583"> -</span><span style="color:#E1E4E8">ballXFart;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="if (ballX < ballRadius) {
+ballXFart = -ballXFart;
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p>Til:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> (ballX </span><span style="color:#F97583">&#x3C;</span><span style="color:#E1E4E8"> ballRadius) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="if (ballX < ballRadius) {
+
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+</li>
+</ul>
+<p><img src="/p5js-workshop/images/pingpong2.gif" alt="Ping pong 2"></p>
+<h3 id="utfordringer-1">Utfordringer</h3>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" disabled> Kan du få ballen til å dukke opp et annet sted etter den har gått igjennom veggen?</li>
+</ul>
+<h2 id="steg-3-legg-til-rekkerten">Steg 3: Legg til rekkerten</h2>
+<p>Nå som ballen kan falle igjennom den venstre veggen, så må vi få på plass en rekkert, slik at du kan slå ballen tilbake. Det gjør vi ved å ha noen tallvariabler som representerer hvor rekkerten er og hvor stor den er. I tilegg så må vi ha kode som sender ballen tilbake.</p>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Legge inn disse variablene nedenfor de som er der fra før:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> rekkertHoyde </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 66</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> rekkertBredde </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 5</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> rekkert1X </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 20</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> rekkert1Y </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 100</span><span style="color:#E1E4E8">;</span></span></code></pre><button class="copy-btn" type="button" data-code="let rekkertHoyde = 66;
+let rekkertBredde = 5;
+let rekkert1X = 20;
+let rekkert1Y = 100;" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+</li>
+</ul>
+<p>Disse variablene skal vi bruke til å holde styr på på størrelsen og plasseringen til rekkerten.</p>
+<p>Rett nedenfor background(0), legg til dette:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#B392F0">rect</span><span style="color:#E1E4E8">(rekkert1X, rekkert1Y, rekkertBredde, rekkertHoyde);</span></span></code></pre><button class="copy-btn" type="button" data-code="rect(rekkert1X, rekkert1Y, rekkertBredde, rekkertHoyde);" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p><img src="/p5js-workshop/images/pingpong3.gif" alt="Ping pong 3"></p>
+<p>Vi kan nå se rekkerten når vi kjører programmet, men ballen går igjennom rekkerten. Det er fordi vi ikke har skrevet kode som stopper ballen og sender den tilbake.</p>
+<p>Legg til følgende i <code>draw()</code>-funksjonen:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> (ballX</span><span style="color:#F97583">-</span><span style="color:#E1E4E8">ballRadius </span><span style="color:#F97583">&#x3C;</span><span style="color:#E1E4E8"> rekkert1X </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> rekkertBredde </span><span style="color:#F97583">&#x26;&#x26;</span><span style="color:#E1E4E8"> ballX </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> ballRadius </span><span style="color:#F97583">></span><span style="color:#E1E4E8"> rekkert1X) {</span></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8"> (ballY </span><span style="color:#F97583">&#x3C;</span><span style="color:#E1E4E8"> rekkert1Y </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> rekkertHoyde </span><span style="color:#F97583">&#x26;&#x26;</span><span style="color:#E1E4E8"> ballY </span><span style="color:#F97583">></span><span style="color:#E1E4E8"> rekkert1Y) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    ballX </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> ballX </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> rekkertBredde;</span></span>
+<span class="line"><span style="color:#E1E4E8">    ballXFart </span><span style="color:#F97583">=</span><span style="color:#F97583"> -</span><span style="color:#E1E4E8">ballXFart;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="if (ballX-ballRadius < rekkert1X + rekkertBredde &#x26;&#x26; ballX + ballRadius > rekkert1X) {
+  if (ballY < rekkert1Y + rekkertHoyde &#x26;&#x26; ballY > rekkert1Y) {
+    ballX = ballX + rekkertBredde;
+    ballXFart = -ballXFart;
+  }
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p><img src="/p5js-workshop/images/pingpong4.gif" alt="Ping pong 4"></p>
+<h3 id="utfordringer-2">Utfordringer</h3>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Kan du gjøre rekkerten mindre?</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Kan du endre plasseringen til rekkerten?</p>
+</li>
+</ul>
+<hr>
+<h3 id="forklaring">Forklaring</h3>
+<p>Her er et bilde som forklarer hva de forskjellige variablene står for:
+<img src="/p5js-workshop/images/pingpongforklaring.png" alt="Ping pong forklaring"></p>
+<hr>
+<h2 id="steg-4-styre-rekkerten">Steg 4: Styre rekkerten</h2>
+<p>Vi har en rekkert, men den er ikke til mye hjelp så lenge du ikke kan styre den. Derfor må du skrive kode som gjør at du kan styre den.</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" disabled> Skriv inn følgende i toppeb av <code>draw()</code>:</li>
+</ul>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8"> (</span><span style="color:#B392F0">keyIsDown</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">UP_ARROW</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">===</span><span style="color:#79B8FF"> true</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    rekkert1Y </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> rekkert1Y </span><span style="color:#F97583">-</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8"> (</span><span style="color:#B392F0">keyIsDown</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">DOWN_ARROW</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">===</span><span style="color:#79B8FF"> true</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    rekkert1Y </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> rekkert1Y </span><span style="color:#F97583">+</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span></code></pre><button class="copy-btn" type="button" data-code="  if (keyIsDown(UP_ARROW) === true) {
+    rekkert1Y = rekkert1Y - 2;
+  }
+
+  if (keyIsDown(DOWN_ARROW) === true) {
+    rekkert1Y = rekkert1Y + 2;
+  }" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p>Denne koden sjekker om du holder ned opp- eller ned-pilen på tastaturet. Hvis du holder ned opp-pilen så flytter den rekkerten oppover, og hvis du holder ned ned-pilen så flytter den rekkerten nedover. Pass på å klikke med musen i tegneområdet før du prøver å bruke pilene, ellers vil ikke programmet registrere at du trykker på dem. Du må gjøre tegneområdet aktivt for at programmet skal kunne registrere tastetrykk.</p>
+<p><img src="/p5js-workshop/images/pingpong5.gif" alt="Ping pong 5"></p>
+<p>Nå har du laget Ping pong!</p>
+<p>Koden så langt:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> ballX;</span></span>
+<span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> ballY;</span></span>
+<span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> ballXFart </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> ballYFart </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> ballRadius </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 9</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> ballDiameter </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> ballRadius </span><span style="color:#F97583">*</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> rekkertHoyde </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 66</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> rekkertBredde </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 5</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> rekkert1X </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 20</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> rekkert1Y </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 100</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> setup</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  createCanvas</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">600</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">300</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  ballX </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> width </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  ballY </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> height </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8"> (</span><span style="color:#B392F0">keyIsDown</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">UP_ARROW</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">===</span><span style="color:#79B8FF"> true</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    rekkert1Y </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> rekkert1Y </span><span style="color:#F97583">-</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8"> (</span><span style="color:#B392F0">keyIsDown</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">DOWN_ARROW</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">===</span><span style="color:#79B8FF"> true</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    rekkert1Y </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> rekkert1Y </span><span style="color:#F97583">+</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#E1E4E8">  ballX </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> ballX </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> ballXFart;</span></span>
+<span class="line"><span style="color:#E1E4E8">  ballY </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> ballY </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> ballYFart;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8"> (ballX </span><span style="color:#F97583">&#x3C;</span><span style="color:#E1E4E8"> ballRadius) {</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8"> (ballX </span><span style="color:#F97583">></span><span style="color:#E1E4E8"> width </span><span style="color:#F97583">-</span><span style="color:#E1E4E8"> ballRadius) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    ballXFart </span><span style="color:#F97583">=</span><span style="color:#F97583"> -</span><span style="color:#E1E4E8">ballXFart;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8"> (ballY </span><span style="color:#F97583">&#x3C;</span><span style="color:#E1E4E8"> ballRadius) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    ballYFart </span><span style="color:#F97583">=</span><span style="color:#F97583"> -</span><span style="color:#E1E4E8">ballYFart;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8"> (ballY </span><span style="color:#F97583">></span><span style="color:#E1E4E8"> height </span><span style="color:#F97583">-</span><span style="color:#E1E4E8"> ballRadius) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    ballYFart </span><span style="color:#F97583">=</span><span style="color:#F97583"> -</span><span style="color:#E1E4E8">ballYFart;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">    ballX </span><span style="color:#F97583">-</span><span style="color:#E1E4E8"> ballRadius </span><span style="color:#F97583">&#x3C;</span><span style="color:#E1E4E8"> rekkert1X </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> rekkertBredde </span><span style="color:#F97583">&#x26;&#x26;</span></span>
+<span class="line"><span style="color:#E1E4E8">    ballX </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> ballRadius </span><span style="color:#F97583">></span><span style="color:#E1E4E8"> rekkert1X</span></span>
+<span class="line"><span style="color:#E1E4E8">  ) {</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (ballY </span><span style="color:#F97583">&#x3C;</span><span style="color:#E1E4E8"> rekkert1Y </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> rekkertHoyde </span><span style="color:#F97583">&#x26;&#x26;</span><span style="color:#E1E4E8"> ballY </span><span style="color:#F97583">></span><span style="color:#E1E4E8"> rekkert1Y) {</span></span>
+<span class="line"><span style="color:#E1E4E8">      ballX </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> ballX </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> rekkertBredde;</span></span>
+<span class="line"><span style="color:#E1E4E8">      ballXFart </span><span style="color:#F97583">=</span><span style="color:#F97583"> -</span><span style="color:#E1E4E8">ballXFart;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#B392F0">  background</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  rect</span><span style="color:#E1E4E8">(rekkert1X, rekkert1Y, rekkertBredde, rekkertHoyde);</span></span>
+<span class="line"><span style="color:#B392F0">  ellipse</span><span style="color:#E1E4E8">(ballX, ballY, ballDiameter, ballDiameter);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="let ballX;
+let ballY;
+let ballXFart = 2;
+let ballYFart = 2;
+let ballRadius = 9;
+let ballDiameter = ballRadius * 2;
+let rekkertHoyde = 66;
+let rekkertBredde = 5;
+let rekkert1X = 20;
+let rekkert1Y = 100;
+
+function setup() {
+  createCanvas(600, 300);
+
+  ballX = width / 2;
+  ballY = height / 2;
+}
+
+function draw() {
+  
+  if (keyIsDown(UP_ARROW) === true) {
+    rekkert1Y = rekkert1Y - 2;
+  }
+
+  if (keyIsDown(DOWN_ARROW) === true) {
+    rekkert1Y = rekkert1Y + 2;
+  }
+  
+  ballX = ballX + ballXFart;
+  ballY = ballY + ballYFart;
+
+  if (ballX < ballRadius) {
+  }
+  if (ballX > width - ballRadius) {
+    ballXFart = -ballXFart;
+  }
+  if (ballY < ballRadius) {
+    ballYFart = -ballYFart;
+  }
+  if (ballY > height - ballRadius) {
+    ballYFart = -ballYFart;
+  }
+  if (
+    ballX - ballRadius < rekkert1X + rekkertBredde &#x26;&#x26;
+    ballX + ballRadius > rekkert1X
+  ) {
+    if (ballY < rekkert1Y + rekkertHoyde &#x26;&#x26; ballY > rekkert1Y) {
+      ballX = ballX + rekkertBredde;
+      ballXFart = -ballXFart;
+    }
+  }
+  
+  background(0);
+  rect(rekkert1X, rekkert1Y, rekkertBredde, rekkertHoyde);
+  ellipse(ballX, ballY, ballDiameter, ballDiameter);
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<hr>
+<h3 id="bokstavtaster">Bokstavtaster</h3>
+<p>Bokstavtaster
+Hvis du vil styre ved å trykke på bokstavtaster istedenfor piltastene, må du endre litt på koden. Mange er vant til å styre opp med <em><strong>W</strong></em> og ned med <em><strong>S</strong></em>.</p>
+<p>Hvis du endrer:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>  if (keyIsDown(UP_ARROW) === true) {</span></span></code></pre><button class="copy-btn" type="button" data-code="  if (keyIsDown(UP_ARROW) === true) {" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p>Til:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>  if (keyIsDown(87) === true) {</span></span></code></pre><button class="copy-btn" type="button" data-code="  if (keyIsDown(87) === true) {" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p>87 er koden for <em><strong>W</strong></em>-tasten. Kan du styre opp med <em><strong>W</strong></em>? Koden for  <em><strong>S</strong></em> er 83.</p>
+<p>Alternativt kan du bruke <code>key</code>-variabelen, som inneholder selve tegnet på tasten du trykker på. Da kan du skrive:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> (keyIsPressed </span><span style="color:#F97583">===</span><span style="color:#79B8FF"> true</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8"> (key </span><span style="color:#F97583">===</span><span style="color:#9ECBFF"> 'w'</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    rekkert1Y </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> rekkert1Y </span><span style="color:#F97583">-</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8"> (key </span><span style="color:#F97583">===</span><span style="color:#9ECBFF"> 's'</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    rekkert1Y </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> rekkert1Y </span><span style="color:#F97583">+</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="if (keyIsPressed === true) {
+  if (key === &#x27;w&#x27;) {
+    rekkert1Y = rekkert1Y - 2;
+  }
+  if (key === &#x27;s&#x27;) {
+    rekkert1Y = rekkert1Y + 2;
+  }
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<hr>
+<h3 id="utfordringer-3">Utfordringer</h3>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Kan du endre farten rekkerten beveger seg i?</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Kan du legge til en rekkert på den andre siden slik at to spillere kan spille mot hverandre?</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Kan du gjøre det slik at ballens vertikale retning (opp og ned) bestemmes av hvilken del av rekkerten den treffer?</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> Kan du gjøre noe som gjør at spillet blir vanskeligere etter hvert? For eksempel at ballen går raskere og raskere etter hvert, eller at rakkerten blir mindre.</p>
+</li>
+</ul> </article> <div class="flex justify-between mt-12 border-t-2 border-gray-700 pt-8"> <div> <a href="/p5js-workshop/workshop/medium/07-verden-1" class="block text-blue-300 hover:bg-gray-700 p-4 rounded border border-gray-600">
+&larr; Verden </a> </div> <div>  </div> </div>  </div> </main> <script type="module">document.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll(".copy-btn").forEach(e=>{e.textContent="Kopier",e.addEventListener("click",async()=>{const o=e.dataset.code;if(o)try{await navigator.clipboard.writeText(o);const t=e.textContent;e.textContent="Kopiert!",setTimeout(()=>{e.textContent=t},2e3)}catch(t){console.error("Failed to copy: ",t)}})})});</script> </body> </html>
