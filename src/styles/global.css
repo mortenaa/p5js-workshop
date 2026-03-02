@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@plugin "@tailwindcss/typography";
 
 .code-wrapper {
   position: relative;
@@ -28,4 +27,11 @@
 
 .copy-btn:hover {
   opacity: 1;
+}
+
+.prose-invert :not(pre) > code {
+  background-color: #4a5568; /* gray-700 */
+  color: #f7fafc; /* gray-100 */
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
 }
