@@ -1,0 +1,25 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="14">
+  <rect width="400" height="300" fill="none" stroke="#ccc" stroke-width="2"/>
+
+  <!-- Y-axis -->
+  <line x1="10" y1="10" x2="10" y2="290" stroke="#fff" stroke-width="2"/>
+  <polygon points="10,295 5,285 15,285" fill="#fff"/>
+  <text x="20" y="150" fill="#fff" dominant-baseline="middle" font-size="16">Y</text>
+
+  <!-- X-axis -->
+  <line x1="10" y1="10" x2="390" y2="10" stroke="#fff" stroke-width="2"/>
+  <polygon points="395,10 385,5 385,15" fill="#fff"/>
+  <text x="200" y="30" fill="#fff" text-anchor="middle" font-size="16">X</text>
+
+  <!-- Origin -->
+  <circle cx="10" cy="10" r="4" fill="red"/>
+  <text x="20" y="25" fill="red">(0, 0)</text>
+
+  <!-- Width/Height labels -->
+  <text x="380" y="25" fill="#ccc" text-anchor="end">(width, 0)</text>
+  <text x="30" y="285" fill="#ccc" text-anchor="start">(0, height)</text>
+
+  <!-- Example point -->
+  <circle cx="150" cy="100" r="3" fill="cyan"/>
+  <text x="160" y="105" fill="cyan">(150, 100)</text>
+</svg>
