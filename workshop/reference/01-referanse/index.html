@@ -1,0 +1,173 @@
+<!DOCTYPE html><html lang="no"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><title>Referanseark for p5.js</title><link rel="stylesheet" href="/p5js-workshop/_astro/index.otgUlqX7.css"></head> <body class="bg-gray-900 text-white font-sans text-lg leading-relaxed"> <main class="flex"> <aside class="w-1/4 bg-gray-800 p-8 border-r-2 border-gray-700 sticky top-0 h-screen overflow-y-auto"> <h2 class="text-1xl font-bold mb-8"><a href="/p5js-workshop/" class="text-blue-300 hover:text-blue-100">⬅ Startsiden</a></h2> <h2 class="text-3xl font-bold mb-8">Oppgaver</h2> <nav> <ul> <li class="mb-6"> <h3 class="text-2xl font-bold capitalize mb-2">Lett</h3> <ul> <li class="mb-1"> <a href="/p5js-workshop/workshop/easy/01-introduction" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Introduksjon </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/easy/02-intro2" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Introduksjon del 2 </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/easy/03-drawing-shapes" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Tegne figurer </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/easy/04-images" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Vise bilder </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/easy/05-colors" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Jobbe med farger </a> </li> </ul> </li><li class="mb-6"> <h3 class="text-2xl font-bold capitalize mb-2">Middels</h3> <ul> <li class="mb-1"> <a href="/p5js-workshop/workshop/medium/01-variables" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Variabler </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/medium/02-bouncing-ball" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Sprettende ball </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/medium/03-tegnespillet" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Tegnespillet </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/medium/04-tetris" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Tetris </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/medium/05-to_player" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> ToPlayer </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/medium/06-uendelig_bakke" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Uendelig bakke </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/medium/07-verden-1" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Verden </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/medium/09-ping-pong" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Ping Pong </a> </li> </ul> </li><li class="mb-6"> <h3 class="text-2xl font-bold capitalize mb-2">Avansert</h3> <ul> <li class="mb-1"> <a href="/p5js-workshop/workshop/advanced/01-interactivity" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Interaktivitet </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/advanced/02-mangekanter" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Kanter, kanter, mange mangekanter </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/advanced/04-trigonometri" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Trigonometri, regulære mangekanter og stjerner </a> </li> </ul> </li><li class="mb-6"> <h3 class="text-2xl font-bold capitalize mb-2">Referanse</h3> <ul> <li class="mb-1"> <a href="/p5js-workshop/workshop/reference/01-referanse" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Referanseark for p5.js </a> </li> </ul> </li> </ul> </nav> </aside> <div class="prose prose-invert w-3/4 p-12 overflow-y-auto"> <h1 class="text-5xl font-bold mb-8">Referanseark for p5.js</h1>  <article class="prose prose-invert max-w-none"> <p>Dette dokumentet er en rask referanse for de vanligste konseptene og funksjonene du vil møte i dette p5.js-kurset.</p>
+<h2 id="grunnleggende-struktur">Grunnleggende Struktur</h2>
+<p>Alle p5.js-skisser har samme grunnleggende struktur med to hovedfunksjoner: <code>setup()</code> og <code>draw()</code>.</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// Kjøres én gang når programmet starter</span></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> setup</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#6A737D">  // Oppsett-kode her, f.eks. createCanvas()</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Kjøres i en løkke (om og om igjen) etter setup()</span></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#6A737D">  // Tegne-kode her</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="// Kjøres én gang når programmet starter
+function setup() {
+  // Oppsett-kode her, f.eks. createCanvas()
+}
+
+// Kjøres i en løkke (om og om igjen) etter setup()
+function draw() {
+  // Tegne-kode her
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<h3 id="setup"><code>setup()</code></h3>
+<p>Brukes til å initialisere programmet. Dette kan være å sette størrelsen på lerretet, laste inn bilder eller fonter, og sette startverdier for variabler.</p>
+<h3 id="draw"><code>draw()</code></h3>
+<p>Inneholder koden som tegner på lerretet. Siden <code>draw()</code> kjører i en løkke, vil endringer i variabler føre til animasjon.</p>
+<h2 id="variabler-og-datatyper">Variabler og Datatyper</h2>
+<p>Variabler brukes til å lagre informasjon som programmet ditt kan bruke.</p>
+<h3 id="deklarering">Deklarering</h3>
+<p>Bruk <code>let</code> for variabler som kan endre verdi, og <code>const</code> for konstanter som ikke endrer seg.</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> score </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">; </span><span style="color:#6A737D">// Kan endres senere</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> GRAVITY</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> 9.8</span><span style="color:#E1E4E8">; </span><span style="color:#6A737D">// Kan ikke endres</span></span></code></pre><button class="copy-btn" type="button" data-code="let score = 0; // Kan endres senere
+const GRAVITY = 9.8; // Kan ikke endres" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<h3 id="datatyper">Datatyper</h3>
+<ul>
+<li><strong>Tall (Number)</strong>: <code>let alder = 15;</code></li>
+<li><strong>Tekst (String)</strong>: <code>let navn = "Ola Nordmann";</code></li>
+<li><strong>Array (Liste)</strong>: <code>let farger = ["rød", "grønn", "blå"];</code></li>
+</ul>
+<h2 id="operatorer">Operatorer</h2>
+<h3 id="aritmetiske">Aritmetiske</h3>
+<ul>
+<li><code>+</code> (addisjon)</li>
+<li><code>-</code> (subtraksjon)</li>
+<li><code>*</code> (multiplikasjon)</li>
+<li><code>/</code> (divisjon)</li>
+</ul>
+<h3 id="tilordning">Tilordning</h3>
+<ul>
+<li><code>=</code> (sett verdi): <code>x = 10;</code></li>
+<li><code>+=</code> (øk med): <code>x += 5;</code> (samme som <code>x = x + 5;</code>)</li>
+<li><code>-=</code> (mink med): <code>x -= 5;</code> (samme som <code>x = x - 5;</code>)</li>
+</ul>
+<h3 id="sammenligning">Sammenligning</h3>
+<ul>
+<li><code>===</code> (lik): <code>if (navn === "Ola")</code></li>
+<li><code>&#x3C;</code> (mindre enn): <code>if (alder &#x3C; 18)</code></li>
+<li><code>></code> (større enn): <code>if (score > 100)</code></li>
+</ul>
+<h2 id="kontrollstrukturer">Kontrollstrukturer</h2>
+<h3 id="betingelser-if--else">Betingelser (<code>if</code> / <code>else</code>)</h3>
+<p>Brukes til å kjøre kode kun hvis en betingelse er sann.</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> (x </span><span style="color:#F97583">></span><span style="color:#E1E4E8"> width) {</span></span>
+<span class="line"><span style="color:#6A737D">  // Gjør noe hvis x er utenfor høyre kant</span></span>
+<span class="line"><span style="color:#E1E4E8">} </span><span style="color:#F97583">else</span><span style="color:#F97583"> if</span><span style="color:#E1E4E8"> (x </span><span style="color:#F97583">&#x3C;</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#6A737D">  // Gjør noe annet hvis x er utenfor venstre kant</span></span>
+<span class="line"><span style="color:#E1E4E8">} </span><span style="color:#F97583">else</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#6A737D">  // Gjør noe annet i alle andre tilfeller</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="if (x > width) {
+  // Gjør noe hvis x er utenfor høyre kant
+} else if (x < 0) {
+  // Gjør noe annet hvis x er utenfor venstre kant
+} else {
+  // Gjør noe annet i alle andre tilfeller
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<h3 id="for-løkker"><code>for</code>-løkker</h3>
+<p>Brukes til å repetere kode et bestemt antall ganger. Veldig nyttig for å jobbe med arrays.</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">for</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">let</span><span style="color:#E1E4E8"> i </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">; i </span><span style="color:#F97583">&#x3C;</span><span style="color:#79B8FF"> 5</span><span style="color:#E1E4E8">; i</span><span style="color:#F97583">++</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#6A737D">  // Denne koden kjøres 5 ganger</span></span>
+<span class="line"><span style="color:#B392F0">  ellipse</span><span style="color:#E1E4E8">(i </span><span style="color:#F97583">*</span><span style="color:#79B8FF"> 50</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">40</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">40</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="for (let i = 0; i < 5; i++) {
+  // Denne koden kjøres 5 ganger
+  ellipse(i * 50, 100, 40, 40);
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<h2 id="kommentarer">Kommentarer</h2>
+<p>Brukes til å skrive notater i koden som ikke blir kjørt.</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// Dette er en enkeltlinje-kommentar</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">/*</span></span>
+<span class="line"><span style="color:#6A737D">Dette er en</span></span>
+<span class="line"><span style="color:#6A737D">flerlinje-kommentar</span></span>
+<span class="line"><span style="color:#6A737D">*/</span></span></code></pre><button class="copy-btn" type="button" data-code="// Dette er en enkeltlinje-kommentar
+
+/*
+Dette er en
+flerlinje-kommentar
+*/" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<h2 id="tegning-i-p5js">Tegning i p5.js</h2>
+<h3 id="lerret-og-koordinater">Lerret og Koordinater</h3>
+<ul>
+<li><code>createCanvas(bredde, høyde)</code>: Lager tegneområdet.</li>
+<li><code>width</code> og <code>height</code>: Innebygde variabler som holder lerretets bredde og høyde.</li>
+<li>Koordinatsystemet starter med <code>(0, 0)</code> i øverste venstre hjørne.</li>
+</ul>
+<h3 id="farger">Farger</h3>
+<ul>
+<li><code>background(farge)</code>: Setter bakgrunnsfargen.</li>
+<li><code>fill(farge)</code>: Setter fyllfargen for former.</li>
+<li><code>noFill()</code>: Ingen fyllfarge.</li>
+<li><code>stroke(farge)</code>: Setter fargen på omrisset (streken).</li>
+<li><code>noStroke()</code>: Ikke noe omriss.</li>
+</ul>
+<p>Farger kan spesifiseres som gråtone (0-255), RGB (r, g, b) eller med andre metoder.</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#B392F0">background</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">200</span><span style="color:#E1E4E8">); </span><span style="color:#6A737D">// Grå</span></span>
+<span class="line"><span style="color:#B392F0">fill</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">255</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">); </span><span style="color:#6A737D">// Rød</span></span>
+<span class="line"><span style="color:#B392F0">stroke</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">255</span><span style="color:#E1E4E8">); </span><span style="color:#6A737D">// Blå</span></span></code></pre><button class="copy-btn" type="button" data-code="background(200); // Grå
+fill(255, 0, 0); // Rød
+stroke(0, 0, 255); // Blå" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<h3 id="former">Former</h3>
+<ul>
+<li><code>ellipse(x, y, bredde, høyde)</code>: Tegner en ellipse (eller sirkel).</li>
+<li><code>rect(x, y, bredde, høyde)</code>: Tegner et rektangel.</li>
+<li><code>triangle(x1, y1, x2, y2, x3, y3)</code>: Tegner en trekant med tre hjørner.</li>
+<li><code>quad(x1, y1, x2, y2, x3, y3, x4, y4)</code>: Tegner en firkant med fire hjørner.</li>
+<li><code>beginShape()</code>, <code>vertex(x, y)</code>, <code>endShape(CLOSE)</code>: Brukes til å tegne egendefinerte mangekanter.</li>
+</ul>
+<h2 id="input-fra-bruker">Input fra Bruker</h2>
+<h3 id="mus">Mus</h3>
+<ul>
+<li><code>mouseX</code>, <code>mouseY</code>: Innebygde variabler som holder musens x- og y-posisjon.</li>
+<li><code>mouseIsPressed</code>: Innebygd variabel som er <code>true</code> hvis en museknapp holdes nede.</li>
+<li><code>mouseReleased()</code>: En funksjon som kjøres én gang når en museknapp slippes.</li>
+</ul>
+<h3 id="tastatur">Tastatur</h3>
+<ul>
+<li><code>keyIsPressed</code>: Innebygd variabel som er <code>true</code> hvis en tast holdes nede.</li>
+<li><code>key</code>: Innebygd variabel som holder verdien av den siste tasten som ble trykket.</li>
+</ul>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> (keyIsPressed </span><span style="color:#F97583">&#x26;&#x26;</span><span style="color:#E1E4E8"> key </span><span style="color:#F97583">===</span><span style="color:#9ECBFF"> 'a'</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#6A737D">  // Beveg spilleren til venstre</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="if (keyIsPressed &#x26;&#x26; key === &#x27;a&#x27;) {
+  // Beveg spilleren til venstre
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<h2 id="bilder">Bilder</h2>
+<ul>
+<li><code>loadImage("filnavn.png")</code>: Laster inn en bildefil. Bør gjøres i <code>setup()</code>.</li>
+<li><code>image(bildeVariabel, x, y, bredde, høyde)</code>: Tegner et bilde på lerretet.</li>
+</ul>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> mittBilde;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> setup</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#E1E4E8">  mittBilde </span><span style="color:#F97583">=</span><span style="color:#B392F0"> loadImage</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"bilde.png"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  image</span><span style="color:#E1E4E8">(mittBilde, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="let mittBilde;
+
+function setup() {
+  mittBilde = loadImage(&#x22;bilde.png&#x22;);
+}
+
+function draw() {
+  image(mittBilde, 0, 0);
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<h2 id="matematikk">Matematikk</h2>
+<ul>
+<li><code>random(max)</code>: Gir et tilfeldig tall mellom 0 og <code>max</code>.</li>
+<li><code>random(min, max)</code>: Gir et tilfeldig tall mellom <code>min</code> og <code>max</code>.</li>
+<li><code>sin(vinkel)</code>, <code>cos(vinkel)</code>: Trigonometriske funksjoner, nyttige for sirkulær bevegelse.</li>
+<li><code>radians(grader)</code>: Konverterer en vinkel fra grader til radianer, som <code>sin()</code> og <code>cos()</code> forventer.</li>
+</ul>
+<hr>
+<p>Dette er ikke en komplett liste over alt i p5.js, men den dekker det du trenger for å komme i gang og fullføre oppgavene i dette kurset. For en fullstendig oversikt, se den <a href="https://p5js.org/reference/">offisielle p5.js-referansen</a>.</p> </article> <div class="flex justify-between mt-12 border-t-2 border-gray-700 pt-8"> <div> <a href="/p5js-workshop/workshop/medium/09-ping-pong" class="block text-blue-300 hover:bg-gray-700 p-4 rounded border border-gray-600">
+&larr; Ping Pong </a> </div> <div>  </div> </div>  </div> </main> <script type="module">document.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll(".copy-btn").forEach(e=>{e.textContent="Kopier",e.addEventListener("click",async()=>{const o=e.dataset.code;if(o)try{await navigator.clipboard.writeText(o);const t=e.textContent;e.textContent="Kopiert!",setTimeout(()=>{e.textContent=t},2e3)}catch(t){console.error("Failed to copy: ",t)}})})});</script> </body> </html>

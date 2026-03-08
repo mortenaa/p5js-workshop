@@ -1,0 +1,199 @@
+
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>p5.js Workshop Presentasjon</title>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reset.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/moon.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/zenburn.min.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>p5.js Workshop</h1>
+					<h3>En introduksjon til kreativ koding</h3>
+				</section>
+				
+				<section>
+					<h2>Grunnleggende Struktur</h2>
+					<p>Alle p5.js-skisser har to hovedfunksjoner: <code>setup()</code> og <code>draw()</code>.</p>
+					<pre><code class="javascript" data-line-numbers="1-4|6-8">
+// Kjøres én gang når programmet starter
+function setup() {
+  // Oppsett-kode her, f.eks. createCanvas()
+}
+
+// Kjøres i en løkke (om og om igjen) etter setup()
+function draw() {
+  // Tegne-kode her
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<section>
+						<h2>Variabler og Datatyper</h2>
+						<p>Brukes til å lagre informasjon.</p>
+						<pre><code class="javascript">
+let score = 0; // Kan endres
+const GRAVITY = 9.8; // Kan ikke endres
+						</code></pre>
+						<p>Bruk <code>let</code> for verdier som kan endres, og <code>const</code> for konstante verdier.</p>
+					</section>
+					<section>
+						<h3>Datatyper</h3>
+						<ul>
+							<li><strong>Tall (Number)</strong>: <code>let alder = 15;</code></li>
+							<li><strong>Tekst (String)</strong>: <code>let navn = "Ola";</code></li>
+							<li><strong>Array (Liste)</strong>: <code>let farger = ["rød", "grønn", "blå"];</code></li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<h2>Operatorer</h2>
+					<ul>
+						<li>Aritmetiske: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code></li>
+						<li>Tilordning: <code>=</code>, <code>+=</code>, <code>-=</code></li>
+						<li>Sammenligning: <code>===</code>, <code>&lt;</code>, <code>&gt;</code></li>
+					</ul>
+				</section>
+
+				<section>
+					<section>
+						<h2>Kontrollstrukturer</h2>
+						<h3>Betingelser (if / else)</h3>
+						<p>Kjører kode kun hvis en betingelse er sann.</p>
+						<pre><code class="javascript">
+if (x > width) {
+  // Gjør noe
+} else if (x < 0) {
+  // Gjør noe annet
+} else {
+  // Til slutt
+}
+						</code></pre>
+					</section>
+					<section>
+						<h3><code>for</code>-løkker</h3>
+						<p>Repeterer kode et bestemt antall ganger.</p>
+						<pre><code class="javascript">
+for (let i = 0; i < 5; i++) {
+  // Denne koden kjøres 5 ganger
+  ellipse(i * 50, 100, 40, 40);
+}
+						</code></pre>
+					</section>
+				</section>
+
+				<section>
+					<h2>Tegning i p5.js</h2>
+					<p>Alt skjer på et "lerret" (canvas).</p>
+				</section>
+
+				<section>
+					<h3>Koordinatsystem og Farger</h3>
+					<ul>
+						<li><code>createCanvas(bredde, høyde)</code></li>
+						<li><code>background(farge)</code></li>
+						<li><code>fill(farge)</code>, <code>noFill()</code></li>
+						<li><code>stroke(farge)</code>, <code>noStroke()</code></li>
+					</ul>
+					<pre><code class="javascript">
+background(200); // Grå
+fill(255, 0, 0); // Rød
+stroke(0, 0, 255); // Blå
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>Former</h3>
+					<ul>
+						<li><code>ellipse(x, y, bredde, høyde)</code></li>
+						<li><code>rect(x, y, bredde, høyde)</code></li>
+						<li><code>triangle(x1, y1, x2, y2, x3, y3)</code></li>
+						<li><code>beginShape()</code>, <code>vertex(x, y)</code>, <code>endShape(CLOSE)</code></li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Input fra Bruker</h2>
+					<p>Gjør skissene interaktive.</p>
+				</section>
+
+				<section>
+					<h3>Mus</h3>
+					<ul>
+						<li><code>mouseX</code>, <code>mouseY</code>: Musens posisjon.</li>
+						<li><code>mouseIsPressed</code>: Sjekker om museknapp er nede.</li>
+						<li><code>mouseReleased()</code>: Funksjon som kalles ved klikk.</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h3>Tastatur</h3>
+					<ul>
+						<li><code>keyIsPressed</code>: Sjekker om en tast er nede.</li>
+						<li><code>key</code>: Holder verdien av siste tast.</li>
+					</ul>
+					<pre><code class="javascript">
+if (keyIsPressed && key === 'a') {
+  // Beveg spilleren til venstre
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Bilder og Matematikk</h2>
+				</section>
+
+				<section>
+					<h3>Bilder</h3>
+					<ul>
+						<li><code>loadImage("fil.png")</code>: Laster inn et bilde.</li>
+						<li><code>image(bilde, x, y, b, h)</code>: Viser bildet.</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Matematikk</h3>
+					<ul>
+						<li><code>random(min, max)</code>: Tilfeldig tall.</li>
+						<li><code>sin()</code>, <code>cos()</code>: For sirkulær bevegelse.</li>
+						<li><code>radians(grader)</code>: Konverterer grader til radianer.</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Spørsmål?</h2>
+					<p>Utforsk den <a href="https://p5js.org/reference/">offisielle p5.js-referansen</a> for mer.</p>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/notes/notes.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/markdown/markdown.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/highlight/highlight.min.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
