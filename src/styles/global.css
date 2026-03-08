@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 .code-wrapper {
   position: relative;
@@ -34,4 +35,13 @@
   color: #f7fafc; /* gray-100 */
   padding: 0.2em 0.4em;
   border-radius: 3px;
+}
+
+.prose {
+  max-width: none;
+}
+
+.prose img {
+  max-width: 100%; /* Allows images to be their natural size or larger */
+  width: auto; /* Or set a specific width, e.g., width: 100vw; for full viewport width */
 }
