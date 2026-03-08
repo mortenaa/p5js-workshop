@@ -1,6 +1,5 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
-
 .code-wrapper {
   position: relative;
   margin-top: 1rem;
@@ -44,4 +43,10 @@
 .prose img {
   max-width: 100%; /* Allows images to be their natural size or larger */
   width: auto; /* Or set a specific width, e.g., width: 100vw; for full viewport width */
+}
+
+/* Force-remove backticks from inline code */
+.prose :where(code):not(:where([class~="not-prose"] *))::before,
+.prose :where(code):not(:where([class~="not-prose"] *))::after {
+  content: "";
 }
