@@ -11,13 +11,15 @@ Når du er logget inn, kan du klikke på "File" i verktøylinjen og velge "Dupli
 
 For hvert eksempel vil det være kommetarer i koden som forklarer, og foreslår endringer du kan gjøre for å se hva som skjer. Prøv deg frem og ha det gøy!
 
-# 1.Hello World!
+_Disse leksjonene er basert på leksjonene fra <a href="http://vestera.as/processing/" target="_blank" rel="noreferrer">http://vestera.as/processing/</a>. Vi har oversatt de til p5.js og gjort noen tilpasninger._
+
+## 1. Hello World!
 
 I dette eksempelet starter vi med et veldig enkelt program som skriver ut "Hello World!" på skjermen.
 
 Klikk her for å komme inn på eksempelet: <a href="https://editor.p5js.org/fborlaug/sketches/vVgEvTlxw" target="_blank" rel="noreferrer">1.Hello World</a>.
 
-# 2.Former
+## 2. Former
 
 Noe av det første du skal få lære i ***p5.js*** er å tegne rektangler og ellipser. Eller firkanter og rundinger som vi sier til vanlig.
 

@@ -163,3 +163,7 @@ function draw() {
 Hold nede museknappen mens du drar musepekeren over canvaset.
 
 Koden over tegner hvite sirkler på samme sted som musepekeren. Når museknappen holdes inne, endrer sirkelen farge til svart.
+
+---
+
+_Denne leksjonen er inspirert av [p5.js Setting Up Your Environment](https://p5js.org/tutorials/setting-up-your-environment/). For mer informasjon om p5.js og hvordan du kommer i gang, se den offisielle guiden._
