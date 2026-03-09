@@ -96,10 +96,16 @@ flerlinje-kommentar
 <h2 id="tegning-i-p5js">Tegning i p5.js</h2>
 <h3 id="lerret-og-koordinater">Lerret og Koordinater</h3>
 <ul>
-<li><code>createCanvas(bredde, høyde)</code>: Lager tegneområdet.</li>
-<li><code>width</code> og <code>height</code>: Innebygde variabler som holder lerretets bredde og høyde.</li>
-<li>Koordinatsystemet starter med <code>(0, 0)</code> i øverste venstre hjørne.</li>
+<li><code>createCanvas(bredde, høyde)</code>: Lager selve tegneområdet (lerretet) ditt.</li>
+<li><code>width</code> og <code>height</code>: Innebygde variabler som alltid inneholder lerretets bredde og høyde.</li>
 </ul>
+<p>Tenk på lerretet som et rutenett. For å tegne noe, må du oppgi posisjonen med x- og y-koordinater.</p>
+<ul>
+<li><strong>(0, 0)</strong> er punktet øverst i venstre hjørne.</li>
+<li><strong>x-koordinaten</strong> bestemmer posisjonen horisontalt (sideveis). Verdien øker mot høyre.</li>
+<li><strong>y-koordinaten</strong> bestemmer posisjonen vertikalt (opp og ned). Verdien øker nedover.</li>
+</ul>
+<p><img src="/p5js-workshop/images/p5js-coordinate-system.svg" alt="Illustrasjon av p5.js-koordinatsystemet"></p>
 <h3 id="farger">Farger</h3>
 <ul>
 <li><code>background(farge)</code>: Setter bakgrunnsfargen.</li>
