@@ -1,5 +1,5 @@
 ---
-title: "Introduksjon del 2"
+title: "Introduksjon"
 description: "Vi løper gjennom de grunnleggende delene av p5.js"
 ---
 
