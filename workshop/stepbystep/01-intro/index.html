@@ -6,7 +6,92 @@
 <h2 id="1-hello-world">1. Hello World!</h2>
 <p>I dette eksempelet starter vi med et veldig enkelt program som skriver ut “Hello World!” på skjermen.</p>
 <p>Klikk her for å komme inn på eksempelet: <a href="https://editor.p5js.org/fborlaug/sketches/vVgEvTlxw" target="_blank" rel="noreferrer">1.Hello World</a>.</p>
+<hr>
 <h2 id="2-former">2. Former</h2>
 <p>Noe av det første du skal få lære i <em><strong>p5.js</strong></em> er å tegne rektangler og ellipser. Eller firkanter og rundinger som vi sier til vanlig.</p>
-<p>Klikk her for å komme inn på eksempelet: <a href="https://editor.p5js.org/fborlaug/sketches/NC1EKeDuQ" target="_blank" rel="noreferrer">2.Former</a>.</p> </article> <div class="flex justify-between mt-12 border-t-2 border-gray-700 pt-8"> <div> <a href="/p5js-workshop/workshop/reference/01-referanse" class="block text-blue-300 hover:bg-gray-700 p-4 rounded border border-gray-600">
+<p>Klikk her for å komme inn på eksempelet: <a href="https://editor.p5js.org/fborlaug/sketches/NC1EKeDuQ" target="_blank" rel="noreferrer">2.Former</a>.</p>
+<hr>
+<h2 id="3--å-tegne-en-h">3.  Å tegne en H</h2>
+<p>Klarer du å tegne en H med tre firkanter?</p>
+<p>Klikk her for å komme inn på eksempelet: <a href="https://editor.p5js.org/fborlaug/sketches/OVx4habRo" target="_blank" rel="noreferrer">3. Tegne en H</a>.</p>
+<hr>
+<h2 id="4-farger">4. Farger</h2>
+<p>Kommandoen <code>fill(r, g, b);</code> bestemmer fargen ting vi tegner fylles med. Man setter inn tall fra 0 til 255 for r, g og b som sier hvor rød, hvor grønn og hvor blå fargen skal være.</p>
+<p>For eksempel blir <code>fill(0, 0, 0);</code> svart, <code>fill(100, 0, 100);</code> blir mørk lilla og <code>fill(255, 255, 0);</code> blir gul.</p>
+<p>Under har vi skrevet koden for to sirkler. En rød og en grønn. Klarer du å lage én til som er blå?</p>
+<p>Hva med andre farger?</p>
+<p>Klikk her for å komme inn på eksempelet: <a href="https://editor.p5js.org/fborlaug/sketches/2UEnM7rR3" target="_blank" rel="noreferrer">4. Farger</a>.</p>
+<hr>
+<h2 id="5-flere-tegneverktøy">5. Flere tegneverktøy</h2>
+<p>Vi har litt flere tegneverktøy som er kjekt å vite om før vi går videre.</p>
+<p>Kommandoen <code>background(r, g, b);</code> setter farge på bakgrunnen. Man setter inn tall fra 0 til 255 på akkurat samme måte som i <code>fill(r, g, b);</code>.</p>
+<p>Kommandoen <code>line(a1, a2, b1, b2);</code> tegner en linje mellom to punkter. Man setter fire tall, hvor de to første er det første punktet og de to siste er det andre punktet.</p>
+<p>Med kommandoen <code>triangle(a1, a2, b1, b2, c1, c2);</code> tegner man en trekant ved å sette inn tre punkter på samme måte som <code>line();</code> tar to punkter.</p>
+<p>Klarer du å kode en tegning av et hus, nå som du har litt flere verktøy å tegne med?</p>
+<p>Klikk her for å komme inn på eksempelet: <a href="https://editor.p5js.org/fborlaug/sketches/hzYQdPKUr" target="_blank" rel="noreferrer">5. Flere tegneverktøy</a>.</p>
+<hr>
+<h2 id="6-bevegelse">6. Bevegelse</h2>
+<p>Hittil har vi bare lagd ting som står stille. Men ting blir jo mye mer spennende når de beveger seg!</p>
+<p>Koden vi har skrevet til nå skjer én gang, og så stopper den. Hvis vi vil at den skal kjøres om igjen og om igjen helt til vi stopper den pakker vi den inn på denne måten:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>function draw() {</span></span>
+<span class="line"><span>    Koden plasseres her</span></span>
+<span class="line"><span>}</span></span></code></pre><button class="copy-btn" type="button" data-code="function draw() {
+    Koden plasseres her
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p>I koden under har vi pakket inn kode som tegner en sirkel. I tillegg er det et par andre nye ting. <code>mouseX</code> og <code>mouseY</code> er det vi kaller variabler. Ting vi kan sette inn i stedet for tall. Akkurat disse to sier oss hvor musepekeren peker akkurat nå.</p>
+<p>Prøv å bytt om på <code>mouseX</code> og <code>mouseY</code>. Hva er det som skjer?</p>
+<p>Klikk her for å komme inn på eksempelet: <a href="https://editor.p5js.org/fborlaug/sketches/DoCdZC8u-" target="_blank" rel="noreferrer">6. Bevegelse</a>.</p>
+<hr>
+<h2 id="7-bevegelse-2">7. Bevegelse 2</h2>
+<p>Variabler som <code>mouseX</code> og <code>mouseY</code> kan brukes alle steder tall kan brukes.</p>
+<p>Hva skjer hvis du setter inn <code>mouseX</code> og <code>mouseY</code> i stedet for tall i <code>fill</code>-kommandoen?</p>
+<p>Klikk her for å komme inn på eksempelet: <a href="https://editor.p5js.org/fborlaug/sketches/8KERxDhTi" target="_blank" rel="noreferrer">7. Bevegelse 2</a>.</p>
+<hr>
+<h2 id="8-flere-innebygde-variabler">8. Flere innebygde variabler</h2>
+<p>I tillegg til <code>mouseX</code> og <code>mouseY</code> har vi noen andre nyttige innebygde variabler. <code>height</code> som er høyden på området vi tegner på og <code>width</code> som er bredden.</p>
+<p>Klarer du å tegne en strek fra hjørnet øverst til venstre til det nederst til høyre uten å bruke noe annet enn 0, <code>width</code> og <code>height</code> i <code>line()</code>-kommandoen?</p>
+<p>Hva med en strek mellom de to andre hjørnene?</p>
+<p>Klikk her for å komme inn på eksempelet: <a href="https://editor.p5js.org/fborlaug/sketches/iThPXTkET" target="_blank" rel="noreferrer">8. Flere innebygde variabler</a>.</p>
+<hr>
+<h2 id="9-å-regne-i-p5js">9. Å regne i p5.js</h2>
+<p>På samme måte som du kan bruke variabler der du kan bruke tall kan du også sette inn regnestykker i stedet for enkle tall.</p>
+<p>Når vi skal skrive regnestykker bruker vi <code>*</code> til ganging og <code>/</code> til deling.</p>
+<p>Hvis du vil plassere en sirkel på midten kan du for eksempel skrive <code>ellipse(width / 2, height / 2, 100, 100);</code></p>
+<p>Under ser du et litt mer spennende eksempel. Prøv å sette inn variabler i stedet for <code>100, 100</code> også. Klarer du å få til noe spennende?</p>
+<p>Klikk her for å komme inn på eksempelet: <a href="https://editor.p5js.org/fborlaug/sketches/ocqcp74bR" target="_blank" rel="noreferrer">9. Å regne i p5.js</a>.</p>
+<hr>
+<h2 id="10-å-skrive-tekst-på-skjermen">10: Å skrive tekst på skjermen</h2>
+<p>Når vi driver å regner med ting som endrer seg er fort gjort å bli forvirret. Særlig når vi ikke engang får se tallene vi regner ut, men bare det vi bruker dem til!</p>
+<p>Heldigvis har p5.js en kommando som ser slik ut: <code>text("En tekst", x, y);</code></p>
+<p>Hvis du for eksempel vil skrive “Hei” midt på skjermen skriver du koden <code>text("Hei!", width / 2, height / 2);</code></p>
+<p>Men vi kan også bruke text();-kommandoen til å skrive ut tall. Under har vi oppdatert forrige eksempel til å vise variablene x og y etter at vi har regnet dem ut.</p>
+<p>Klarer du å skrive navnet ditt inne i sirkelen?</p>
+<p>Klikk her for å komme inn på eksempelet: <a href="https://editor.p5js.org/fborlaug/sketches/eveoztcNA" target="_blank" rel="noreferrer">10. Å skrive tekst på skjermen</a>.</p>
+<hr>
+<h2 id="11-ifelse">11. if/else</h2>
+<p>Ofte vil vi bare at koden vi skriver gjør forskjellige ting i forskjellige tilfeller. Til det kan vi bruke noe som kalles en <code>if</code>-blokk. Den ser ut ca sånn:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> (test) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    kode</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="if (test) {
+    kode
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p>I en <code>if</code>-blokk kjøres koden som er mellom <code>{</code> og <code>}</code> bare dersom det vi har skrevet som test er sant(eller <code>true</code> som det heter på engelsk). Hvis testen er usann(<code>false</code>) går programmet videre uten å kjøre koden vi har pakket inn.</p>
+<p>På samme måte som variabelen <code>mouseX</code> sier oss noe om hvor musepekeren er, kan <code>mouseIsPressed</code> si oss om det trykkes med musa når koden kjører.</p>
+<p>Klarer du å lage et lite “tegneprogram” med <code>mouseX</code>, <code>mouseY</code> og <code>mouseIsPressed</code>?</p>
+<p>Klikk her for å komme inn på eksempelet: <a href="https://editor.p5js.org/fborlaug/sketches/VmLMUBGnk" target="_blank" rel="noreferrer">11. if/else</a>.</p>
+<hr>
+<h2 id="12-mer-om-ifelse">12. Mer om if/else</h2>
+<p>Når vi lager tester til å bruke i <code>if</code>-setninger kan vi regne som vanlig, men for å ha en test må vi ha <code>true</code> eller <code>false</code>, og derfor må vi gjerne sammenligne tall. Til det har vi en del forskjellige tegn.</p>
+<p>Det vi kanskje bruker oftest er <code>></code> og <code>&#x3C;</code> til om å se om ett tall er større enn et annet. For eksempel vil testen i <code>if (1 &#x3C; 2) { }</code> alltid være sann(<code>true</code>), mens testen i <code>if (1 > 2) { }</code> alltid vil være usann(<code>false</code>).</p>
+<p>Hvis vi lurer på om to tall er helt like bruker vi <code>===</code>. For eksempel vil <code>(5 === 5)</code> alltid bli <code>true</code>, mens <code>(1 === 2)</code> alltid vil bli <code>false</code>.</p>
+<p>Til slutt har vi <code>!==</code> som er det motsatte av <code>===</code>. Den blir <code>true</code> hvis tallene er forskjellige.</p>
+<p>Klikk her for å komme inn på eksempelet: <a href="https://editor.p5js.org/fborlaug/sketches/FtXRjRvqOA" target="_blank" rel="noreferrer">12. Mer om if/else</a>.</p>
+<hr>
+<h2 id="13-løkker">13. Løkker</h2>
+<p>Hittil, hvis vi har hatt lyst til å gjøre noe flere ganger har vi bare skrevet det flere ganger etter hverandre. Heldigvis har vi noe vi kaller løkker, for å gjøre ting mange ganger.</p>
+<p>Den enkleste løkken er <code>while (test) { }</code></p>
+<p>Den fungerer veldig likt en <code>if</code>-blokk, med det unntaket at en <code>if</code>-blokk kun kjøres en gang dersom testen er sann, mens en <code>while</code>-løkke kjøres om igjen og om igjen så lenge testen er sann.</p>
+<p>Skriv navnet ditt mange ganger nedover skjermen ved hjelp av en <code>while</code>-løkke.</p>
+<p>Klikk her for å komme inn på eksempelet: <a href="https://editor.p5js.org/fborlaug/sketches/qV78ZQuok" target="_blank" rel="noreferrer">13. Løkker</a>.</p>
+<hr> </article> <div class="flex justify-between mt-12 border-t-2 border-gray-700 pt-8"> <div> <a href="/p5js-workshop/workshop/reference/01-referanse" class="block text-blue-300 hover:bg-gray-700 p-4 rounded border border-gray-600">
 &larr; Referanseark for p5.js </a> </div> <div>  </div> </div>  </div> </main> <script type="module">document.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll(".copy-btn").forEach(e=>{e.textContent="Kopier",e.addEventListener("click",async()=>{const o=e.dataset.code;if(o)try{await navigator.clipboard.writeText(o);const t=e.textContent;e.textContent="Kopiert!",setTimeout(()=>{e.textContent=t},2e3)}catch(t){console.error("Failed to copy: ",t)}})})});</script> </body> </html>
