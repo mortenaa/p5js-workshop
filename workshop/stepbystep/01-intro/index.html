@@ -93,5 +93,29 @@
 <p>Den fungerer veldig likt en <code>if</code>-blokk, med det unntaket at en <code>if</code>-blokk kun kjøres en gang dersom testen er sann, mens en <code>while</code>-løkke kjøres om igjen og om igjen så lenge testen er sann.</p>
 <p>Skriv navnet ditt mange ganger nedover skjermen ved hjelp av en <code>while</code>-løkke.</p>
 <p>Klikk her for å komme inn på eksempelet: <a href="https://editor.p5js.org/fborlaug/sketches/qV78ZQuok" target="_blank" rel="noreferrer">13. Løkker</a>.</p>
+<hr>
+<h2 id="14for-løkker">14.for-løkker</h2>
+<p>I tillegg til <code>while</code>-løkken har vi en løkke som ser slik ut: <code>for (start; test; oppdatering) { }</code></p>
+<p><code>for</code>-løkken er egentlig bare en mer kompakt versjon av <code>while</code>-løkken.</p>
+<p>Den <code>for</code>-løkken vi har lagt inn under gjør faktisk ganske akkurat det samme som <code>while</code>-løkken som var forrige eksempel.</p>
+<p>Bruk en <code>for</code>-løkke til å tegne mange streker som går til samme punkt.</p>
+<p>Klikk her for å komme inn på eksempelet: <a href="https://editor.p5js.org/fborlaug/sketches/q-_UAlLOb" target="_blank" rel="noreferrer">14. for-løkker</a>.</p>
+<hr>
+<h2 id="15doble-for-løkker">15.Doble for-løkker</h2>
+<p>Du kan ha mye rar kode inni en <code>for</code>-løkke. Du kan for eksempel til og med ha en <code>for</code>-løkke inni <code>for</code>-løkken din!</p>
+<p>Fyll bildeområdet med mange små sirkler. (Bonuspoeng om de også har litt forskjellig farge!)</p>
+<p>Klikk her for å komme inn på eksempelet: <a href="https://editor.p5js.org/fborlaug/sketches/xFa0ba0Sw" target="_blank" rel="noreferrer">15. Doble for-løkker</a>.</p>
+<hr>
+<h2 id="16endring-over-tid">16.Endring over tid</h2>
+<p>Som du kanskje vet nå kjøres <code>draw()</code>-funksjonen om igjen og om igjen helt til vi sier stopp.</p>
+<p>Slik vi har programmert til nå er det ikke slik at hva variablene var forrige gang har noe å si neste gang <code>draw()</code> kjøres. Det er fordi variablene våre forsvinner hver gang <code>draw()</code> er ferdig.</p>
+<p>Variabler som er utenfor <code>draw()</code>, derimot, forsvinner ikke før hele programmet stopper. Så hvis vi vil oppdatere en variabel litt etter hvert er det bare å gjøre som i eksemplet under.</p>
+<p>Klarer du å tegne en sirkel der du klikket med musa sist?</p>
+<p>Klikk her for å komme inn på eksempelet: <a href="https://editor.p5js.org/fborlaug/sketches/cTut6jhnk" target="_blank" rel="noreferrer">16. Endring over tid</a>.</p>
+<hr>
+<h2 id="17gjennomsiktighet">17.Gjennomsiktighet</h2>
+<p>Hvis vi gir fill ett ekstra tall sier det siste tallet hvor gjennomsiktig fargen er. 0 er helt usynlig. 255 er ikke gjennomsiktig i det hele tatt.</p>
+<p>Tegn tre gjennomsiktige sirkler som overlapper hverandre.</p>
+<p>Klikk her for å komme inn på eksempelet: <a href="https://editor.p5js.org/fborlaug/sketches/eJT4w47he" target="_blank" rel="noreferrer">17. Gjennomsiktighet</a>.</p>
 <hr> </article> <div class="flex justify-between mt-12 border-t-2 border-gray-700 pt-8"> <div> <a href="/p5js-workshop/workshop/reference/01-referanse" class="block text-blue-300 hover:bg-gray-700 p-4 rounded border border-gray-600">
 &larr; Referanseark for p5.js </a> </div> <div>  </div> </div>  </div> </main> <script type="module">document.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll(".copy-btn").forEach(e=>{e.textContent="Kopier",e.addEventListener("click",async()=>{const o=e.dataset.code;if(o)try{await navigator.clipboard.writeText(o);const t=e.textContent;e.textContent="Kopiert!",setTimeout(()=>{e.textContent=t},2e3)}catch(t){console.error("Failed to copy: ",t)}})})});</script> </body> </html>
