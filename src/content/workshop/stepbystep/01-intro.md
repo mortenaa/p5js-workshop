@@ -184,3 +184,51 @@ Klikk her for å komme inn på eksempelet: <a href="https://editor.p5js.org/fbor
 
 ---
 
+## 14.for-løkker
+
+I tillegg til `while`-løkken har vi en løkke som ser slik ut: `for (start; test; oppdatering) { }`
+
+`for`-løkken er egentlig bare en mer kompakt versjon av `while`-løkken.
+
+Den `for`-løkken vi har lagt inn under gjør faktisk ganske akkurat det samme som `while`-løkken som var forrige eksempel.
+
+Bruk en `for`-løkke til å tegne mange streker som går til samme punkt.
+
+Klikk her for å komme inn på eksempelet: <a href="https://editor.p5js.org/fborlaug/sketches/q-_UAlLOb" target="_blank" rel="noreferrer">14. for-løkker</a>.
+
+---
+
+## 15.Doble for-løkker
+
+Du kan ha mye rar kode inni en `for`-løkke. Du kan for eksempel til og med ha en `for`-løkke inni `for`-løkken din!
+
+Fyll bildeområdet med mange små sirkler. (Bonuspoeng om de også har litt forskjellig farge!)
+
+Klikk her for å komme inn på eksempelet: <a href="https://editor.p5js.org/fborlaug/sketches/xFa0ba0Sw" target="_blank" rel="noreferrer">15. Doble for-løkker</a>.
+
+---
+
+## 16.Endring over tid
+
+Som du kanskje vet nå kjøres `draw()`-funksjonen om igjen og om igjen helt til vi sier stopp.
+
+Slik vi har programmert til nå er det ikke slik at hva variablene var forrige gang har noe å si neste gang `draw()` kjøres. Det er fordi variablene våre forsvinner hver gang `draw()` er ferdig.
+
+Variabler som er utenfor `draw()`, derimot, forsvinner ikke før hele programmet stopper. Så hvis vi vil oppdatere en variabel litt etter hvert er det bare å gjøre som i eksemplet under.
+
+Klarer du å tegne en sirkel der du klikket med musa sist?
+
+Klikk her for å komme inn på eksempelet: <a href="https://editor.p5js.org/fborlaug/sketches/cTut6jhnk" target="_blank" rel="noreferrer">16. Endring over tid</a>.
+
+---
+
+## 17.Gjennomsiktighet
+
+Hvis vi gir fill ett ekstra tall sier det siste tallet hvor gjennomsiktig fargen er. 0 er helt usynlig. 255 er ikke gjennomsiktig i det hele tatt.
+
+Tegn tre gjennomsiktige sirkler som overlapper hverandre.
+
+Klikk her for å komme inn på eksempelet: <a href="https://editor.p5js.org/fborlaug/sketches/eJT4w47he" target="_blank" rel="noreferrer">17. Gjennomsiktighet</a>.
+
+---
+
