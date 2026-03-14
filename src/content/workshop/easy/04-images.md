@@ -3,6 +3,8 @@ title: "Vise bilder"
 description: "Lær å vise eksisterende bilder."
 ---
 
+___Denne leksjon er er oversatt fra [kidsakoder.no](https://oppgaver.kidsakoder.no/processing), og opprinnelig skrevet av Ruben Gjerstad Eide og Kine Gjerstad Eide___
+
 Her lærer du å vise bilder i p5.js. Du kan bruke bilder som du har lagret på datamaskinen din, eller du kan bruke bilder som er tilgjengelige på nettet.
 
 I denne oppgaven skal vi vise bilder ved å skrive kode i p5.js. Det kan være kult å bruke i presentasjoner på skolen, som bakgrunnsbilder i spill, eller andre ting. Vi kommer til å lære deg hvordan du kan bytte bilde ved å klikke på datamusa.
@@ -10,14 +12,14 @@ I denne oppgaven skal vi vise bilder ved å skrive kode i p5.js. Det kan være k
 Når du er gjennom oppgava skal du greie å sette opp et vindu som ser slik ut:
 ![bilde1](/p5js-workshop/images/bilde_preview.png)
 
-## Steg 1: Laste opp bildet
+## Steg 1: Første bilde
 Når du har åpna p5.js, så kan du starte med å lagre det tomme vinduet. Kall det hva du vil. Vi har valgt å kalle vårt bildevisningsprogram for `presentasjonen`. Pass på at du er logget inn på p5.js, ellers kan du ikke lagre prosjektet ditt.
 ![Startbilde](/p5js-workshop/images/color_start.png)
 
-Nå kan du høyreklikke på bildet under og lagre det på datamaskinen din.
+Vi skal bruke dette bildet i oppgaven. Bildet har adressen: `https://mortenaa.github.io/p5js-workshop/images/color_undersea.jpg`.
 ![Bilde av sjø](/p5js-workshop/images/color_undersea.jpg)
 
-Så kan du klikke på ">"-knappen under play-knappen i p5.js. Deretter klikker du pluss-tegnet og velger "Upload File". Finn bildet du nettopp lagret og dra det inn i "Upload File"-vinduet. Nå skal bildet være lastet opp i p5.js, og du kan se det i "Sketch Files"-delen.
+Vi kan laste ned bildet, og laste det opp i p5.js. Det skal vi ikke gjøre i denne oppgaven. Vi velger å laste inn bildet direkte fra nettet. Det gjør vi ved å skrive inn adressen til bildet i koden vår.
 
 I web editoren kan du skrive kode for å lage variablen som skal holde bildet. Skrive inn på første linje foran function setup():
 ```javascript
@@ -61,29 +63,19 @@ function draw() {
 
 Nå skal vi få frem bildet i vinduet du har laget. Først må vi laste inn bildet, det gjør vi inne i setup-metoden. 
 
-- Først må du skrive `async` foran `function setup()`, slik at det ser slik ut:
-```javascript
-async function setup() {
-  createCanvas(640, 420);
-}
-```
-
-- async er en måte å fortelle p5.js at det kommer til å være noe i setup-funksjonen som tar litt tid, og at p5.js må vente på det før den fortsetter. Det er viktig at vi skriver async her, ellers kommer ikke bildet til å vises.
-
 - Så må du skrive inn følgende kode inne i setup-funksjonen, under createCanvas-linjen:
-    - Her må du passe på at filnavnet i koden er det samme som filnavnet på bildet du lastet opp. Hvis du for eksempel lastet opp et bilde som heter `bilde.jpg`, så må du skrive `bilde.jpg` i koden.
 
 ```javascript
-sjoen = await loadImage('undersea.jpg');
+sjoen = loadImage('https://mortenaa.github.io/p5js-workshop/images/color_undersea.jpg');
 ```
 
 Hele koden så langt skal se slik ut:
 ```javascript
 let sjoen;
 
-async function setup() {
+function setup() {
   createCanvas(640, 420);
-  sjoen = await loadImage('undersea.jpg');
+  sjoen = loadImage('https://mortenaa.github.io/p5js-workshop/images/color_undersea.jpg');
 }
 
 function draw() {
@@ -100,9 +92,9 @@ Hele koden så langt skal se slik ut:
 ```javascript
 let sjoen;
 
-async function setup() {
+function setup() {
   createCanvas(640, 420);
-  sjoen = await loadImage('undersea.jpg');
+  sjoen = loadImage('https://mortenaa.github.io/p5js-workshop/images/color_undersea.jpg');
 }
 
 function draw() {
@@ -133,9 +125,9 @@ Her er koden med de to siste parameterne i image. Når denne koden kjører, så 
 ```javascript
 let sjoen;
 
-async function setup() {
+function setup() {
   createCanvas(640, 420);
-  sjoen = await loadImage('undersea.jpg');
+  sjoen = loadImage('https://mortenaa.github.io/p5js-workshop/images/color_undersea.jpg');
 }
 
 function draw() {
@@ -146,10 +138,8 @@ function draw() {
 
 ## Steg 5: Vis 2 bilder
 
-Her er det nye bildet vi har valgt å bruke. Lagre det på samme sted som det forrige, eller finn et annet bilde du vil bruke. Gi bildet navnet `space.jpg`.
+Her er det nye bildet vi har valgt å bruke. Dette bildet har adressen: `https://mortenaa.github.io/p5js-workshop/images/color_space.jpg`.
 ![Bilde av verdensrommet](/p5js-workshop/images/color_space.jpg)
-
-Hugser du hvordan du lastet opp det første bildet? Se tilbake på steg 1 dersom du ikke husker det. Nå må du laste opp det nye bildet på samme måte som du lastet opp det første.
 
 For hver kodelinje du skriver inn, må du kjøre koden din for å se at du ikke har noen skrivefeil. Bildet vil ikke vises før du har skrevet inn alle linjene, men du vil få feilmelding dersom du har skrivefeil, og da vil du vite hvilken linje skrivefeilen er på.
 
@@ -161,7 +151,7 @@ Husker du hva du må gjøre nå?
 
 - Nå må bildet leses inn, da skriver vi denne kodelinja inni setup:
 ```javascript
-verdensrommet = await loadImage('space.jpg');
+verdensrommet = loadImage('https://mortenaa.github.io/p5js-workshop/images/color_space.jpg');
 ```
 
 - Nå gjenstår bare å fortelle programmet hvordan du vil at bildet skal vises. La oss starte med å putte det inn oppå det andre bildet. Da skriver vi denne kodelinja inn i draw-metoden:
@@ -184,10 +174,10 @@ Her er koden så langt:
 let sjoen;
 let verdensrommet;
 
-async function setup() {
+function setup() {
   createCanvas(640, 420);
-  sjoen = await loadImage('undersea.jpg');
-  verdensrommet = await loadImage('space.jpg');
+  sjoen = loadImage('https://mortenaa.github.io/p5js-workshop/images/color_undersea.jpg');
+  verdensrommet = loadImage('https://mortenaa.github.io/p5js-workshop/images/color_space.jpg');
 }
 
 function draw() {
@@ -254,10 +244,10 @@ let sjoen;
 let verdensrommet;
 let bildenummer = 0;
 
-async function setup() {
+function setup() {
   createCanvas(640, 420);
-  sjoen = await loadImage('undersea.jpg');
-  verdensrommet = await loadImage('space.jpg');
+  sjoen = loadImage('https://mortenaa.github.io/p5js-workshop/images/color_undersea.jpg');
+  verdensrommet = loadImage('https://mortenaa.github.io/p5js-workshop/images/color_space.jpg');
 }
 
 function draw() {
@@ -332,8 +322,9 @@ Her vil koden bare sjekke den andre if-setningen dersom den første ikke stemte.
 - Kjør koden og se at det fungerer, nå skal bilde byttes når du trykker på datamusa.
 - Skrive om koden inni `mouseReleased` slik at det er to if-setninger.
 - Skriv om koden inni `draw`, slik at du får `if` og så `else`.
-- Legg til dette bildet også:
+- Legg til dette bildet med adressen: `https://mortenaa.github.io/p5js-workshop/images/color_trekant.png`
 ![Bilde trekanter](/p5js-workshop/images/color_trekant.png)
+
 ### Ruller mellom alle tre bildene (da må du deklarere bilde, laste bilde, skrive en if-setning inni `draw` og en if-setning inni `mouseReleased` med `else` foran).
 - Gjør om koden slik at alle tre bildene er like store som vinduet.
 - Bytt om rekkefølgen, slik at trekantbilde vises rett etter bilde av verdensrommet.
@@ -344,10 +335,10 @@ let sjoen;
 let verdensrommet;
 let bildenummer = 0;
 
-async function setup() {
+function setup() {
   createCanvas(640, 420);
-  sjoen = await loadImage('undersea.jpg');
-  verdensrommet = await loadImage('space.jpg');
+  sjoen = loadImage('https://mortenaa.github.io/p5js-workshop/images/color_undersea.jpg');
+  verdensrommet = loadImage('https://mortenaa.github.io/p5js-workshop/images/color_space.jpg');
 }
 
 function draw() {
@@ -377,11 +368,11 @@ let verdensrommet;
 let trekant;
 let bildenummer = 0;
 
-async function setup() {
+function setup() {
   createCanvas(640, 420);
-  sjoen = await loadImage('undersea.jpg');
-  verdensrommet = await loadImage('space.jpg');
-  trekant = await loadImage('trekant.png');
+  sjoen = loadImage('https://mortenaa.github.io/p5js-workshop/images/color_undersea.jpg');
+  verdensrommet = loadImage('https://mortenaa.github.io/p5js-workshop/images/color_space.jpg');
+  trekant = loadImage('https://mortenaa.github.io/p5js-workshop/images/color_trekant.png');
 }
 
 function draw() {
