@@ -21,19 +21,20 @@ function draw() {
 <h3 id="setup"><code>setup()</code></h3>
 <p>Brukes til å initialisere programmet. Dette kan være å sette størrelsen på lerretet, laste inn bilder eller fonter, og sette startverdier for variabler.</p>
 <h3 id="draw"><code>draw()</code></h3>
-<p>Inneholder koden som tegner på lerretet. Siden <code>draw()</code> kjører i en løkke, vil endringer i variabler føre til animasjon.</p>
+<p>Inneholder koden som tegner på lerretet. Siden <code>draw()</code> kjører i en løkke, vil endringer i variabler som brukes til å tegne føre til animasjon.</p>
 <h2 id="variabler-og-datatyper">Variabler og Datatyper</h2>
-<p>Variabler brukes til å lagre informasjon som programmet ditt kan bruke.</p>
+<p>Variabler brukes til å lagre informasjon som programmet ditt kan bruke. En variabel har et navn og en verdi.</p>
 <h3 id="deklarering">Deklarering</h3>
 <p>Bruk <code>let</code> for variabler som kan endre verdi, og <code>const</code> for konstanter som ikke endrer seg.</p>
 <div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> score </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">; </span><span style="color:#6A737D">// Kan endres senere</span></span>
 <span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> GRAVITY</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> 9.8</span><span style="color:#E1E4E8">; </span><span style="color:#6A737D">// Kan ikke endres</span></span></code></pre><button class="copy-btn" type="button" data-code="let score = 0; // Kan endres senere
 const GRAVITY = 9.8; // Kan ikke endres" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p>Det er vanlig å bruke store bokstaver for navn på konstanter (<code>const</code>), men det er ikke nødvendig.</p>
 <h3 id="datatyper">Datatyper</h3>
 <ul>
 <li><strong>Tall (Number)</strong>: <code>let alder = 15;</code></li>
 <li><strong>Tekst (String)</strong>: <code>let navn = "Ola Nordmann";</code></li>
-<li><strong>Array (Liste)</strong>: <code>let farger = ["rød", "grønn", "blå"];</code></li>
+<li><strong>Liste (Array)</strong>: <code>let farger = ["rød", "grønn", "blå"];</code></li>
 </ul>
 <h2 id="operatorer">Operatorer</h2>
 <h3 id="aritmetiske">Aritmetiske</h3>
