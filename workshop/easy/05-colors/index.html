@@ -25,17 +25,17 @@
     // svart backgrunn
     background(0);
   }" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
-<p>Dette har du kanskje sett før. Når vi kaller på background med bare ett tall får vi en gråtone der 0 er sort og 255 er hvitt.</p>
-<p>// Dette er en kommentar. Det er tekst i koden som ikke har noen effekt, men som kan brukes til å forklare hva koden gjør. Kommentarer starter med // og fortsetter til slutten av linjen. Kommentarer er nyttige for å gjøre koden lettere å forstå for deg selv og andre som leser koden din.</p>
+<p>Dette har du kanskje sett før. Når vi kaller på <code>background</code> med bare ett tall får vi en gråtone der 0 er sort og 255 er hvitt.</p>
+<p><code>//</code> Dette er en kommentar. Det er tekst i koden som ikke har noen effekt, men som kan brukes til å forklare hva koden gjør. Kommentarer starter med <code>//</code> og fortsetter til slutten av linjen. Kommentarer er nyttige for å gjøre koden lettere å forstå for deg selv og andre som leser koden din.</p>
 </li>
 <li class="task-list-item">
 <p><input type="checkbox" disabled> Test ut å endre bakgrunnsfargen til hvit ved å bytte ut 0 med 255 i background-funksjonen. 0 = sort, 255 = hvitt, og alle tallene imellom er forskjellige gråtoner.</p>
 </li>
 <li class="task-list-item">
 <p><input type="checkbox" disabled> La oss endre på <code>draw</code> slik at vi får en rød bakgrunn:</p>
-<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">  function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">() {</span></span>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">() {</span></span>
 <span class="line"><span style="color:#B392F0">  background</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">255</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
-<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="  function draw() {
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="function draw() {
   background(255, 0, 0);
 }" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
 <p>Dette likner på det vi hadde i det første steget, men nå bruker vi plutselig tre tall istedenfor ett. La oss utforske dem.</p>
@@ -43,18 +43,18 @@
 </li>
 <li class="task-list-item">
 <p><input type="checkbox" disabled> La oss endre <code>background</code> igjen:</p>
-<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">  function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">() {</span></span>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">() {</span></span>
 <span class="line"><span style="color:#B392F0">  background</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">255</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
-<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="  function draw() {
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="function draw() {
   background(0, 255, 0);
 }" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
 <p>Når du kjører programmet, hvilken farge får du på bakgrunnen?</p>
 </li>
 <li class="task-list-item">
 <p><input type="checkbox" disabled> La oss endre <code>background</code> enda en gang:</p>
-<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">  function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">() {</span></span>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">() {</span></span>
 <span class="line"><span style="color:#B392F0">  background</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">255</span><span style="color:#E1E4E8">);</span></span>
-<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="  function draw() {
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="function draw() {
   background(0, 0, 255);
 }" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
 <p>Hvilke farge får du nå på bakgrunnen?</p>
@@ -65,7 +65,7 @@
 <p>Som nevnt har du kanskje lært om farger på skolen og brukt maling eller fargeblyanter. Du lærte nok om primærfargene rød, gul og blå, og at du kunne lage omtrent alle slags farger ved å blande disse sammen.</p>
 <p>Jo flere farger man blander sammen når man maler, desto mørkere ble den ferdige fargen. Dette er fordi malingen inneholder fargede pigmenter som absorberer lys. Jo flere farger av lyset som absorberes, desto færre farger og mindre lys reflekteres og treffer øyet ditt. For eksempel absorberer grønn maling rødt og blått lys, det grønne lyset reflekteres tilbake og treffer øyet ditt. Gul maling absorberer blått lys, og blå maling absorberer rødt og deler av det grønne lyset. Da gjenstår det bare grønt lys igjen, og derfor kan du blande gul og blå for å få grønn.</p>
 <p>I en datamaskin er det annerledes. Har du lagt merke til at skjermen lyser? Siden skjermen lyser, angir vi hvor mye hver farge skal lyse. Øyet reagerer på rødt, grønt og blått lys, så disse er valgt som de tre primærfargene i dataskjermer. Om du går nærme nok en gammel data- eller TV-skjerm kan du se de tre fargene hver for seg.</p>
-<p>Hvilke tre farger fikk du i stegene ovenfor? Nå forstår du kanskje hvorfor de tre verdiene <code>255, 0, 0</code>, <code>0, 255, 0</code> og `0, 0, 255 ga henholdsvis rød, grønn og blå?</p>
+<p>Hvilke tre farger fikk du i stegene ovenfor? Nå forstår du kanskje hvorfor de tre verdiene <code>255, 0, 0</code>, <code>0, 255, 0</code> og <code>0, 0, 255</code> ga henholdsvis rød, grønn og blå?</p>
 <p>Fordi primærfargene er rød, grønn og blå kalles dette systemet RGB. Det er et additivt system, fordi man legger sammen fargene, mens i tegning på papir jobber man med et subtraktivt system der farger trekkes fra.</p>
 <p>Vi kan også blande farger her, men det oppfører seg annerledes fra du kanskje er vant til fra maling. Hvis vi blander rødt og grønt, får vi gult. Hvis vi blander grønt og blått, får vi en slags turkis, kalt cyan. Hvis vi blander rødt og blått, får vi en slags rosa, kalt magenta. Når alle tre fargene er like sterke, får vi en gråtone. Med alle tre på fullt, <code>255</code>, får vi hvitt.</p>
 <p><img src="/p5js-workshop/images/col_rgb.png" alt="Blanding av farger"></p>
@@ -320,7 +320,7 @@ function draw() {
   fill(300, 100, 50);
   ellipse(3 * width / 4, 2 * height / 3, 100, 100);
 }" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
-<p>Her går vi gjennom fargetonene 60 grader ad gangen. Hvilke farger ligger på de seks vinklene: 0, 60, 120, 180, 240 og 300? Hva tror du befinner seg på 360 grader?</p>
+<p>Her går vi gjennom fargetonene 60 grader om gangen. Hvilke farger ligger på de seks vinklene: 0, 60, 120, 180, 240 og 300? Hva tror du befinner seg på 360 grader?</p>
 <p>Om du lurer på regnestykkene for plasseringene av sirklene, så deler vi bredden på fire fordi det blir fire tomrom med tre kolonner. Tilsvarende blir det tre tomrom i høyden når vi har to rader. Ved å dele på antall tomrom, får vi bredden på avstanden mellom to nabosirkler eller vinduskanten og den nærmeste sirkelen.</p>
 <ul class="contains-task-list">
 <li class="task-list-item">
@@ -515,7 +515,7 @@ function draw() {
 <p>Hvis du kjører programmet ser du en blå sirkel på en grønn bakgrunn. <code>color(32, 128, 64)</code> gir oss en verdi som vi kan putte i en color-variabel. Nå vi bruker variabelen i <code>background(bakgrunn)</code>, er det som om vi skrev <code>background(32, 128, 64)</code>.</p>
 </li>
 <li class="task-list-item">
-<p><input type="checkbox" disabled> La oss se hvordan vi kan lage en farge som ligger et sted mellom to farger med lerpColor. Legg til en ekstra farge for svart først i programmet:</p>
+<p><input type="checkbox" disabled> La oss se hvordan vi kan lage en farge som ligger et sted mellom to farger med <code>lerpColor</code>. Legg til en ekstra farge for svart først i programmet:</p>
 <p>I starten:</p>
 <div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> svart;</span></span></code></pre><button class="copy-btn" type="button" data-code="let svart;" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
 <p>Legg til i setup():</p>
