@@ -28,15 +28,15 @@ Her skal vi se hvordan bakgrunnsfargen bestemmes. I det første punktet viser vi
       background(0);
     }
   ```
-  Dette har du kanskje sett før. Når vi kaller på background med bare ett tall får vi en gråtone der 0 er sort og 255 er hvitt.
+  Dette har du kanskje sett før. Når vi kaller på `background` med bare ett tall får vi en gråtone der 0 er sort og 255 er hvitt.
   
-  // Dette er en kommentar. Det er tekst i koden som ikke har noen effekt, men som kan brukes til å forklare hva koden gjør. Kommentarer starter med // og fortsetter til slutten av linjen. Kommentarer er nyttige for å gjøre koden lettere å forstå for deg selv og andre som leser koden din.
+  `//` Dette er en kommentar. Det er tekst i koden som ikke har noen effekt, men som kan brukes til å forklare hva koden gjør. Kommentarer starter med `//` og fortsetter til slutten av linjen. Kommentarer er nyttige for å gjøre koden lettere å forstå for deg selv og andre som leser koden din.
 
 - [ ] Test ut å endre bakgrunnsfargen til hvit ved å bytte ut 0 med 255 i background-funksjonen. 0 = sort, 255 = hvitt, og alle tallene imellom er forskjellige gråtoner.
 
 - [ ] La oss endre på `draw` slik at vi får en rød bakgrunn:
   ```javascript
-    function draw() {
+  function draw() {
     background(255, 0, 0);
   }
   ```
@@ -46,7 +46,7 @@ Her skal vi se hvordan bakgrunnsfargen bestemmes. I det første punktet viser vi
 
 - [ ] La oss endre `background` igjen:
   ```javascript
-    function draw() {
+  function draw() {
     background(0, 255, 0);
   }
   ```
@@ -54,7 +54,7 @@ Her skal vi se hvordan bakgrunnsfargen bestemmes. I det første punktet viser vi
 
 - [ ] La oss endre `background` enda en gang:
   ```javascript
-    function draw() {
+  function draw() {
     background(0, 0, 255);
   }
   ```
@@ -70,7 +70,7 @@ Jo flere farger man blander sammen når man maler, desto mørkere ble den ferdig
 
 I en datamaskin er det annerledes. Har du lagt merke til at skjermen lyser? Siden skjermen lyser, angir vi hvor mye hver farge skal lyse. Øyet reagerer på rødt, grønt og blått lys, så disse er valgt som de tre primærfargene i dataskjermer. Om du går nærme nok en gammel data- eller TV-skjerm kan du se de tre fargene hver for seg.
 
-Hvilke tre farger fikk du i stegene ovenfor? Nå forstår du kanskje hvorfor de tre verdiene `255, 0, 0`, `0, 255, 0` og `0, 0, 255 ga henholdsvis rød, grønn og blå?
+Hvilke tre farger fikk du i stegene ovenfor? Nå forstår du kanskje hvorfor de tre verdiene `255, 0, 0`, `0, 255, 0` og `0, 0, 255` ga henholdsvis rød, grønn og blå?
 
 Fordi primærfargene er rød, grønn og blå kalles dette systemet RGB. Det er et additivt system, fordi man legger sammen fargene, mens i tegning på papir jobber man med et subtraktivt system der farger trekkes fra.
 
@@ -270,7 +270,7 @@ function draw() {
 }
 ```
 
-Her går vi gjennom fargetonene 60 grader ad gangen. Hvilke farger ligger på de seks vinklene: 0, 60, 120, 180, 240 og 300? Hva tror du befinner seg på 360 grader?
+Her går vi gjennom fargetonene 60 grader om gangen. Hvilke farger ligger på de seks vinklene: 0, 60, 120, 180, 240 og 300? Hva tror du befinner seg på 360 grader?
 
 Om du lurer på regnestykkene for plasseringene av sirklene, så deler vi bredden på fire fordi det blir fire tomrom med tre kolonner. Tilsvarende blir det tre tomrom i høyden når vi har to rader. Ved å dele på antall tomrom, får vi bredden på avstanden mellom to nabosirkler eller vinduskanten og den nærmeste sirkelen.
 
@@ -394,7 +394,7 @@ Vi skal også se på noen funksjoner for å jobbe med farger. Dette gjør at vi 
 
   Hvis du kjører programmet ser du en blå sirkel på en grønn bakgrunn. `color(32, 128, 64)` gir oss en verdi som vi kan putte i en color-variabel. Nå vi bruker variabelen i `background(bakgrunn)`, er det som om vi skrev `background(32, 128, 64)`.
 
-- [ ] La oss se hvordan vi kan lage en farge som ligger et sted mellom to farger med lerpColor. Legg til en ekstra farge for svart først i programmet:
+- [ ] La oss se hvordan vi kan lage en farge som ligger et sted mellom to farger med `lerpColor`. Legg til en ekstra farge for svart først i programmet:
 
   I starten:
   ```javascript
