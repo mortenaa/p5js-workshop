@@ -8,7 +8,7 @@ Her lærer du å vise bilder i p5.js. Du kan bruke bilder som du har lagret på 
 I denne oppgaven skal vi vise bilder ved å skrive kode i p5.js. Det kan være kult å bruke i presentasjoner på skolen, som bakgrunnsbilder i spill, eller andre ting. Vi kommer til å lære deg hvordan du kan bytte bilde ved å klikke på datamusa.
 
 Når du er gjennom oppgava skal du greie å sette opp et vindu som ser slik ut:
-[bilde1]
+![bilde1](/p5js-workshop/images/bilde_preview.png)
 
 ## Steg 1: Laste opp bildet
 Når du har åpna p5.js, så kan du starte med å lagre det tomme vinduet. Kall det hva du vil. Vi har valgt å kalle vårt bildevisningsprogram for `presentasjonen`. Pass på at du er logget inn på p5.js, ellers kan du ikke lagre prosjektet ditt.
