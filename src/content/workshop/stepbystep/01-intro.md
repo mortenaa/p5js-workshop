@@ -232,3 +232,107 @@ Klikk her for å komme inn på eksempelet: <a href="https://editor.p5js.org/fbor
 
 ---
 
+## 18. Datatyper
+
+Når vi programmerer med variabler i p5.js kan vi bruke forskjellige typer variabler. 
+
+Du har allerede sett typen tall og tekst.
+
+```javascript
+let i = 1;
+```
+
+Variaben `i` er av typen heltall, dvs. tallet er et helt tall uten desimaler. Vi har også tall med desimaler, som for eksempel 14.5.
+
+```javascript
+let j = 14.5;
+```
+
+Vi bruker ordet `let` for å lage en variabel, og så setter vi inn et navn på variabelen. Vi kan gi variabelen en verdi ved å skrive `=`, og så skriver vi inn verdien. Vi kan gi variabelen `i` nye verdier senere i programmet ved å skrive `i = 2;` for eksempel. Da skriver vi ikke `let` igjen, fordi vi allerede har laget variabelen `i`.
+
+Vi kan også gi en variabel en tekstverdi, som for eksempel "Hei". Da må vi skrive teksten i anførselstegn.
+
+```javascript
+let tekst = 'Hei';
+```
+
+Finn på noe å bruk variablene under til.
+
+Klikk her for å komme inn på eksempelet: <a href="https://editor.p5js.org/fborlaug/sketches/tKpLVuhIE" target="_blank" rel="noreferrer">18. Datatyper</a>.
+
+---
+
+## 19. Funksjoner
+
+Ofte når vi programmer skriver vi flere linjer kode som egentlig kan oppsummeres som én ting vi gjør. Da er det ganske vanlig å samle den koden i noe vi kaller en funksjon.
+
+Du har allerede sett mange funksjoner. Hver gang du har et ord etterfulgt av paranteser, som dette `fill(255, 255, 0);` er det en funksjon.
+
+Men nå skal du få lære å lage dine egne funksjoner. For eksempel, hvis vi skal tegne en gul sirkel trenger vi to linjer:
+
+```
+fill(255, 255, 0);
+ellipse(200, 200, 100, 100);
+```
+Hvis vi ville lage en funksjon for dette kunne den se for eksempel sånn ut:
+
+```
+function tegnGulSirkel(x, y, w) {
+    fill(255, 255, 0);
+    ellipse(x, y, w, w);
+}
+```
+
+Klarer du å gjøre ferdig funksjonen `tegnToSirkler`?
+
+Klikk her for å komme inn på eksempelet: <a href="https://editor.p5js.org/fborlaug/sketches/zQ5zueXKR" target="_blank" rel="noreferrer">19. Funksjoner</a>.
+
+---
+
+## 20.Objekter
+
+En siste viktig metode du skal få lære for å gjøre programmeringen lettere er bruk av objekter.
+
+Objekter er i sin enkleste form en samling av variabler som vi ønsker å jobbe med som én ting.
+
+Når vi programmerer grafikk, slik vi gjør i p5.js er det veldig ofte vi jobber med varianter av et veldig enkelt objekt: et punkt.
+
+Lag ett nytt punkt og bruk det til å tegne en firkant.
+
+Klikk her for å komme inn på eksempelet: <a href="https://editor.p5js.org/fborlaug/sketches/uLuq3b_Am" target="_blank" rel="noreferrer">20. Objekter</a>.
+
+---
+
+## 21. Mer avanserte objekter
+
+Objekter kan inneholde mer enn bare variabler. De kan også inneholde sine egne funksjoner.
+
+Hvis man har en funksjon som heter det samme som klassen er det den som brukes når man lager ett nytt objekt.
+
+Å gjøre oppgaver med denne type ting blir nok litt for upraktisk i denne løsningen. 
+
+Klikk her for å komme inn på eksempelet: <a href="https://editor.p5js.org/fborlaug/sketches/SUqMJDJ3s" target="_blank" rel="noreferrer">21. Mer avanserte objekter</a>.
+
+---
+
+## 22. Farger og sirkler
+
+Enkle grafiske ting trenger ikke nødvendigvis så mye kode. Dette er bare en litt utvidet versjon av oppgave 15.
+
+Funksjonen `dist(x1, y1, x2, y2)` er innebygd og regner ut avstanden mellom to punkter.
+
+Klikk her for å komme inn på eksempelet: <a href="https://editor.p5js.org/fborlaug/sketches/VdkdqkGio" target="_blank" rel="noreferrer">22. Farger og sirkler</a>.
+
+---
+
+## 25. Partikler
+
+Kule effekter med partikler:
+
+Klikk her for å komme inn på eksempelet: <a href="https://editor.p5js.org/fborlaug/sketches/sZ2oRjCaq" target="_blank" rel="noreferrer">25. Partikler</a>.
+
+
+
+
+
+
