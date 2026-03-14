@@ -117,5 +117,56 @@
 <p>Hvis vi gir fill ett ekstra tall sier det siste tallet hvor gjennomsiktig fargen er. 0 er helt usynlig. 255 er ikke gjennomsiktig i det hele tatt.</p>
 <p>Tegn tre gjennomsiktige sirkler som overlapper hverandre.</p>
 <p>Klikk her for å komme inn på eksempelet: <a href="https://editor.p5js.org/fborlaug/sketches/eJT4w47he" target="_blank" rel="noreferrer">17. Gjennomsiktighet</a>.</p>
-<hr> </article> <div class="flex justify-between mt-12 border-t-2 border-gray-700 pt-8"> <div> <a href="/p5js-workshop/workshop/reference/01-referanse" class="block text-blue-300 hover:bg-gray-700 p-4 rounded border border-gray-600">
+<hr>
+<h2 id="18-datatyper">18. Datatyper</h2>
+<p>Når vi programmerer med variabler i p5.js kan vi bruke forskjellige typer variabler.</p>
+<p>Du har allerede sett typen tall og tekst.</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> i </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">;</span></span></code></pre><button class="copy-btn" type="button" data-code="let i = 1;" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p>Variaben <code>i</code> er av typen heltall, dvs. tallet er et helt tall uten desimaler. Vi har også tall med desimaler, som for eksempel 14.5.</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> j </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 14.5</span><span style="color:#E1E4E8">;</span></span></code></pre><button class="copy-btn" type="button" data-code="let j = 14.5;" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p>Vi bruker ordet <code>let</code> for å lage en variabel, og så setter vi inn et navn på variabelen. Vi kan gi variabelen en verdi ved å skrive <code>=</code>, og så skriver vi inn verdien. Vi kan gi variabelen <code>i</code> nye verdier senere i programmet ved å skrive <code>i = 2;</code> for eksempel. Da skriver vi ikke <code>let</code> igjen, fordi vi allerede har laget variabelen <code>i</code>.</p>
+<p>Vi kan også gi en variabel en tekstverdi, som for eksempel “Hei”. Da må vi skrive teksten i anførselstegn.</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> tekst </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> 'Hei'</span><span style="color:#E1E4E8">;</span></span></code></pre><button class="copy-btn" type="button" data-code="let tekst = &#x27;Hei&#x27;;" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p>Finn på noe å bruk variablene under til.</p>
+<p>Klikk her for å komme inn på eksempelet: <a href="https://editor.p5js.org/fborlaug/sketches/tKpLVuhIE" target="_blank" rel="noreferrer">18. Datatyper</a>.</p>
+<hr>
+<h2 id="19-funksjoner">19. Funksjoner</h2>
+<p>Ofte når vi programmer skriver vi flere linjer kode som egentlig kan oppsummeres som én ting vi gjør. Da er det ganske vanlig å samle den koden i noe vi kaller en funksjon.</p>
+<p>Du har allerede sett mange funksjoner. Hver gang du har et ord etterfulgt av paranteser, som dette <code>fill(255, 255, 0);</code> er det en funksjon.</p>
+<p>Men nå skal du få lære å lage dine egne funksjoner. For eksempel, hvis vi skal tegne en gul sirkel trenger vi to linjer:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>fill(255, 255, 0);</span></span>
+<span class="line"><span>ellipse(200, 200, 100, 100);</span></span></code></pre><button class="copy-btn" type="button" data-code="fill(255, 255, 0);
+ellipse(200, 200, 100, 100);" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p>Hvis vi ville lage en funksjon for dette kunne den se for eksempel sånn ut:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>function tegnGulSirkel(x, y, w) {</span></span>
+<span class="line"><span>    fill(255, 255, 0);</span></span>
+<span class="line"><span>    ellipse(x, y, w, w);</span></span>
+<span class="line"><span>}</span></span></code></pre><button class="copy-btn" type="button" data-code="function tegnGulSirkel(x, y, w) {
+    fill(255, 255, 0);
+    ellipse(x, y, w, w);
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p>Klarer du å gjøre ferdig funksjonen <code>tegnToSirkler</code>?</p>
+<p>Klikk her for å komme inn på eksempelet: <a href="https://editor.p5js.org/fborlaug/sketches/zQ5zueXKR" target="_blank" rel="noreferrer">19. Funksjoner</a>.</p>
+<hr>
+<h2 id="20objekter">20.Objekter</h2>
+<p>En siste viktig metode du skal få lære for å gjøre programmeringen lettere er bruk av objekter.</p>
+<p>Objekter er i sin enkleste form en samling av variabler som vi ønsker å jobbe med som én ting.</p>
+<p>Når vi programmerer grafikk, slik vi gjør i p5.js er det veldig ofte vi jobber med varianter av et veldig enkelt objekt: et punkt.</p>
+<p>Lag ett nytt punkt og bruk det til å tegne en firkant.</p>
+<p>Klikk her for å komme inn på eksempelet: <a href="https://editor.p5js.org/fborlaug/sketches/uLuq3b_Am" target="_blank" rel="noreferrer">20. Objekter</a>.</p>
+<hr>
+<h2 id="21-mer-avanserte-objekter">21. Mer avanserte objekter</h2>
+<p>Objekter kan inneholde mer enn bare variabler. De kan også inneholde sine egne funksjoner.</p>
+<p>Hvis man har en funksjon som heter det samme som klassen er det den som brukes når man lager ett nytt objekt.</p>
+<p>Å gjøre oppgaver med denne type ting blir nok litt for upraktisk i denne løsningen.</p>
+<p>Klikk her for å komme inn på eksempelet: <a href="https://editor.p5js.org/fborlaug/sketches/SUqMJDJ3s" target="_blank" rel="noreferrer">21. Mer avanserte objekter</a>.</p>
+<hr>
+<h2 id="22-farger-og-sirkler">22. Farger og sirkler</h2>
+<p>Enkle grafiske ting trenger ikke nødvendigvis så mye kode. Dette er bare en litt utvidet versjon av oppgave 15.</p>
+<p>Funksjonen <code>dist(x1, y1, x2, y2)</code> er innebygd og regner ut avstanden mellom to punkter.</p>
+<p>Klikk her for å komme inn på eksempelet: <a href="https://editor.p5js.org/fborlaug/sketches/VdkdqkGio" target="_blank" rel="noreferrer">22. Farger og sirkler</a>.</p>
+<hr>
+<h2 id="25-partikler">25. Partikler</h2>
+<p>Kule effekter med partikler:</p>
+<p>Klikk her for å komme inn på eksempelet: <a href="https://editor.p5js.org/fborlaug/sketches/sZ2oRjCaq" target="_blank" rel="noreferrer">25. Partikler</a>.</p> </article> <div class="flex justify-between mt-12 border-t-2 border-gray-700 pt-8"> <div> <a href="/p5js-workshop/workshop/reference/01-referanse" class="block text-blue-300 hover:bg-gray-700 p-4 rounded border border-gray-600">
 &larr; Referanseark for p5.js </a> </div> <div>  </div> </div>  </div> </main> <script type="module">document.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll(".copy-btn").forEach(e=>{e.textContent="Kopier",e.addEventListener("click",async()=>{const o=e.dataset.code;if(o)try{await navigator.clipboard.writeText(o);const t=e.textContent;e.textContent="Kopiert!",setTimeout(()=>{e.textContent=t},2e3)}catch(t){console.error("Failed to copy: ",t)}})})});</script> </body> </html>
