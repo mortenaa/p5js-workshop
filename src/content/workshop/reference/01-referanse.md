@@ -25,11 +25,11 @@ function draw() {
 Brukes til å initialisere programmet. Dette kan være å sette størrelsen på lerretet, laste inn bilder eller fonter, og sette startverdier for variabler.
 
 ### `draw()`
-Inneholder koden som tegner på lerretet. Siden `draw()` kjører i en løkke, vil endringer i variabler føre til animasjon.
+Inneholder koden som tegner på lerretet. Siden `draw()` kjører i en løkke, vil endringer i variabler som brukes til å tegne føre til animasjon.
 
 ## Variabler og Datatyper
 
-Variabler brukes til å lagre informasjon som programmet ditt kan bruke.
+Variabler brukes til å lagre informasjon som programmet ditt kan bruke. En variabel har et navn og en verdi.
 
 ### Deklarering
 Bruk `let` for variabler som kan endre verdi, og `const` for konstanter som ikke endrer seg.
@@ -38,11 +38,12 @@ Bruk `let` for variabler som kan endre verdi, og `const` for konstanter som ikke
 let score = 0; // Kan endres senere
 const GRAVITY = 9.8; // Kan ikke endres
 ```
+Det er vanlig å bruke store bokstaver for navn på konstanter (`const`), men det er ikke nødvendig.
 
 ### Datatyper
 - **Tall (Number)**: `let alder = 15;`
 - **Tekst (String)**: `let navn = "Ola Nordmann";`
-- **Array (Liste)**: `let farger = ["rød", "grønn", "blå"];`
+- **Liste (Array)**: `let farger = ["rød", "grønn", "blå"];`
 
 ## Operatorer
 
