@@ -5,7 +5,7 @@ description: "Lær å lage en sprettende ball med variabler og logikk."
 
 # Introduksjon:
 
-I denne modulen skal vi lære et programmeringsspråk som heter p5.js. Det
+I denne modulen skal vi lære å lage en animasjon med p5.js. P5.js 
 ble laget for å gjøre programmering lett for designere og andre som ikke har
 programmert før. p5.js egner seg til å lage multimedieprogrammer, spill og
 liknende. Mange liker p5.js fordi det er raskt å lage programmer som

@@ -27,7 +27,7 @@ nesten alle programmer vi lager i p5.js.
 
 ## Gjør dette:
 
-- [ ] Start p5.js-editoren og skriv dette:
+- [ ] Åpne p5.js-editoren og skriv dette:
 
 ```javascript
 function setup(){
@@ -47,21 +47,21 @@ function setup(){
 Her er en oversikt over hvordan man skriver tegn som ofte brukes i p5.js og
 andre programmeringsspråk.
 
- | Tegn  | Windows/Linux            | Mac                           |
- |:-----:| ------------------------ | ----------------------------- |
- |  `;`  | `shift + ,`              | `shift + ,`                   |
- |  `"`  | `shift + 2`              | `shift + 2`                   |
- |  `\'` | `\'` (til høyre for Æ)   | `\'` (til venstre for 1)      |
- |  `\|` | `\|` (til venstre for 1) | `alt + 7`                     |
- |  `\&` | `shift + 6`              | `shift + 6`                   |
- |  `+`  | `+` (til høyre for 0)    | `+` (til høyre for 0)         |
- |  `-`  | `-` (til høyre for .)    | `-` (til høyre for .)         |
- |  `*`  | `shift + '`              | `shift + @` (til høyre for Æ) |
- |  `/`  | `shift + 7`              | `shift + 7`                   |
- |  `\[` | `alt gr + 8`             | `alt + 8`                     |
- |  `\]` | `alt gr + 9`             | `alt + 9`                     |
- |  `{`  | `alt gr + 7`             | `shift + alt + 8`             |
- |  `}`  | `alt gr + 0`             | `shift + alt + 9`             |
+ | Tegn | Windows/Linux            | Mac                           |
+ |:----:|--------------------------|-------------------------------|
+ | `;`  | `shift + ,`              | `shift + ,`                   |
+ | `"`  | `shift + 2`              | `shift + 2`                   |
+ | `'`  | `'` (til høyre for Æ)    | `'` (til venstre for 1)       |
+ | `\|` | `\|` (til venstre for 1) | `option + 7`                  |
+ | `&` | `shift + 6`              | `shift + 6`                   |
+ | `+`  | `+` (til høyre for 0)    | `+` (til høyre for 0)         |
+ | `-`  | `-` (til høyre for .)    | `-` (til høyre for .)         |
+ | `*`  | `shift + '`              | `shift + @` (til høyre for Æ) |
+ | `/`  | `shift + 7`              | `shift + 7`                   |
+ | `[` | `alt gr + 8`             | `option + 8`                  |
+ | `]` | `alt gr + 9`             | `option + 9`                  |
+ | `{`  | `alt gr + 7`             | `shift + alt + 8`             |
+ | `}`  | `alt gr + 0`             | `shift + alt + 9`             |
 
 ## Prøv dette:
 
