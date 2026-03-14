@@ -5,19 +5,24 @@ description: "En kort introduksjon til p5.js."
 
 I denne guiden skal vi bruke ["p5.js Web Editor"](https://editor.p5js.org/) til å skrive, lagre og kjøre programmer.
 
-p5.js Web Editor er et nettsted der programmerere kan skrive, teste, kjøre eller eksperimentere p5.js‑programmer uten å måtte laste ned eller sette opp en kodeeditor på datamaskinen. En kodeeditor gjør det enklere å skrive og lese kode ved å strukturere og fargelegge teksten på en måte som hjelper programmerere å se de ulike delene av koden.
+p5.js Web Editor er et nettsted der du kan skrive, teste, kjøre eller eksperimentere p5.js‑programmer uten å måtte laste ned eller sette opp en kodeeditor på datamaskinen. En kodeeditor gjør det enklere å skrive og lese kode ved å strukturere og fargelegge teksten på en måte som hjelper programmerere å se de ulike delene av koden.
 
 ## Hva du trenger
 
 1. Tilgang til internett og en moderne nettleser, for eksempel Chrome, Firefox, Safari eller Edge.
 2. En stasjonær datamaskin, bærbar datamaskin eller Chromebook.
 
-## Steg 1: Åpne registreringssiden
+## Steg 1: Åpne p5.js Web editor
 
 Åpne en nettleser på datamaskinen og gå til <a href="https://editor.p5js.org/" target="_blank" rel="noreferrer">`https://editor.p5js.org/`</a>.
+
+Her kan du opprette en egen konto i p5.js Web Editor. Gjør du det kan du lagre dine egen programmer og dele dem med andre.
+
 Klikk på "Sign up"-lenken øverst til høyre på nettsiden.
 
 ![Skjermbilde av "Sign up"-siden i p5.js Web Editor](/p5js-workshop/images/p5_editor_sign_up.png)
+
+Det er mulig å gjennomføre oppgavene uten å registrere en egen konto, men da kan du ikke lagre dine egen programmer, hvis du vil jobbe videre med dem senere. I så fall kan du gå videre til Steg 3.
 
 ## Steg 2: Lage konto
 
@@ -44,7 +49,7 @@ Når du er på registreringssiden, lager du en konto i p5.js Web Editor på en a
 
 ## Steg 3: Utforsk web‑editoren
 
-p5.js Web Editor er et nettbasert miljø der programmerere kan skrive og teste p5.js‑kode. Nå skal vi utforsk de ulike delene av p5.js Web Editor og hva de brukes til.
+p5.js Web Editor er et nettbasert miljø der du kan skrive og teste p5.js‑kode. Nå skal vi utforsk de ulike delene av p5.js Web Editor og hva de brukes til.
 
 Diagrammet under viser og beskriver hver del av brukergrensesnittet i editoren:
 ![p5 editor grensesnitt](/p5js-workshop/images/p5_editor_interface_breakdown.png)
@@ -75,14 +80,14 @@ Koden over lager et canvas‑element i forhåndsvisningen som er 400 piksler bre
 
 ### createCanvas()
 
-Dataskjermer er bygd opp av bittesmå lys som kalles piksler. Det er de minste byggesteinene i alle bilder. Linjen med kode som lager et tegneområde i forhåndsvisningen er createCanvas(400, 400). Uten denne linjen har du ikke noe å tegne på! Tallene 400, 400 sier hvor bredt og hvor høyt canvaset skal være, målt i piksler. Disse tallene kalles argumenter til createCanvas()-funksjonen.
+Dataskjermer er bygd opp av bittesmå lys som kalles piksler. Det er de minste byggesteinene i alle bilder. Linjen med kode som lager et tegneområde i forhåndsvisningen er createCanvas(400, 400). Uten denne linjen har du ikke noe å tegne på! Tallene 400, 400 sier hvor bredt og hvor høyt canvaset skal være, målt i piksler. Disse tallene kalles argumenter til `createCanvas()`-funksjonen.
 
-Verdiene du skriver inni parentesene til en funksjon, kalles argumenter – altså verdier du bruker for å tilpasse hvordan funksjonen oppfører seg. createCanvas() står inne i setup()-funksjonen for å lage et HTML‑canvas‑element som du kan tegne på.
+Verdiene du skriver inni parentesene til en funksjon, kalles argumenter – altså verdier du bruker for å tilpasse hvordan funksjonen oppfører seg. `createCanvas()` står inne i `setup()`-funksjonen for å lage et HTML‑canvas‑element som du kan tegne på.
 
 ## Steg 5: Endre fargen på canvaset
 - Du kan skrive kommandoer for hvilken som helst skisse i teksteditoren, og se resultatet i forhåndsvisningen ved å klikke på Play.
 - Endre bakgrunnsfargen på canvaset ved å endre argumentet til background()-funksjonen.
-    - Bytt background(220); til background("aqua"); og trykk på Play.
+    - Bytt `background(220);` til `background("aqua");` og trykk på Play.
 
 ```javascript
 function setup() {
@@ -93,12 +98,12 @@ function draw() {
 }
 ```
 ### background()
-background()-funksjonen farger bakgrunnen i en bestemt farge. Du kan bruke ord inni anførselstegn eller tallverdier for å sette fargen på bakgrunnen til canvaset.
+´background()`-funksjonen farger bakgrunnen i en bestemt farge. Du kan bruke ord inni anførselstegn eller tallverdier for å sette fargen på bakgrunnen til canvaset.
 
 ## Steg 6: Tegn figurer på canvaset
 
 - Tegn en sirkel på canvaset.
-    - Legg til denne kodelinjen under background()-funksjonen:
+    - Legg til denne kodelinjen under `background()`-funksjonen:
     ```javascript
     //circle in the center with a width of 100
     circle(200,200,100);
@@ -118,11 +123,14 @@ function draw() {
   circle(200, 200, 100);
 }
 ```
+
+Linjene som starter med `//` er kommentarer. Kommentarer kan være nyttige for å minne seg på hva koden gjør, men de har ingen påvirkning på hvordan koden fungerer.
+
 ### draw()
 
-Du kan tegne figurer på canvaset ved å skrive bestemte kommandoer for figurer inne i klammeparentesene {} etter function draw().
+Du kan tegne figurer på canvaset ved å skrive bestemte kommandoer for figurer inne i klammeparentesene `{}` etter function `draw()`.
 
-Skissen over tegner en sirkel på canvaset ved å kalle circle()-funksjonen inne i draw(). De to første argumentene – 200, 200 – plasserer sirkelen midt på canvaset, og det siste argumentet – 100 – sier at sirkelen er 100 piksler bred. Kommentarene som er skrevet inn i skissen i linjene over circle()-funksjonen forklarer hva koden gjør.
+Skissen over tegner en sirkel på canvaset ved å kalle `circle()`-funksjonen inne i `draw()`. De to første argumentene – `200, 200` – plasserer sirkelen midt på canvaset, og det siste argumentet – `100` – sier at sirkelen er 100 piksler bred. Kommentarene som er skrevet inn i skissen i linjene over `circle()`-funksjonen forklarer hva koden gjør.
 
 ## Steg 7: Eksperimenter!
 
