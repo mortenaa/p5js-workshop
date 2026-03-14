@@ -3,7 +3,7 @@ title: "Vise bilder"
 description: "Lær å vise eksisterende bilder."
 ---
 
-___Denne leksjon er er oversatt fra [kidsakoder.no](https://oppgaver.kidsakoder.no/processing), og opprinnelig skrevet av Ruben Gjerstad Eide og Kine Gjerstad Eide___
+___Denne leksjon er oversatt fra [kidsakoder.no](https://oppgaver.kidsakoder.no/processing), og opprinnelig skrevet av Ruben Gjerstad Eide og Kine Gjerstad Eide___
 
 Her lærer du å vise bilder i p5.js. Du kan bruke bilder som du har lagret på datamaskinen din, eller du kan bruke bilder som er tilgjengelige på nettet.
 

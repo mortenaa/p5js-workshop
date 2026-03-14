@@ -3,6 +3,8 @@ title: "Jobbe med farger"
 description: "Lær å jobbe med farger"
 ---
 
+___Denne leksjon er oversatt fra [kidsakoder.no](https://oppgaver.kidsakoder.no/processing), og opprinnelig skrevet av Sigmund Hansen___
+
 På skolen lærer man om farger og hvordan man kan blande dem for å få andre farger. Slik er det med farger i datamaskinen også; vi blander primærfarger og mengden av hver primærfarge bestemmer hvilken farge vi får. Hvis vi sammenligner blanding av malingsfarger med blanding av farger på en dataskjerm, fungerer blandingen litt annerledes. Hvordan blandingen fungerer på en dataskjerm skal du lære mer om i denne leksjonen med p5.js.
 
 ![Blanding av farger](/p5js-workshop/images/col_rgb.png)
