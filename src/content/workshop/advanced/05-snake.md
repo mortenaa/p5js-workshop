@@ -7,12 +7,27 @@ description: Et enkelt Snake-spill laget i p5.js, hvor du styrer en slange som v
 
 I denne leksjonen kan du prøve å lære av å lese koden for et enkelt Snake-spill laget i p5.js. Spillet går ut på at du styrer en slange som beveger seg rundt på skjermen, og målet er å spise mat som dukker opp. Hver gang slangen spiser maten, vokser den, og spillet er over hvis slangen krasjer i seg selv eller veggen.
 
+I koden er slangen en array av ledd. En arrayen er en liste med elementer. Hvert ledd av slangen er et element i listen. Så arrayen `slange` inneholder alle leddene i slangen.
+
+I starten er slangen bare ett ledd, som er hodet. Derfor lager vi arrayen slik:
+`slange = Array.of(slangeHode);`
+
+Hvert ledd/element i arrayen kan vi aksessere ved å bruke indekser. For eksempel, `slange[0]` gir oss det første leddet i slangen, som er hodet. `slange[1]` gir oss det andre leddet, og så videre.
+
+Hvert ledd er en vektor som representerer posisjonen til det leddet på skjermen. Vektoren består av x og y koordinater. Matens posisjon er også representert som en vektor. Vi lager en vektor ved å bruke `createVector(x, y)`, hvor x og y er koordinatene til posisjonen.
+
+
+
 ## Steg 1 
 
-Åpne p5.js editoren, fjern `draw` og `setup` funksjonene, og kopier koden for Snake-spillet som er gitt nederst i denne leksjonen. Kjør spillet, og les koden etterpå for å se hvordan spillet fungerer. Prøv å forstå hva hver del av koden gjør, og hvordan de forskjellige funksjonene og variablene samhandler for å skape spillet. Om du ikke forstår koden, prøv likevel å fortsette. Du vil nok lære mye bare ved å eksperimentere med koden og se hvordan endringene påvirker spillet. Ikke vær redd for å gjøre feil, det er en del av læringsprosessen!
+Åpne p5.js editoren, fjern `draw` og `setup` funksjonene, og kopier koden for Snake-spillet som er gitt nederst i denne leksjonen. Kjør spillet, og les koden etterpå for å se hvordan spillet fungerer. 
+
+Du styrer slangen ved å bruke piltastene på tastaturet. For at dine trykk på piltastene, skal registreres så må du ha fokus på spill-vinduet. Det betyr at du må klikke på spillvinduet før du kan bruke piltastene for å styre slangen.
+
+Prøv å forstå hva hver del av koden gjør, og hvordan de forskjellige funksjonene og variablene samhandler for å skape spillet. Om du ikke forstår koden, prøv likevel å fortsette. Du vil nok lære mye bare ved å eksperimentere med koden og se hvordan endringene påvirker spillet. Ikke vær redd for å gjøre feil, det er en del av læringsprosessen!
 
 ## Steg 2
-Ser at brettet er delt inn i celler, og at både slangen og maten beveger seg i disse cellene. Prøv å endre `cellSize` og `brettSize` for å se hvordan det påvirker spillet. Hva skjer hvis du gjør cellene større eller mindre? Hva skjer hvis du gjør brettet større eller mindre?
+Brettet er delt inn i celler, både slangen og maten beveger seg i disse cellene. Prøv å endre `cellSize` og `brettSize` for å se hvordan det påvirker spillet. Hva skjer hvis du gjør cellene større eller mindre? Hva skjer hvis du gjør brettet større eller mindre?
 
 ## Steg 3
 Eksperimenter med `frameRate` for å se hvordan det påvirker spillet. Hva skjer hvis du gjør oppdateringshastigheten raskere eller tregere? Hvordan påvirker det spillopplevelsen?
@@ -31,7 +46,7 @@ Forslag:
 - En startskjerm
 - Lydeffekter når slangen spiser maten eller krasjer. 
 - Endre farger og grafikk for å gjøre spillet mer visuelt tiltalende. Kanskje slange og maten kan ha andre farger eller former, eller kanskje du vil legge til en bakgrunnsbilde.
-- Mat kan dukke opp i slangens kropp. Det er uheldigvis, kanskje du kan legge til en sjekk for å sørge for at maten ikke dukker opp i slangens kropp når den blir plassert på nytt etter å ha blitt spist.
+- Mat kan dukke opp i slangens kropp. Det er uheldig, kanskje du kan legge til en sjekk for å sørge for at maten ikke dukker opp i slangens kropp når den blir plassert på nytt etter å ha blitt spist.
 
 ```javascript
 let slange;
