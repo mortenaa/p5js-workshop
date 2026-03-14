@@ -1,18 +1,194 @@
-<!DOCTYPE html><html lang="no"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><title>Tegne figurer</title><link rel="stylesheet" href="/p5js-workshop/_astro/index.DqmYikOj.css"></head> <body class="bg-gray-900 text-white font-sans text-lg leading-relaxed"> <main class="flex"> <aside class="w-1/4 bg-gray-800 p-8 border-r-2 border-gray-700 sticky top-0 h-screen overflow-y-auto"> <h2 class="text-1xl font-bold mb-8"><a href="/p5js-workshop/" class="text-blue-300 hover:text-blue-100">⬅ Startsiden</a></h2> <h2 class="text-3xl font-bold mb-8">Oppgaver</h2> <nav> <ul> <li class="mb-6"> <h3 class="text-2xl font-bold capitalize mb-2">Lett</h3> <ul> <li class="mb-1"> <a href="/p5js-workshop/workshop/easy/01-introduction" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Introduksjon </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/easy/03-drawing-shapes" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Tegne figurer </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/easy/04-images" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Vise bilder </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/easy/05-colors" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Jobbe med farger </a> </li> </ul> </li><li class="mb-6"> <h3 class="text-2xl font-bold capitalize mb-2">Middels</h3> <ul> <li class="mb-1"> <a href="/p5js-workshop/workshop/medium/01-variables" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Variabler </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/medium/02-bouncing-ball" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Sprettende ball </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/medium/03-tegnespillet" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Tegnespillet </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/medium/04-tetris" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Tetris </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/medium/05-to_player" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> ToPlayer </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/medium/06-uendelig_bakke" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Uendelig bakke </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/medium/07-verden-1" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Verden </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/medium/09-ping-pong" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Ping Pong </a> </li> </ul> </li><li class="mb-6"> <h3 class="text-2xl font-bold capitalize mb-2">Avansert</h3> <ul> <li class="mb-1"> <a href="/p5js-workshop/workshop/advanced/01-interactivity" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Interaktivitet </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/advanced/02-mangekanter" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Kanter, kanter, mange mangekanter </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/advanced/04-trigonometri" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Trigonometri, regulære mangekanter og stjerner </a> </li> </ul> </li><li class="mb-6"> <h3 class="text-2xl font-bold capitalize mb-2">Stegvis med kode</h3> <ul> <li class="mb-1"> <a href="/p5js-workshop/workshop/stepbystep/01-intro" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Introduksjon </a> </li> </ul> </li><li class="mb-6"> <h3 class="text-2xl font-bold capitalize mb-2">Referanse</h3> <ul> <li class="mb-1"> <a href="/p5js-workshop/workshop/reference/01-referanse" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Referanseark for p5.js </a> </li> </ul> </li> </ul> </nav> </aside> <div class="prose prose-invert w-3/4 p-12 overflow-y-auto"> <h1 class="text-5xl font-bold mb-8">Tegne figurer</h1>  <article class="prose prose-invert max-w-none"> <p>Her lærer du å tegne figurer som sirkler, firkanter og trekanter.</p>
+<!DOCTYPE html><html lang="no"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><title>Tegne Figurer</title><link rel="stylesheet" href="/p5js-workshop/_astro/index.DqmYikOj.css"></head> <body class="bg-gray-900 text-white font-sans text-lg leading-relaxed"> <main class="flex"> <aside class="w-1/4 bg-gray-800 p-8 border-r-2 border-gray-700 sticky top-0 h-screen overflow-y-auto"> <h2 class="text-1xl font-bold mb-8"><a href="/p5js-workshop/" class="text-blue-300 hover:text-blue-100">⬅ Startsiden</a></h2> <h2 class="text-3xl font-bold mb-8">Oppgaver</h2> <nav> <ul> <li class="mb-6"> <h3 class="text-2xl font-bold capitalize mb-2">Lett</h3> <ul> <li class="mb-1"> <a href="/p5js-workshop/workshop/easy/01-introduction" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Introduksjon </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/easy/03-drawing-shapes" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Tegne Figurer </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/easy/04-images" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Vise bilder </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/easy/05-colors" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Jobbe med farger </a> </li> </ul> </li><li class="mb-6"> <h3 class="text-2xl font-bold capitalize mb-2">Middels</h3> <ul> <li class="mb-1"> <a href="/p5js-workshop/workshop/medium/01-variables" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Variabler </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/medium/02-bouncing-ball" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Sprettende ball </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/medium/03-tegnespillet" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Tegnespillet </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/medium/04-tetris" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Tetris </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/medium/05-to_player" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> ToPlayer </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/medium/06-uendelig_bakke" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Uendelig bakke </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/medium/07-verden-1" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Verden </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/medium/09-ping-pong" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Ping Pong </a> </li> </ul> </li><li class="mb-6"> <h3 class="text-2xl font-bold capitalize mb-2">Avansert</h3> <ul> <li class="mb-1"> <a href="/p5js-workshop/workshop/advanced/01-interactivity" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Interaktivitet </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/advanced/02-mangekanter" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Kanter, kanter, mange mangekanter </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/advanced/04-trigonometri" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Trigonometri, regulære mangekanter og stjerner </a> </li> </ul> </li><li class="mb-6"> <h3 class="text-2xl font-bold capitalize mb-2">Stegvis med kode</h3> <ul> <li class="mb-1"> <a href="/p5js-workshop/workshop/stepbystep/01-intro" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Introduksjon </a> </li> </ul> </li><li class="mb-6"> <h3 class="text-2xl font-bold capitalize mb-2">Referanse</h3> <ul> <li class="mb-1"> <a href="/p5js-workshop/workshop/reference/01-referanse" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Referanseark for p5.js </a> </li> </ul> </li> </ul> </nav> </aside> <div class="prose prose-invert w-3/4 p-12 overflow-y-auto"> <h1 class="text-5xl font-bold mb-8">Tegne Figurer</h1>  <article class="prose prose-invert max-w-none"> <p>I denne leksjonen skal vi lære å tegne grunnleggende former og figurer. Dette er byggeklossene for alle slags tegninger og visualiseringer du kan lage med kode!</p>
+<h2 id="steg-1-lerretet-og-bakgrunnen">Steg 1: Lerretet og Bakgrunnen</h2>
+<p>Før vi kan tegne noe, setter vi som vanlig opp et “Lerret” med ønsket størrelse og farge.</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> setup</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#6A737D">  // Lager et lerret som er 400x400 piksler</span></span>
+<span class="line"><span style="color:#B392F0">  createCanvas</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">400</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">400</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#6A737D">  // Setter bakgrunnsfargen til en lys gråfarge</span></span>
+<span class="line"><span style="color:#B392F0">  background</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">220</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="function setup() {
+  // Lager et lerret som er 400x400 piksler
+  createCanvas(400, 400);
+}
+
+function draw() {
+  // Setter bakgrunnsfargen til en lys gråfarge
+  background(220);
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p>Kjør denne koden. Du skal nå se en grå firkant. Dette er lerretet vårt, klart til å bli tegnet på!</p>
+<h2 id="steg-2-rektangler">Steg 2: Rektangler</h2>
+<p>La oss tegne et rektangel. Vi bruker <code>rect()</code>-funksjonen. Den tar fire argumenter: <code>rect(x, y, bredde, høyde)</code>.</p>
+<ul>
+<li><code>x</code> og <code>y</code> bestemmer posisjonen til rektangelets øverste venstre hjørne.</li>
+<li><code>bredde</code> og <code>høyde</code> bestemmer størrelsen.</li>
+</ul>
+<p>La oss legge til et rektangel i <code>draw()</code>-funksjonen vår (behold <code>setup</code>-funksjonen som den er):</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  background</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">220</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#6A737D">  // Tegner et rektangel på posisjon (20, 20)</span></span>
+<span class="line"><span style="color:#6A737D">  // med bredde 150 og høyde 100</span></span>
+<span class="line"><span style="color:#B392F0">  rect</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">20</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">20</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">150</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="function draw() {
+  background(220);
+  // Tegner et rektangel på posisjon (20, 20)
+  // med bredde 150 og høyde 100
+  rect(20, 20, 150, 100);
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p>En kvadrat er bare et rektangel der bredden og høyden er lik.</p>
+<h3 id="prøv-selv">Prøv selv:</h3>
+<ul>
+<li>Kan du tegne et høyt, smalt rektangel?</li>
+<li>Kan du tegne et lite kvadrat nær midten av lerretet? (Husk at midten er på <code>(200, 200)</code> i et 400x400 lerret).</li>
+</ul>
+<h2 id="steg-3-ellipser-og-sirkler">Steg 3: Ellipser og Sirkler</h2>
+<p>For å tegne ellipser eller sirkler, bruker vi <code>ellipse()</code>-funksjonen. Den tar også fire argumenter: <code>ellipse(x, y, bredde, høyde)</code>.</p>
+<ul>
+<li><code>x</code> og <code>y</code> bestemmer posisjonen til ellipsens <strong>sentrum</strong>.</li>
+<li><code>bredde</code> og <code>høyde</code> bestemmer størrelsen.</li>
+</ul>
+<p>La oss tegne en ellipse:</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  background</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">220</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#6A737D">  // Tegner en ellipse med sentrum i (250, 100)</span></span>
+<span class="line"><span style="color:#6A737D">  // med bredde 120 og høyde 60</span></span>
+<span class="line"><span style="color:#B392F0">  ellipse</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">250</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">120</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">60</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="function draw() {
+  background(220);
+  // Tegner en ellipse med sentrum i (250, 100)
+  // med bredde 120 og høyde 60
+  ellipse(250, 100, 120, 60);
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p>En sirkel er en ellipse der bredden og høyden er like.</p>
+<h3 id="prøv-selv-1">Prøv selv:</h3>
+<ul>
+<li>Tegn en perfekt sirkel.</li>
+<li>Plasser en liten sirkel i nederste høyre hjørne av lerretet.</li>
+</ul>
+<h2 id="steg-4-farger-og-kanter">Steg 4: Farger og Kanter</h2>
+<p>Som standard er figurene hvite med en svart kant. Vi kan endre dette med <code>fill()</code> (fyll-farge) og <code>stroke()</code> (kant-farge).</p>
+<ul>
+<li><code>fill(r, g, b)</code>: Setter fyll-fargen. <code>r, g, b</code> er verdier for rød, grønn og blå (0-255).</li>
+<li><code>stroke(r, g, b)</code>: Setter kant-fargen.</li>
+<li><code>noFill()</code>: Gjør at figurene blir tegnet uten å ha noen fyll-farge.</li>
+<li><code>noStroke()</code>: Gjør at figurene tegnes uten kant.</li>
+</ul>
+<p><strong>Viktig:</strong> Når du setter en farge med <code>fill()</code> eller <code>stroke()</code>, vil alle figurene som tegnes <em>etterpå</em> få den fargen, helt til du endrer den igjen.</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  background</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">220</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">  // En rød sirkel med blå kant</span></span>
+<span class="line"><span style="color:#B392F0">  fill</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">255</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);   </span><span style="color:#6A737D">// Rødt fyll</span></span>
+<span class="line"><span style="color:#B392F0">  stroke</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">255</span><span style="color:#E1E4E8">); </span><span style="color:#6A737D">// Blå kant</span></span>
+<span class="line"><span style="color:#B392F0">  ellipse</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">80</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">80</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">  // En grønn firkant uten kant</span></span>
+<span class="line"><span style="color:#B392F0">  fill</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">255</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);   </span><span style="color:#6A737D">// Grønt fyll</span></span>
+<span class="line"><span style="color:#B392F0">  noStroke</span><span style="color:#E1E4E8">();        </span><span style="color:#6A737D">// Ingen kant</span></span>
+<span class="line"><span style="color:#B392F0">  rect</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">200</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">200</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="function draw() {
+  background(220);
+
+  // En rød sirkel med blå kant
+  fill(255, 0, 0);   // Rødt fyll
+  stroke(0, 0, 255); // Blå kant
+  ellipse(100, 100, 80, 80);
+
+  // En grønn firkant uten kant
+  fill(0, 255, 0);   // Grønt fyll
+  noStroke();        // Ingen kant
+  rect(200, 200, 100, 100);
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p><em>Mer om farger kan du lese i leksjonen <a href="05-colors">Jobbe med farger</a></em></p>
+<h2 id="steg-5-linjer-og-trekanter">Steg 5: Linjer og Trekanter</h2>
+<ul>
+<li><code>line(x1, y1, x2, y2)</code>: Tegner en linje fra punkt <code>(x1, y1)</code> til punkt <code>(x2, y2)</code>.</li>
+<li><code>triangle(x1, y1, x2, y2, x3, y3)</code>: Tegner en trekant med hjørner i de tre punktene.</li>
+</ul>
+<p>Disse er flotte for å lage mer komplekse former.</p>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  background</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">220</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">  stroke</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">); </span><span style="color:#6A737D">// Svart kantfarge</span></span>
+<span class="line"><span style="color:#B392F0">  strokeWeight</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">4</span><span style="color:#E1E4E8">); </span><span style="color:#6A737D">// Tykkere linje</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">  // En linje på skrå</span></span>
+<span class="line"><span style="color:#B392F0">  line</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">20</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">350</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">150</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">250</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">  // En trekant</span></span>
+<span class="line"><span style="color:#B392F0">  fill</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">255</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">255</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">); </span><span style="color:#6A737D">// Gult fyll</span></span>
+<span class="line"><span style="color:#B392F0">  triangle</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">200</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">350</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">280</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">250</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">360</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">350</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="function draw() {
+  background(220);
+
+  stroke(0); // Svart kantfarge
+  strokeWeight(4); // Tykkere linje
+
+  // En linje på skrå
+  line(20, 350, 150, 250);
+
+  // En trekant
+  fill(255, 255, 0); // Gult fyll
+  triangle(200, 350, 280, 250, 360, 350);
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p><code>strokeWeight(tykkelse)</code> kan brukes for å endre tykkelsen på linjer og kanter.</p>
+<h2 id="steg-6-la-oss-tegne-en-figur">Steg 6: La oss tegne en figur!</h2>
+<p>Nå kan du kombinere alt du har lært for å lage en enkel figur. Hva med et enkelt ansikt?</p>
+<p>Her er et eksempel på hvordan du kan tegne et smilefjes:</p>
 <div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> setup</span><span style="color:#E1E4E8">() {</span></span>
 <span class="line"><span style="color:#B392F0">  createCanvas</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">400</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">400</span><span style="color:#E1E4E8">);</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">() {</span></span>
 <span class="line"><span style="color:#B392F0">  background</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">220</span><span style="color:#E1E4E8">);</span></span>
-<span class="line"><span style="color:#B392F0">  ellipse</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">50</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">50</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">80</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">80</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">  // Ansiktet</span></span>
+<span class="line"><span style="color:#B392F0">  fill</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">255</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">255</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">); </span><span style="color:#6A737D">// Gult</span></span>
+<span class="line"><span style="color:#B392F0">  stroke</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  strokeWeight</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  ellipse</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">200</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">200</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">250</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">250</span><span style="color:#E1E4E8">); </span><span style="color:#6A737D">// Hode</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">  // Øyne</span></span>
+<span class="line"><span style="color:#B392F0">  fill</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">); </span><span style="color:#6A737D">// Svart</span></span>
+<span class="line"><span style="color:#B392F0">  ellipse</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">150</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">160</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">30</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">30</span><span style="color:#E1E4E8">); </span><span style="color:#6A737D">// Venstre øye</span></span>
+<span class="line"><span style="color:#B392F0">  ellipse</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">250</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">160</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">30</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">30</span><span style="color:#E1E4E8">); </span><span style="color:#6A737D">// Høyre øye</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">  // Munn (en bue)</span></span>
+<span class="line"><span style="color:#B392F0">  noFill</span><span style="color:#E1E4E8">(); </span><span style="color:#6A737D">// Ikke noe fyll for munnen</span></span>
+<span class="line"><span style="color:#B392F0">  strokeWeight</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">4</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#6A737D">  // arc(x, y, bredde, høyde, startVinkel, sluttVinkel)</span></span>
+<span class="line"><span style="color:#B392F0">  arc</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">200</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">230</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">150</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">PI</span><span style="color:#E1E4E8">);</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="function setup() {
   createCanvas(400, 400);
 }
 
 function draw() {
   background(220);
-  ellipse(50, 50, 80, 80);
-}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div> </article> <div class="flex justify-between mt-12 border-t-2 border-gray-700 pt-8"> <div> <a href="/p5js-workshop/workshop/easy/01-introduction" class="block text-blue-300 hover:bg-gray-700 p-4 rounded border border-gray-600">
+
+  // Ansiktet
+  fill(255, 255, 0); // Gult
+  stroke(0);
+  strokeWeight(2);
+  ellipse(200, 200, 250, 250); // Hode
+
+  // Øyne
+  fill(0); // Svart
+  ellipse(150, 160, 30, 30); // Venstre øye
+  ellipse(250, 160, 30, 30); // Høyre øye
+
+  // Munn (en bue)
+  noFill(); // Ikke noe fyll for munnen
+  strokeWeight(4);
+  // arc(x, y, bredde, høyde, startVinkel, sluttVinkel)
+  arc(200, 230, 150, 100, 0, PI);
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div>
+<p>Vi har brukt en ny funksjon her, <code>arc()</code>, for å tegne munnen. Den tegner en del av en ellipse. <code>PI</code> er en innebygd konstant som representerer 180 grader i radianer.</p>
+<h3 id="utfordringer">Utfordringer:</h3>
+<ul>
+<li>Kan du endre ansiktet til å se sint eller overrasket ut?</li>
+<li>Kan du tegne en enkel figur av et hus med en dør og et vindu?</li>
+</ul> </article> <div class="flex justify-between mt-12 border-t-2 border-gray-700 pt-8"> <div> <a href="/p5js-workshop/workshop/easy/01-introduction" class="block text-blue-300 hover:bg-gray-700 p-4 rounded border border-gray-600">
 &larr; Introduksjon </a> </div> <div> <a href="/p5js-workshop/workshop/easy/04-images" class="block text-blue-300 hover:bg-gray-700 p-4 rounded border border-gray-600"> Vise bilder &rarr;
 </a> </div> </div>  </div> </main> <script type="module">document.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll(".copy-btn").forEach(e=>{e.textContent="Kopier",e.addEventListener("click",async()=>{const o=e.dataset.code;if(o)try{await navigator.clipboard.writeText(o);const t=e.textContent;e.textContent="Kopiert!",setTimeout(()=>{e.textContent=t},2e3)}catch(t){console.error("Failed to copy: ",t)}})})});</script> </body> </html>
