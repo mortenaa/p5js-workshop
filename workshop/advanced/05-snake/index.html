@@ -1,0 +1,248 @@
+<!DOCTYPE html><html lang="no"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><title>Snake</title><link rel="stylesheet" href="/p5js-workshop/_astro/index.DqmYikOj.css"></head> <body class="bg-gray-900 text-white font-sans text-lg leading-relaxed"> <main class="flex"> <aside class="w-1/4 bg-gray-800 p-8 border-r-2 border-gray-700 sticky top-0 h-screen overflow-y-auto"> <h2 class="text-1xl font-bold mb-8"><a href="/p5js-workshop/" class="text-blue-300 hover:text-blue-100">⬅ Startsiden</a></h2> <h2 class="text-3xl font-bold mb-8">Oppgaver</h2> <nav> <ul> <li class="mb-6"> <h3 class="text-2xl font-bold capitalize mb-2">Lett</h3> <ul> <li class="mb-1"> <a href="/p5js-workshop/workshop/easy/01-introduction" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Introduksjon </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/easy/03-drawing-shapes" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Tegne Figurer </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/easy/04-images" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Vise bilder </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/easy/05-colors" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Jobbe med farger </a> </li> </ul> </li><li class="mb-6"> <h3 class="text-2xl font-bold capitalize mb-2">Middels</h3> <ul> <li class="mb-1"> <a href="/p5js-workshop/workshop/medium/01-variables" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Variabler </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/medium/02-bouncing-ball" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Sprettende ball </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/medium/03-tegnespillet" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Tegnespillet </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/medium/04-tetris" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Tetris </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/medium/05-to_player" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> ToPlayer </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/medium/06-uendelig_bakke" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Uendelig bakke </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/medium/07-verden-1" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Verden </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/medium/09-ping-pong" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Ping Pong </a> </li> </ul> </li><li class="mb-6"> <h3 class="text-2xl font-bold capitalize mb-2">Avansert</h3> <ul> <li class="mb-1"> <a href="/p5js-workshop/workshop/advanced/01-interactivity" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Interaktivitet </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/advanced/02-mangekanter" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Kanter, kanter, mange mangekanter </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/advanced/04-trigonometri" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Trigonometri, regulære mangekanter og stjerner </a> </li><li class="mb-1"> <a href="/p5js-workshop/workshop/advanced/05-snake" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Snake </a> </li> </ul> </li><li class="mb-6"> <h3 class="text-2xl font-bold capitalize mb-2">Stegvis med kode</h3> <ul> <li class="mb-1"> <a href="/p5js-workshop/workshop/stepbystep/01-intro" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Introduksjon </a> </li> </ul> </li><li class="mb-6"> <h3 class="text-2xl font-bold capitalize mb-2">Referanse</h3> <ul> <li class="mb-1"> <a href="/p5js-workshop/workshop/reference/01-referanse" class="block text-blue-300 hover:bg-gray-700 p-2 rounded"> Referanseark for p5.js </a> </li> </ul> </li> </ul> </nav> </aside> <div class="prose prose-invert w-3/4 p-12 overflow-y-auto"> <h1 class="text-5xl font-bold mb-8">Snake</h1>  <article class="prose prose-invert max-w-none"> <h1 id="introduksjon">Introduksjon</h1>
+<p>I denne leksjonen kan du prøve å lære av å lese koden for et enkelt Snake-spill laget i p5.js. Spillet går ut på at du styrer en slange som beveger seg rundt på skjermen, og målet er å spise mat som dukker opp. Hver gang slangen spiser maten, vokser den, og spillet er over hvis slangen krasjer i seg selv eller veggen.</p>
+<h2 id="steg-1">Steg 1</h2>
+<p>Åpne p5.js editoren, fjern <code>draw</code> og <code>setup</code> funksjonene, og kopier koden for Snake-spillet som er gitt nederst i denne leksjonen. Kjør spillet, og les koden etterpå for å se hvordan spillet fungerer. Prøv å forstå hva hver del av koden gjør, og hvordan de forskjellige funksjonene og variablene samhandler for å skape spillet. Om du ikke forstår koden, prøv likevel å fortsette. Du vil nok lære mye bare ved å eksperimentere med koden og se hvordan endringene påvirker spillet. Ikke vær redd for å gjøre feil, det er en del av læringsprosessen!</p>
+<h2 id="steg-2">Steg 2</h2>
+<p>Ser at brettet er delt inn i celler, og at både slangen og maten beveger seg i disse cellene. Prøv å endre <code>cellSize</code> og <code>brettSize</code> for å se hvordan det påvirker spillet. Hva skjer hvis du gjør cellene større eller mindre? Hva skjer hvis du gjør brettet større eller mindre?</p>
+<h2 id="steg-3">Steg 3</h2>
+<p>Eksperimenter med <code>frameRate</code> for å se hvordan det påvirker spillet. Hva skjer hvis du gjør oppdateringshastigheten raskere eller tregere? Hvordan påvirker det spillopplevelsen?</p>
+<h2 id="steg-4">Steg 4</h2>
+<p>Legg til en poengsum som øker hver gang slangen spiser maten. Vis poengsummen på skjermen, og prøv å slå din egen rekord!</p>
+<h2 id="steg-5">Steg 5</h2>
+<p>Kanskje spillet gå fortere etter hvert som slangen vokser? Legg til en mekanisme for å øke <code>frameRate</code> etter hvert som slangen blir lengre, for å gjøre spillet mer utfordrende.</p>
+<h2 id="steg-6">Steg 6</h2>
+<p>Gjør det du vil for å forbedre spillet!
+Forslag:</p>
+<ul>
+<li>Kanskje du vil legge til flere typer mat som gir forskjellige poengsummer</li>
+<li>Hindringer på brettet som slangen må unngå.</li>
+<li>En startskjerm</li>
+<li>Lydeffekter når slangen spiser maten eller krasjer.</li>
+<li>Endre farger og grafikk for å gjøre spillet mer visuelt tiltalende. Kanskje slange og maten kan ha andre farger eller former, eller kanskje du vil legge til en bakgrunnsbilde.</li>
+<li>Mat kan dukke opp i slangens kropp. Det er uheldigvis, kanskje du kan legge til en sjekk for å sørge for at maten ikke dukker opp i slangens kropp når den blir plassert på nytt etter å ha blitt spist.</li>
+</ul>
+<div class="code-wrapper"><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> slange;</span></span>
+<span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> matPos;</span></span>
+<span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> slangeRetning;</span></span>
+<span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> spisteMat </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> false</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> cellSize</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> 10</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> brettSize</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> 50</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> setup</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#6A737D">  // Setter slangen sin posisjon til (0,0) dvs. opp til venstre hjørne av lerretet.</span></span>
+<span class="line"><span style="color:#F97583">  let</span><span style="color:#E1E4E8"> slangeHode </span><span style="color:#F97583">=</span><span style="color:#B392F0"> createVector</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  slange </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> Array.</span><span style="color:#B392F0">of</span><span style="color:#E1E4E8">(slangeHode);</span></span>
+<span class="line"><span style="color:#E1E4E8">  slangeRetning </span><span style="color:#F97583">=</span><span style="color:#B392F0"> createVector</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">); </span><span style="color:#6A737D">// Slangen starter med å bevege seg mot høyre.</span></span>
+<span class="line"><span style="color:#6A737D">  // Setter matens posisjon til en tilfeldig posisjon på lerretet.</span></span>
+<span class="line"><span style="color:#E1E4E8">  matPos </span><span style="color:#F97583">=</span><span style="color:#B392F0"> createVector</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">floor</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">random</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, brettSize)), </span><span style="color:#B392F0">floor</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">random</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, brettSize)));</span></span>
+<span class="line"><span style="color:#B392F0">  createCanvas</span><span style="color:#E1E4E8">(brettSize </span><span style="color:#F97583">*</span><span style="color:#E1E4E8"> cellSize, brettSize </span><span style="color:#F97583">*</span><span style="color:#E1E4E8"> cellSize);</span></span>
+<span class="line"><span style="color:#B392F0">  frameRate</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">10</span><span style="color:#E1E4E8">); </span><span style="color:#6A737D">// Setter oppdateringshastigheten til 10 ganger per sekund.</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> draw</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  background</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"green"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#6A737D">  // Oppdaterer </span></span>
+<span class="line"><span style="color:#B392F0">  oppdaterSlange</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#6A737D">  // Sjekker død</span></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8"> (</span><span style="color:#B392F0">sjekkerDød</span><span style="color:#E1E4E8">()) {</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#6A737D">  // Sjekker om slangen spiser maten</span></span>
+<span class="line"><span style="color:#B392F0">  sjekkerMat</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#6A737D">  // Tegner </span></span>
+<span class="line"><span style="color:#B392F0">  tegnSlange</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#B392F0">  tegnMat</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> tegnSlange</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  fill</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"white"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">  for</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">let</span><span style="color:#E1E4E8"> i </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">; i </span><span style="color:#F97583">&#x3C;</span><span style="color:#E1E4E8"> slange.</span><span style="color:#79B8FF">length</span><span style="color:#E1E4E8">; i</span><span style="color:#F97583">++</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">    let</span><span style="color:#E1E4E8"> del </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> slange[i];</span></span>
+<span class="line"><span style="color:#B392F0">    rect</span><span style="color:#E1E4E8">(del.x </span><span style="color:#F97583">*</span><span style="color:#E1E4E8"> cellSize, del.y </span><span style="color:#F97583">*</span><span style="color:#E1E4E8"> cellSize, cellSize, cellSize);</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> tegnMat</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  fill</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"red"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  rect</span><span style="color:#E1E4E8">(matPos.x </span><span style="color:#F97583">*</span><span style="color:#E1E4E8"> cellSize, matPos.y </span><span style="color:#F97583">*</span><span style="color:#E1E4E8"> cellSize, cellSize, cellSize);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> oppdaterSlange</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">  let</span><span style="color:#E1E4E8"> gamleRetning </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> slangeRetning.</span><span style="color:#B392F0">copy</span><span style="color:#E1E4E8">(); </span><span style="color:#6A737D">// Kopierer den gamle retningen for å kunne sjekke om den nye retningen er gyldig (slangen kan ikke snu 180 grader).</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> nyRetning</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> slangeRetning.</span><span style="color:#B392F0">copy</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8"> (</span><span style="color:#B392F0">keyIsDown</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">LEFT_ARROW</span><span style="color:#E1E4E8">) ) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    nyRetning.</span><span style="color:#B392F0">set</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">-</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  } </span><span style="color:#F97583">else</span><span style="color:#F97583"> if</span><span style="color:#E1E4E8"> (</span><span style="color:#B392F0">keyIsDown</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">RIGHT_ARROW</span><span style="color:#E1E4E8">)) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    nyRetning.</span><span style="color:#B392F0">set</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  } </span><span style="color:#F97583">else</span><span style="color:#F97583"> if</span><span style="color:#E1E4E8"> (</span><span style="color:#B392F0">keyIsDown</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">UP_ARROW</span><span style="color:#E1E4E8">)) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    nyRetning.</span><span style="color:#B392F0">set</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">-</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  } </span><span style="color:#F97583">else</span><span style="color:#F97583"> if</span><span style="color:#E1E4E8"> (</span><span style="color:#B392F0">keyIsDown</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">DOWN_ARROW</span><span style="color:#E1E4E8">)) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    nyRetning.</span><span style="color:#B392F0">set</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">!</span><span style="color:#B392F0">erMotsattRetning</span><span style="color:#E1E4E8">(gamleRetning, nyRetning)) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    slangeRetning </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> nyRetning;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  let</span><span style="color:#E1E4E8"> nyttHode </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> slange[</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">].</span><span style="color:#B392F0">copy</span><span style="color:#E1E4E8">(); </span><span style="color:#6A737D">// Kopierer det gamle hodet for å lage et nytt hode som skal flyttes i den retningen slangen beveger seg i.</span></span>
+<span class="line"><span style="color:#E1E4E8">  nyttHode.</span><span style="color:#B392F0">add</span><span style="color:#E1E4E8">(slangeRetning); </span><span style="color:#6A737D">// Legger til retningen til det nye hodet for å flytte det i den retningen slangen beveger seg i.</span></span>
+<span class="line"><span style="color:#E1E4E8">  slange.</span><span style="color:#B392F0">unshift</span><span style="color:#E1E4E8">(nyttHode); </span><span style="color:#6A737D">// Legger det nye hodet til i starten av slangen (index 0) for å flytte slangen i den retningen den beveger seg i.</span></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">!</span><span style="color:#E1E4E8">spisteMat) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    slange.</span><span style="color:#B392F0">pop</span><span style="color:#E1E4E8">(); </span><span style="color:#6A737D">// Fjerner den siste delen av slangen (halen) hvis slangen ikke har spist maten, for å opprettholde samme lengde.</span></span>
+<span class="line"><span style="color:#E1E4E8">  } </span><span style="color:#F97583">else</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    spisteMat </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> false</span><span style="color:#E1E4E8">; </span><span style="color:#6A737D">// Resetter spisteMat til false etter at slangen har vokst.</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> sjekkerDød</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">  let</span><span style="color:#E1E4E8"> erDød </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> false</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8"> (slange[</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">].x </span><span style="color:#F97583">&#x3C;</span><span style="color:#79B8FF"> 0</span><span style="color:#F97583"> ||</span><span style="color:#E1E4E8"> slange[</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">].x </span><span style="color:#F97583">>=</span><span style="color:#E1E4E8"> brettSize </span><span style="color:#F97583">||</span><span style="color:#E1E4E8"> slange[</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">].y </span><span style="color:#F97583">&#x3C;</span><span style="color:#79B8FF"> 0</span><span style="color:#F97583"> ||</span><span style="color:#E1E4E8"> slange[</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">].y </span><span style="color:#F97583">>=</span><span style="color:#E1E4E8"> brettSize) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    erDød </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> true</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#6A737D">  // Kræsjet i seg selv</span></span>
+<span class="line"><span style="color:#F97583">  for</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">let</span><span style="color:#E1E4E8"> i </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">; i </span><span style="color:#F97583">&#x3C;</span><span style="color:#E1E4E8"> slange.</span><span style="color:#79B8FF">length</span><span style="color:#E1E4E8">; i</span><span style="color:#F97583">++</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">    let</span><span style="color:#E1E4E8"> del </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> slange[i];</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (slange[</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">].x </span><span style="color:#F97583">===</span><span style="color:#E1E4E8"> del.x </span><span style="color:#F97583">&#x26;&#x26;</span><span style="color:#E1E4E8"> slange[</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">].y </span><span style="color:#F97583">===</span><span style="color:#E1E4E8"> del.y) {</span></span>
+<span class="line"><span style="color:#E1E4E8">      erDød </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> true</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">      continue</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8"> (erDød) {</span></span>
+<span class="line"><span style="color:#B392F0">    tegnGameOver</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#B392F0">    noLoop</span><span style="color:#E1E4E8">(); </span><span style="color:#6A737D">// Stopper spillet hvis slangen går utenfor lerretet.</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> erDød;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> sjekkerMat</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8"> (slange[</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">].x </span><span style="color:#F97583">===</span><span style="color:#E1E4E8"> matPos.x </span><span style="color:#F97583">&#x26;&#x26;</span><span style="color:#E1E4E8"> slange[</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">].y </span><span style="color:#F97583">===</span><span style="color:#E1E4E8"> matPos.y) {</span></span>
+<span class="line"><span style="color:#6A737D">    // Setter spisteMat til true for å indikere at slangen har spist maten, slik at den ikke fjerner halen i neste oppdatering og dermed vokser.</span></span>
+<span class="line"><span style="color:#E1E4E8">    spisteMat </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> true</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#6A737D">    // Når slangen spiser maten, flytter vi maten til en ny tilfeldig posisjon.</span></span>
+<span class="line"><span style="color:#E1E4E8">    matPos.</span><span style="color:#B392F0">set</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">floor</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">random</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, brettSize)), </span><span style="color:#B392F0">floor</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">random</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, brettSize)));</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> tegnGameOver</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  textSize</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">32</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  fill</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"white"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  textAlign</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">CENTER</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">CENTER</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  text</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Game Over"</span><span style="color:#E1E4E8">, width </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">, height </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">} </span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> erMotsattRetning</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">retning1</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">retning2</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> slange.</span><span style="color:#79B8FF">length</span><span style="color:#F97583"> ></span><span style="color:#79B8FF"> 1</span><span style="color:#F97583"> &#x26;&#x26;</span><span style="color:#E1E4E8"> (retning2.x </span><span style="color:#F97583">===</span><span style="color:#F97583"> -</span><span style="color:#E1E4E8">retning1.x </span><span style="color:#F97583">||</span><span style="color:#E1E4E8"> retning2.y </span><span style="color:#F97583">===</span><span style="color:#F97583"> -</span><span style="color:#E1E4E8">retning1.y);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre><button class="copy-btn" type="button" data-code="let slange;
+let matPos;
+let slangeRetning;
+let spisteMat = false;
+const cellSize = 10;
+const brettSize = 50;
+
+function setup() {
+  // Setter slangen sin posisjon til (0,0) dvs. opp til venstre hjørne av lerretet.
+  let slangeHode = createVector(0, 0);
+  slange = Array.of(slangeHode);
+  slangeRetning = createVector(1, 0); // Slangen starter med å bevege seg mot høyre.
+  // Setter matens posisjon til en tilfeldig posisjon på lerretet.
+  matPos = createVector(floor(random(0, brettSize)), floor(random(0, brettSize)));
+  createCanvas(brettSize * cellSize, brettSize * cellSize);
+  frameRate(10); // Setter oppdateringshastigheten til 10 ganger per sekund.
+}
+
+function draw() {
+  background(&#x22;green&#x22;);
+  // Oppdaterer 
+  oppdaterSlange();
+  // Sjekker død
+  if (sjekkerDød()) {
+    return;
+  }
+  // Sjekker om slangen spiser maten
+  sjekkerMat();
+  // Tegner 
+  tegnSlange();
+  tegnMat();
+}
+
+function tegnSlange() {
+  fill(&#x22;white&#x22;);
+  for (let i = 0; i < slange.length; i++) {
+    let del = slange[i];
+    rect(del.x * cellSize, del.y * cellSize, cellSize, cellSize);
+  }
+}
+
+function tegnMat() {
+  fill(&#x22;red&#x22;);
+  rect(matPos.x * cellSize, matPos.y * cellSize, cellSize, cellSize);
+}
+
+function oppdaterSlange() {
+  let gamleRetning = slangeRetning.copy(); // Kopierer den gamle retningen for å kunne sjekke om den nye retningen er gyldig (slangen kan ikke snu 180 grader).
+  const nyRetning = slangeRetning.copy();
+  if (keyIsDown(LEFT_ARROW) ) {
+    nyRetning.set(-1, 0);
+  } else if (keyIsDown(RIGHT_ARROW)) {
+    nyRetning.set(1, 0);
+  } else if (keyIsDown(UP_ARROW)) {
+    nyRetning.set(0, -1);
+  } else if (keyIsDown(DOWN_ARROW)) {
+    nyRetning.set(0, 1);
+  }
+
+  if (!erMotsattRetning(gamleRetning, nyRetning)) {
+    slangeRetning = nyRetning;
+  }
+
+  let nyttHode = slange[0].copy(); // Kopierer det gamle hodet for å lage et nytt hode som skal flyttes i den retningen slangen beveger seg i.
+  nyttHode.add(slangeRetning); // Legger til retningen til det nye hodet for å flytte det i den retningen slangen beveger seg i.
+  slange.unshift(nyttHode); // Legger det nye hodet til i starten av slangen (index 0) for å flytte slangen i den retningen den beveger seg i.
+  if (!spisteMat) {
+    slange.pop(); // Fjerner den siste delen av slangen (halen) hvis slangen ikke har spist maten, for å opprettholde samme lengde.
+  } else {
+    spisteMat = false; // Resetter spisteMat til false etter at slangen har vokst.
+  }
+}
+
+function sjekkerDød() {
+  let erDød = false;
+  if (slange[0].x < 0 || slange[0].x >= brettSize || slange[0].y < 0 || slange[0].y >= brettSize) {
+    erDød = true;
+  }
+  // Kræsjet i seg selv
+  for (let i = 1; i < slange.length; i++) {
+    let del = slange[i];
+    if (slange[0].x === del.x &#x26;&#x26; slange[0].y === del.y) {
+      erDød = true;
+      continue;
+    }
+  }
+  if (erDød) {
+    tegnGameOver();
+    noLoop(); // Stopper spillet hvis slangen går utenfor lerretet.
+  }
+  return erDød;
+}
+
+function sjekkerMat() {
+  if (slange[0].x === matPos.x &#x26;&#x26; slange[0].y === matPos.y) {
+    // Setter spisteMat til true for å indikere at slangen har spist maten, slik at den ikke fjerner halen i neste oppdatering og dermed vokser.
+    spisteMat = true;
+    // Når slangen spiser maten, flytter vi maten til en ny tilfeldig posisjon.
+    matPos.set(floor(random(0, brettSize)), floor(random(0, brettSize)));
+  }
+}
+
+function tegnGameOver() {
+  textSize(32);
+  fill(&#x22;white&#x22;);
+  textAlign(CENTER, CENTER);
+  text(&#x22;Game Over&#x22;, width / 2, height / 2);
+} 
+
+function erMotsattRetning(retning1, retning2) {
+  return slange.length > 1 &#x26;&#x26; (retning2.x === -retning1.x || retning2.y === -retning1.y);
+}" aria-label="Kopier kode til utklippstavlen">Kopier</button></div> </article> <div class="flex justify-between mt-12 border-t-2 border-gray-700 pt-8"> <div> <a href="/p5js-workshop/workshop/advanced/04-trigonometri" class="block text-blue-300 hover:bg-gray-700 p-4 rounded border border-gray-600">
+&larr; Trigonometri, regulære mangekanter og stjerner </a> </div> <div> <a href="/p5js-workshop/workshop/easy/01-introduction" class="block text-blue-300 hover:bg-gray-700 p-4 rounded border border-gray-600"> Introduksjon &rarr;
+</a> </div> </div>  </div> </main> <script type="module">document.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll(".copy-btn").forEach(e=>{e.textContent="Kopier",e.addEventListener("click",async()=>{const o=e.dataset.code;if(o)try{await navigator.clipboard.writeText(o);const t=e.textContent;e.textContent="Kopiert!",setTimeout(()=>{e.textContent=t},2e3)}catch(t){console.error("Failed to copy: ",t)}})})});</script> </body> </html>
