@@ -98,7 +98,7 @@ function draw() {
 }
 ```
 ### background()
-´background()`-funksjonen farger bakgrunnen i en bestemt farge. Du kan bruke ord inni anførselstegn eller tallverdier for å sette fargen på bakgrunnen til canvaset.
+`background()`-funksjonen farger bakgrunnen i en bestemt farge. Du kan bruke ord inni anførselstegn eller tallverdier for å sette fargen på bakgrunnen til canvaset.
 
 ## Steg 6: Tegn figurer på canvaset
 
